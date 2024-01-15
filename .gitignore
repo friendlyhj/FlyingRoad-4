@@ -1,0 +1,26 @@
+# Whitelist
+.minecraft/**
+
+## MMC stuff
+instance.cfg
+mmc-pack.json
+natives
+
+## Config
+!.minecraft/config/
+!.minecraft/config/**
+!.minecraft/defaultconfigs/
+!.minecraft/defaultconfigs/**
+
+## KubeJS
+!.minecraft/kubejs/
+!.minecraft/kubejs/**
+.minecraft/kubejs/README.txt
+.minecraft/kubejs/exported
+.minecraft/kubejs/probe
+
+## Resources
+!.minecraft/patchouli_books/
+!.minecraft/patchouli_books/**
+!.minecraft/scripts/
+!.minecraft/scripts/**
