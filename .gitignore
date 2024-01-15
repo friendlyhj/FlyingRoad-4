@@ -9,6 +9,7 @@ natives
 ## Config
 !.minecraft/config/
 !.minecraft/config/**
+.minecraft/config/inventoryprofilesnext
 !.minecraft/defaultconfigs/
 !.minecraft/defaultconfigs/**
 
