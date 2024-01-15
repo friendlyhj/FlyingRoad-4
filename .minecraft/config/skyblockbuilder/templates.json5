@@ -11,18 +11,18 @@
   "spawn": null,
   
   "spawns": {
-    "default": [
-      [ 6, 3, 5 ]
+    "flying_road": [
+      [ 8, 1, 4 ]
     ]
   },
   
   // The list of templates being available. The first entry is the default template.
   "templates": [
     {
-      "name": "default",
+      "name": "Flying Road",
       "desc": "",
-      "file": "default.nbt",
-      "spawns": "default",
+      "file": "flying_road.nbt",
+      "spawns": "flying_road",
       "direction": "south"
     }
   ]
