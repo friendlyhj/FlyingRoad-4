@@ -229,3 +229,6 @@ immersiveengineering:nickel
 immersiveengineering:deep_nickel
 immersiveengineering:uranium
 immersiveengineering:mineral_veins
+cyclic:flower_cyan
+cyclic:flower_tulip
+cyclic:flower_lime

@@ -1,0 +1,10 @@
+{
+    "block.kubejs.budding_andesite": "安山岩母岩",
+    "block.kubejs.andesite_bud": "安山岩芽",
+    "block.kubejs.budding_mine": "矿物母岩",
+    "block.kubejs.mine_bud": "矿物芽",
+    "block.kubejs.gem_budding_mine": "宝石矿物母岩",
+    "block.kubejs.gem_mine_bud": "宝石矿物芽",
+    
+    "item.kubejs.andesite_rock": "安山岩石块"
+}
