@@ -162,8 +162,8 @@ onEvent('recipes', event => {
                     { 'type': 'drop_item', 'item': 'thermal:raw_tin', count: 1, weight: 145},
                     { 'type': 'drop_item', 'item': 'thermal:raw_nickel', count: 1, weight: 130},
                     { 'type': 'drop_item', 'item': 'thermal:raw_silver', count: 1, weight: 125},
-                    { 'type': 'drop_item', 'item': 'thermal:raw_silver', count: 1, weight: 120},
-                    { 'type': 'drop_item', 'item': 'thermal:raw_silver', count: 1, weight: 100},
+                    { 'type': 'drop_item', 'item': 'thermal:raw_lead', count: 1, weight: 120},
+                    { 'type': 'drop_item', 'item': 'mekanism:raw_osmium', count: 1, weight: 100},
                 ]
             }
         ]
