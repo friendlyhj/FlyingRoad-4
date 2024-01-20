@@ -50,8 +50,6 @@ onEvent('block.registry', event => {
         .material('rock')
         .hardness(0)
         .box(2, 0, 2, 14, 8, 14, true)
-
-    
 })
 
 onEvent('item.registry', event => {
