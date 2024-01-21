@@ -34,6 +34,7 @@ onEvent('block.registry', event => {
     event.create('mine_bud')
         .fullBlock(false)
         .notSolid()
+        .noDrops()
         .lightLevel(0.1)
         .defaultCutout()
         .opaque(false)
@@ -44,6 +45,7 @@ onEvent('block.registry', event => {
     event.create('gem_mine_bud')
         .fullBlock(false)
         .notSolid()
+        .noDrops()
         .lightLevel(0.1)
         .defaultCutout()
         .opaque(false)
@@ -54,4 +56,5 @@ onEvent('block.registry', event => {
 
 onEvent('item.registry', event => {
     event.create('andesite_rock')
+    event.create('glowing_gem')
 })

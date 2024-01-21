@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cross",
+    "textures": {
+        "cross": "kubejs:block/gem_mine_bud"
+    }
+}

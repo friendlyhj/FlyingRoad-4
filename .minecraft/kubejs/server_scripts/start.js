@@ -103,7 +103,7 @@ onEvent('recipes', event => {
         'type': 'lychee:item_exploding',
         'item_in': [
             { 'item': 'kubejs:andesite_rock' },
-            { 'item': 'thermal:apatite_dust' }
+            { 'item': 'thermal:niter_dust' }
         ],
         'post': [
             { 'type': 'drop_item', 'item': 'thermal:basalz_powder' }
@@ -164,7 +164,108 @@ onEvent('recipes', event => {
                     { 'type': 'drop_item', 'item': 'thermal:raw_silver', count: 1, weight: 125 },
                     { 'type': 'drop_item', 'item': 'thermal:raw_lead', count: 1, weight: 120 },
                     { 'type': 'drop_item', 'item': 'mekanism:raw_osmium', count: 1, weight: 100 },
+                    { 'type': 'drop_item', 'item': 'mekanism:raw_uranium', count: 1, weight: 25 },
                 ]
+            }
+        ]
+    })
+
+    event.custom({
+        'type': 'lychee:block_interacting',
+        'item_in': { 'item': 'thermal:phytogro' },
+        'block_in': { 'blocks': ['kubejs:budding_gem_mine'] },
+        'post': {
+            'type': 'place',
+            'block': 'kubejs:gem_mine_bud',
+            'offsetY': 1,
+            'contextual': {
+                'type': 'chance',
+                'chance': 0.5
+            }
+        }
+    })
+
+    event.custom({
+        'type': 'lychee:block_clicking',
+        'item_in': { 'tag': 'ae2:knife' },
+        'block_in': { 'blocks': ['kubejs:gem_mine_bud'] },
+        'post': [
+            { 'type': 'damage_item', 'damage': 1 },
+            { 'type': 'place', 'block': 'air' },
+            {
+                'type': 'random',
+                'entries': [
+                    { 'type': 'drop_item', 'item': 'thermal:cinnabar', count: 1, weight: 20 },
+                    { 'type': 'drop_item', 'item': 'thermal:apatite', count: 1, weight: 15 },
+                    { 'type': 'drop_item', 'item': 'thermal:niter', count: 1, weight: 15 },
+                    { 'type': 'drop_item', 'item': 'ae2:certus_quartz_crystal', count: 1, weight: 15 },
+                    { 'type': 'drop_item', 'item': 'thermal:sulfur', count: 1, weight: 10 },
+                    { 'type': 'drop_item', 'item': 'kubejs:glowing_gem', count: 1, weight: 10 },
+                    { 'type': 'drop_item', 'item': 'minecraft:lapis_lazuli', count: 1, weight: 8 },
+                    { 'type': 'drop_item', 'item': 'minecraft:amethyst_shard', count: 1, weight: 6 },
+                    { 'type': 'drop_item', 'item': 'minecraft:diamond', count: 1, weight: 2 },
+                    { 'type': 'drop_item', 'item': 'minecraft:emerald', count: 1, weight: 2 }
+                ]
+            }
+        ]
+    })
+
+    event.custom({
+        'type': 'pneumaticcraft:pressure_chamber',
+        'inputs': [
+            {
+                'type': 'pneumaticcraft:stacked_item',
+                'item': 'minecraft:andesite',
+                'count': 8
+            },
+            {
+                'tag': 'forge:ingots/lead'
+            },
+            {
+                'type': 'pneumaticcraft:stacked_item',
+                'item': 'minecraft:quartz',
+                'count': 2
+            },
+        ],
+        'pressure': 2.4,
+        'results': [
+            {
+                'item': 'kubejs:budding_gem_mine'
+            }
+        ]
+    })
+
+    event.custom({
+        'type': 'pneumaticcraft:pressure_chamber',
+        'inputs': [
+            {
+                'item': 'stone'
+            },
+            {
+                'item': 'andesite'
+            },
+            {
+                'item': 'gold_ingot'
+            }
+        ],
+        'pressure': 2.0,
+        'results': [
+            {
+                'item': 'kubejs:budding_mine'
+            }
+        ]
+    })
+
+    event.custom({
+        'type': 'pneumaticcraft:pressure_chamber',
+        'inputs': [
+            { 'item': 'kubejs:andesite_rock' },
+            { 'item': 'thermal:niter_dust' }
+        ],
+        'pressure': 2.0,
+        'results': [
+            {
+                'item': 'thermal:basalz_powder'
             }
         ]
     })
