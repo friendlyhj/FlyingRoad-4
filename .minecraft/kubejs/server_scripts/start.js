@@ -195,7 +195,7 @@ onEvent('recipes', event => {
             {
                 'type': 'random',
                 'entries': [
-                    { 'type': 'drop_item', 'item': 'thermal:cinnabar', count: 1, weight: 20 },
+                    { 'type': 'drop_item', 'item': 'thermal:cinnabar', count: 1, weight: 15 },
                     { 'type': 'drop_item', 'item': 'thermal:apatite', count: 1, weight: 15 },
                     { 'type': 'drop_item', 'item': 'thermal:niter', count: 1, weight: 15 },
                     { 'type': 'drop_item', 'item': 'ae2:certus_quartz_crystal', count: 1, weight: 15 },

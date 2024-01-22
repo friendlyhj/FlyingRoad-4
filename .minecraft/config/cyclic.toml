@@ -490,7 +490,7 @@
 		[cyclic.blocks.user]
 			#Power per use user
 			#Range: 0 ~ 64000
-			energy_cost = 0
+			energy_cost = 500
 
 	#####################################################################################
 	# Logging related configs

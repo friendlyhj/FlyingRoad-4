@@ -3,10 +3,10 @@ onEvent('recipes', event => {
         'minecraft:andesite', 'thermal:earth_charge'
     ])
 
-    event.remove({id: 'thermal:earth_charge/apatite_dust_from_apatite'})
-    event.remove({id: 'thermal:earth_charge/sulfur_dust_from_sulfur'})
-    event.remove({id: 'thermal:earth_charge/cinnabar_dust_from_cinnabar'})
-    event.remove({id: 'thermal:earth_charge/niter_dust_from_niter'})
+    event.remove({ id: 'thermal:earth_charge/apatite_dust_from_apatite' })
+    event.remove({ id: 'thermal:earth_charge/sulfur_dust_from_sulfur' })
+    event.remove({ id: 'thermal:earth_charge/cinnabar_dust_from_cinnabar' })
+    event.remove({ id: 'thermal:earth_charge/niter_dust_from_niter' })
 
     let crystals = [
         ['apatite', 'thermal:apatite_dust'],
@@ -24,9 +24,9 @@ onEvent('recipes', event => {
         if (name.indexOf(':') != -1) {
             input = name
         } else {
-            event.remove({id: `thermal:earth_charge/${name}_dust_from_${name}`})
-            event.remove({id: `thermal:machines/pulverizer/pulverizer_${name}`})
-            event.remove({id: `thermal:machines/crystallizer/crystallizer_${name}`})
+            event.remove({ id: `thermal:earth_charge/${name}_dust_from_${name}` })
+            event.remove({ id: `thermal:machines/pulverizer/pulverizer_${name}` })
+            event.remove({ id: `thermal:machines/crystallizer/crystallizer_${name}` })
         }
         let output = `6x ${result}`
         event.recipes.minecraft.crafting_shapeless(output, [
@@ -36,16 +36,16 @@ onEvent('recipes', event => {
         event.custom({
             'type': 'pneumaticcraft:pressure_chamber',
             'inputs': [
-              {
-                'item': input
-              }
+                {
+                    'item': input
+                }
             ],
             'pressure': 1.0,
             'results': [
-              {
-                'item': result,
-                'count': 6
-              }
+                {
+                    'item': result,
+                    'count': 6
+                }
             ]
         })
     })
@@ -53,26 +53,26 @@ onEvent('recipes', event => {
     event.custom({
         'type': 'pneumaticcraft:thermo_plant',
         'item_input': {
-          'item': 'thermal:sulfur_dust'
+            'item': 'thermal:sulfur_dust'
         },
         'fluid_input': {
-          'type': 'pneumaticcraft:fluid',
-          'tag': 'thermal:resin',
-          'amount': 100
+            'type': 'pneumaticcraft:fluid',
+            'tag': 'thermal:resin',
+            'amount': 150
         },
         'fluid_output': {
-          'fluid': 'pneumaticcraft:plastic',
-          'amount': 250
+            'fluid': 'pneumaticcraft:plastic',
+            'amount': 250
         },
         'temperature': {
-          'min_temp': 423
+            'min_temp': 423
         },
         'speed': 0.25,
         'pressure': 2.0,
         'exothermic': false
-      })
+    })
 
-    event.remove({id: 'pneumaticcraft:pressure_chamber/etching_acid'})
+    event.remove({ id: 'pneumaticcraft:pressure_chamber/etching_acid' })
     event.custom({
         'type': 'pneumaticcraft:pressure_chamber',
         'inputs': [
@@ -100,8 +100,161 @@ onEvent('recipes', event => {
             }
         ]
     })
+
+    event.custom({
+        'type': 'pneumaticcraft:thermo_plant',
+        'fluid_input': {
+            'type': 'pneumaticcraft:fluid',
+            'tag': 'thermal:latex',
+            'amount': 250
+        },
+        'temperature': {
+            'min_temp': 273,
+            'max_temp': 373
+        },
+        'item_output': {
+            'item': 'slime_ball'
+        },
+        'speed': 1.0,
+        'pressure': 0.5,
+        'exothermic': false
+    })
+
+    event.custom({
+        'type': 'pneumaticcraft:amadron',
+        'input': {
+            'type': 'ITEM',
+            'id': 'thermal:phytogro',
+            'amount': 128
+        },
+        'output': {
+            'type': 'ITEM',
+            'id': 'minecraft:emerald',
+            'amount': 1
+        },
+        'static': true,
+        'level': 0
+    })
+
+    let plants = [
+        'minecraft:wheat_seeds',
+        'minecraft:pumpkin_seeds',
+        'minecraft:melon_seeds',
+        'minecraft:beetroot_seeds',
+        'minecraft:carrot',
+        'minecraft:potato',
+        'minecraft:sugar_cane',
+        'immersiveengineering:seed',
+        'thermal:amaranth_seeds',
+        'thermal:barley_seeds',
+        'thermal:corn_seeds',
+        'thermal:flax_seeds',
+        'minecraft:acacia_sapling',
+        'minecraft:dark_oak_sapling',
+        'thermal:strawberry_seeds',
+        'thermal:tomato_seeds',
+        'thermal:hops_seeds',
+        'thermal:tea_seeds',
+        'thermal:frost_melon_seeds',
+        'minecraft:oak_sapling',
+        'minecraft:spruce_sapling',
+        'minecraft:birch_sapling',
+        'minecraft:jungle_sapling',
+        'thermal:onion_seeds',
+        'thermal:radish_seeds',
+        'thermal:rice_seeds',
+        'thermal:sadiroot_seeds',
+        'thermal:spinach_seeds',
+        'thermal:bell_pepper_seeds',
+        'thermal:eggplant_seeds',
+        'thermal:green_bean_seeds',
+        'thermal:peanut_seeds'
+    ]
+    plants.forEach(plant => {
+        event.custom({
+            'type': 'pneumaticcraft:amadron',
+            'input': {
+                'type': 'ITEM',
+                'id': 'minecraft:emerald',
+                'amount': 4
+            },
+            'output': {
+                'type': 'ITEM',
+                'id': plant,
+                'amount': 1
+            },
+            'static': true,
+            'level': 0
+        })
+    })
+    event.custom({
+        'type': 'pneumaticcraft:pressure_chamber',
+        'inputs': [
+            { 'item': 'water_bucket' }
+        ],
+        'pressure': 2.5,
+        'results': [
+            { 'item': 'ice' },
+            { 'item': 'bucket' }
+        ]
+    })
+
+
+    event.remove({ 'id': 'thermal:rf_coil' })
+    event.custom({
+        "type": "cyclic:solidifier",
+        "ingredients": [
+            { "item": "gold_ingot" },
+            { 'item': 'redstone' },
+            { 'item': 'redstone' }
+        ],
+        "mix": {
+            "fluid": "water",
+            "count": 500
+        },
+        "energy": {
+            "rfpertick": 10,
+            "ticks": 1800
+        },
+        "result": {
+            "item": "thermal:rf_coil",
+        }
+    })
+    event.custom({
+        "type": "thermal:crystallizer",
+        "ingredients": [
+            {
+                "fluid": "thermal:redstone",
+                "amount": 200
+            },
+            {
+                "item": "gold_ingot"
+            }
+        ],
+        "result": [
+            {
+                "item": "thermal:rf_coil"
+            }
+        ],
+        "energy": 8000
+    })
+
+    let mekOres = ['osmium', 'uranium']
+    mekOres.forEach(ore => {
+        event.remove({ 'id': `mekanism:processing/${ore}/ingot/from_dust_blasting` })
+        event.remove({ 'id': `mekanism:processing/${ore}/ingot/from_dust_smelting` })
+        event.remove({ 'id': `mekanism:processing/${ore}/ingot/from_raw_smelting` })
+        event.remove({ 'id': `mekanism:processing/${ore}/ingot/from_raw_blasting` })
+        event.remove({ 'id': `mekanism:processing/${ore}/ingot/from_ore_smelting` })
+        event.remove({ 'id': `mekanism:processing/${ore}/ingot/from_ore_blasting` })
+        event.recipes.thermal.smelter(`mekanism:ingot_${ore}`, [`mekanism:dust_${ore}`, 'fire_charge']).energy(8000)
+        event.recipes.thermal.smelter(`mekanism:ingot_${ore}`, [`mekanism:raw_${ore}`, 'fire_charge']).energy(8000)
+    })
+
+    event.recipes.thermal.smelter('minecraft:blaze_powder', ['minecraft:magma_block', '3x thermal:sulfur_dust']).energy(6000)
 })
 
 onEvent('tags.fluids', event => {
     event.add('thermal:resin', ['thermal:resin'])
+    event.add('thermal:latex', ['thermal:latex'])
 })
