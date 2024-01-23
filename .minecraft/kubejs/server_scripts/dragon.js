@@ -3,6 +3,7 @@ onEvent('recipes', event => {
     event.remove({ 'output': 'draconicevolution:wyvern_core' })
     event.remove({ 'output': 'draconicevolution:grinder' })
     event.remove({ 'output': 'draconicevolution:generator' })
+    event.remove({ 'output': 'draconicevolution:basic_crafting_injector'})
 
     event.recipes.minecraft.crafting_shaped('draconicevolution:draconium_core', [
         'ABA',
@@ -39,4 +40,54 @@ onEvent('recipes', event => {
         'G': 'kubejs:mithril_gear',
         'W': 'thermal:rf_coil'
     })
+
+    event.custom({
+        'type': 'compactcrafting:miniaturization',
+        'layers': [
+            {
+                'type': 'compactcrafting:mixed',
+                'pattern': [
+                    ['-', '-', '-'],
+                    ['-', 'A', '-'],
+                    ['-', '-', '-']
+                ]
+            },
+            {
+                'type': 'compactcrafting:mixed',
+                'pattern': [
+                    ['B', 'C', 'B'],
+                    ['C', 'A', 'C'],
+                    ['B', 'C', 'B']
+                ]
+            },
+            {
+                'type': 'compactcrafting:mixed',
+                'pattern': [
+                    ['C', 'C', 'C'],
+                    ['C', 'C', 'C'],
+                    ['C', 'C', 'C']
+                ]
+            }
+        ],
+        'catalyst': {
+            'id': 'draconicevolution:draconium_core',
+            'Count': 1
+        },
+        'components': {
+            'A': {
+                'type': 'compactcrafting:block',
+                'block': 'thermal_extra:soul_infused_block'
+            },
+            'B': {
+                'type': 'compactcrafting:block',
+                'block': 'pneumaticcraft:smooth_plastic_brick_light_blue'
+            },
+            'C': {
+                'type': 'compactcrafting:block',
+                'block': 'ae2:quartz_block'
+            }
+        },
+        'outputs': [{ 'id': 'draconicevolution:basic_crafting_injector', 'Count': 2 }]
+    })
+
 });

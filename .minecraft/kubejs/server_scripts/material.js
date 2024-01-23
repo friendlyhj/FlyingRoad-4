@@ -338,20 +338,41 @@ onEvent('recipes', event => {
         }
     })
 
+    event.recipes.thermal.press('blaze_rod', '4x blaze_powder')
+    event.recipes.thermal.press('bone', '6x bone_meal')
+    event.recipes.minecraft.crafting_shapeless('bone_meal', ['thermal:phytogro'])
+
     event.custom({
-        'type': 'lychee:lightning_channeling',
-        'item_in': 'thermal:niter_dust',
-        'post': [{
-            'type': 'drop_item',
-            'item': 'thermal:blitz_powder',
-            'contextual': {
-                'type': 'chance',
-                'chance': 0.2
-            }
-        }]
+        'type': 'lychee:block_interacting',
+        'item_in': { 'tag': 'forge:axes' },
+        'block_in': { 'blocks': ['warped_stem'] },
+        'post': [
+            {
+                'type': 'place',
+                'block': 'stripped_warped_stem'
+            },
+            {
+                'type': 'drop_item',
+                'item': 'twisting_vines',
+                'contextual': {
+                    'type': 'chance',
+                    'chance': 0.1
+                }
+            },
+            { 'type': 'damage_item' }
+        ]
     })
 
-    event.recipes.thermal.press('blaze_rod', '4x blaze_powder')
+    event.recipes.mekanism.enriching('miniutilities:ender_dust', 'twisting_vines')
+    event.recipes.mekanism.enriching('mysticalagriculture:inferium_essence', 'thermal:phytogro')
+
+    event.recipes.minecraft.crafting_shapeless('coal', ['charcoal'])
+
+    event.remove({ 'id': 'ae2:smelting/silicon_from_certus_quartz_dust' })
+    event.remove({ 'id': 'ae2:blasting/silicon_from_certus_quartz_dust' })
+
+    event.recipes.thermal.smelter('4x ae2:silicon' , ['3x sand', 'ae2:certus_quartz_dust', '#minecraft:coals']).energy(16000)
+    event.recipes.thermal.pulverizer('ae2:certus_quartz_dust', '#ae2:all_certus_quartz').energy(2000)
 })
 
 onEvent('tags.fluids', event => {
