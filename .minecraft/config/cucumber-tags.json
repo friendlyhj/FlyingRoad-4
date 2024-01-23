@@ -3,7 +3,7 @@
   "forge:ingots/aluminum": "immersiveengineering:ingot_aluminum",
   "forge:ingots/constantan": "thermal:constantan_ingot",
   "forge:ingots/tungsten": "null",
-  "forge:ingots/mithril": "null",
+  "forge:ingots/mithril": "kubejs:mithril_ingot",
   "forge:ingots/tin": "thermal:tin_ingot",
   "forge:ingots/iridium": "null",
   "forge:ingots/zinc": "null",

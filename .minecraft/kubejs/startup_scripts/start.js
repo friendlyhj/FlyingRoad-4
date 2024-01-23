@@ -52,9 +52,29 @@ onEvent('block.registry', event => {
         .material('rock')
         .hardness(0)
         .box(2, 0, 2, 14, 8, 14, true)
+    
+    event.create('mithril_block')
+        .tag('forge:stoarge_blocks/mithril')
+        .tag('forge:stoarge_blocks')
 })
 
 onEvent('item.registry', event => {
     event.create('andesite_rock')
     event.create('glowing_gem')
+    event.create('osmium_gear')
+        .tag('forge:gears/osmium')
+        .tag('forge:gears')
+    event.create('mithril_ingot')
+        .tag('forge:ingots/mithril')
+        .tag('forge:ingots')
+    event.create('mithril_gear')
+        .tag('forge:gears/mithril')
+        .tag('forge:gears')
+})
+
+onEvent('fluid.registry', event => {
+    event.create('primal_mana')
+        .color(0x3C6B86)
+        .thinTexture(0x3C6B86)
+        .thickTexture(0x3C6B86)
 })

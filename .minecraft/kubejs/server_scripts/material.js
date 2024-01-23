@@ -33,6 +33,7 @@ onEvent('recipes', event => {
             input, 'thermal:earth_charge'
         ])
         event.recipes.thermal.pulverizer(output, input).energy(4000)
+        event.recipes.mekanism.crushing(output, input)
         event.custom({
             'type': 'pneumaticcraft:pressure_chamber',
             'inputs': [
@@ -202,41 +203,41 @@ onEvent('recipes', event => {
 
     event.remove({ 'id': 'thermal:rf_coil' })
     event.custom({
-        "type": "cyclic:solidifier",
-        "ingredients": [
-            { "item": "gold_ingot" },
+        'type': 'cyclic:solidifier',
+        'ingredients': [
+            { 'item': 'gold_ingot' },
             { 'item': 'redstone' },
             { 'item': 'redstone' }
         ],
-        "mix": {
-            "fluid": "water",
-            "count": 500
+        'mix': {
+            'fluid': 'water',
+            'count': 500
         },
-        "energy": {
-            "rfpertick": 10,
-            "ticks": 1800
+        'energy': {
+            'rfpertick': 10,
+            'ticks': 1800
         },
-        "result": {
-            "item": "thermal:rf_coil",
+        'result': {
+            'item': 'thermal:rf_coil',
         }
     })
     event.custom({
-        "type": "thermal:crystallizer",
-        "ingredients": [
+        'type': 'thermal:crystallizer',
+        'ingredients': [
             {
-                "fluid": "thermal:redstone",
-                "amount": 200
+                'fluid': 'thermal:redstone',
+                'amount': 200
             },
             {
-                "item": "gold_ingot"
+                'item': 'gold_ingot'
             }
         ],
-        "result": [
+        'result': [
             {
-                "item": "thermal:rf_coil"
+                'item': 'thermal:rf_coil'
             }
         ],
-        "energy": 8000
+        'energy': 8000
     })
 
     let mekOres = ['osmium', 'uranium']
@@ -247,11 +248,110 @@ onEvent('recipes', event => {
         event.remove({ 'id': `mekanism:processing/${ore}/ingot/from_raw_blasting` })
         event.remove({ 'id': `mekanism:processing/${ore}/ingot/from_ore_smelting` })
         event.remove({ 'id': `mekanism:processing/${ore}/ingot/from_ore_blasting` })
+        event.remove({ 'id': `immersiveengineering:arcfurnace/raw_ore_${ore}` })
+        event.remove({ 'id': `immersiveengineering:arcfurnace/raw_block_${ore}` })
+        event.remove({ 'id': `immersiveengineering:arcfurnace/ore_${ore}` })
+        event.remove({ 'id': `immersiveengineering:arcfurnace/dust_${ore}` })
+
         event.recipes.thermal.smelter(`mekanism:ingot_${ore}`, [`mekanism:dust_${ore}`, 'fire_charge']).energy(8000)
         event.recipes.thermal.smelter(`mekanism:ingot_${ore}`, [`mekanism:raw_${ore}`, 'fire_charge']).energy(8000)
     })
 
     event.recipes.thermal.smelter('minecraft:blaze_powder', ['minecraft:magma_block', '3x thermal:sulfur_dust']).energy(6000)
+    event.recipes.minecraft.crafting_shaped('kubejs:osmium_gear', [
+        ' I ',
+        'INI',
+        ' I '
+    ], {
+        'I': '#forge:ingots/osmium',
+        'N': '#forge:nuggets/iron'
+    })
+    event.recipes.thermal.press('kubejs:osmium_gear', ['4x #forge:ingots/osmium', 'thermal:press_gear_die']).energy(2400)
+
+    event.custom({
+        'type': 'pneumaticcraft:pressure_chamber',
+        'inputs': [
+            {
+                'item': 'thermal:redstone_bucket'
+            },
+            {
+                'item': 'minecraft:dragon_egg'
+            },
+            {
+                'type': 'pneumaticcraft:stacked_item',
+                'item': 'thermal_extra:twinite_dust',
+                'count': 16
+            },
+            {
+                'type': 'pneumaticcraft:stacked_item',
+                'item': 'minecraft:fire_charge',
+                'count': 64
+            },
+            {
+                'type': 'pneumaticcraft:stacked_item',
+                'item': 'thermal:ice_charge',
+                'count': 64
+            },
+            {
+                'type': 'pneumaticcraft:stacked_item',
+                'item': 'thermal:earth_charge',
+                'count': 64
+            },
+            {
+                'type': 'pneumaticcraft:stacked_item',
+                'item': 'thermal:lightning_charge',
+                'count': 64
+            },
+        ],
+        'pressure': 4.5,
+        'results': [
+            {
+                'item': 'kubejs:primal_mana_bucket'
+            }
+        ]
+    })
+
+    event.recipes.minecraft.crafting_shaped('9x kubejs:mithril_ingot', ['kubejs:mithril_block'])
+    event.recipes.minecraft.crafting_shaped('kubejs:mithril_block', [
+        'AAA',
+        'AAA',
+        'AAA'
+    ], { 'A': 'kubejs:mithril_ingot' })
+    event.recipes.minecraft.crafting_shaped('kubejs:mithril_gear', [
+        ' I ',
+        'INI',
+        ' I '
+    ], {
+        'I': '#forge:ingots/mithril',
+        'N': '#forge:nuggets/iron'
+    })
+    event.recipes.thermal.press('kubejs:mithril_gear', ['4x #forge:ingots/mithril', 'thermal:press_gear_die']).energy(2400)
+
+    event.custom({
+        'type': 'pneumaticcraft:heat_frame_cooling',
+        'input': {
+            'item': 'blue_ice'
+        },
+        'max_temp': 123,
+        'result': {
+            'item': 'thermal:blizz_rod'
+        }
+    })
+
+    event.custom({
+        'type': 'lychee:lightning_channeling',
+        'item_in': 'thermal:niter_dust',
+        'post': [{
+            'type': 'drop_item',
+            'item': 'thermal:blitz_powder',
+            'contextual': {
+                'type': 'chance',
+                'chance': 0.2
+            }
+        }]
+    })
+
+    event.recipes.thermal.press('blaze_rod', '4x blaze_powder')
 })
 
 onEvent('tags.fluids', event => {

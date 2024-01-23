@@ -5,7 +5,14 @@
     "block.kubejs.mine_bud": "矿物芽",
     "block.kubejs.budding_gem_mine": "宝石矿物母岩",
     "block.kubejs.gem_mine_bud": "宝石矿物芽",
+    "block.kubejs.mithril_block": "秘银块",
     
     "item.kubejs.andesite_rock": "安山岩石块",
-    "item.kubejs.glowing_gem": "荧光宝石"
+    "item.kubejs.glowing_gem": "荧光宝石",
+    "item.kubejs.osmium_gear": "锇齿轮",
+    "item.kubejs.mithril_ingot": "秘银锭",
+    "item.kubejs.mithril_gear": "秘银齿轮",
+    "item.kubejs.primal_mana_bucket": "元始魔力桶",
+
+    "fluid.kubejs.primal_mana": "元始魔力"
 }
