@@ -1,0 +1,350 @@
+{
+	id: "464A7F8AFD96C961"
+	group: ""
+	order_index: 4
+	filename: "464A7F8AFD96C961"
+	title: "龙之进化"
+	icon: "draconicevolution:draconium_core"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: -10.5d
+			y: -5.5d
+			dependencies: ["588E5907C394346B"]
+			id: "2C491EB7B82819F9"
+			tasks: [{
+				id: "6B271B3E0CBEF3F8"
+				type: "item"
+				item: {
+					id: "cyclic:lightning_scepter"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -9.0d
+			y: -5.5d
+			description: ["向硝石粉注入雷电力量"]
+			dependencies: ["2C491EB7B82819F9"]
+			id: "065DB28C46557D9B"
+			tasks: [{
+				id: "0564C1D331672C49"
+				type: "item"
+				item: "thermal:blitz_powder"
+			}]
+		}
+		{
+			x: -7.5d
+			y: -5.5d
+			dependencies: ["065DB28C46557D9B"]
+			id: "3AD825039B078B74"
+			tasks: [{
+				id: "10CBBA001D67ED8D"
+				type: "item"
+				item: "kubejs:primal_mana_bucket"
+			}]
+		}
+		{
+			x: -6.0d
+			y: -5.5d
+			description: [
+				"银块接触元始魔力后会变成秘银块"
+				"由于流体流动不触发方块更新，请先放流体再放银块。"
+			]
+			dependencies: ["3AD825039B078B74"]
+			id: "761066C1EC8BE413"
+			tasks: [{
+				id: "739A103BBB2B558C"
+				type: "item"
+				item: "kubejs:mithril_block"
+				count: 4L
+			}]
+		}
+		{
+			x: -4.5d
+			y: -5.5d
+			dependencies: ["761066C1EC8BE413"]
+			id: "2EC397BF043326E4"
+			tasks: [{
+				id: "7DA5E9EB35EAF7B8"
+				type: "item"
+				item: "draconicevolution:draconium_core"
+			}]
+		}
+		{
+			x: -3.0d
+			y: -5.5d
+			dependencies: ["2EC397BF043326E4"]
+			id: "064D8D073645CB3B"
+			tasks: [{
+				id: "10FBE57ACF501A21"
+				type: "item"
+				item: "draconicevolution:basic_crafting_injector"
+				count: 8L
+			}]
+		}
+		{
+			x: -4.5d
+			y: -2.5d
+			dependencies: ["0221B011E44E8330"]
+			id: "1A9489C8681E01E0"
+			tasks: [{
+				id: "0DB72119E28493CD"
+				type: "item"
+				item: "draconicevolution:energy_transfuser"
+			}]
+		}
+		{
+			x: -4.5d
+			y: -7.0d
+			dependencies: ["2EC397BF043326E4"]
+			id: "35E1DEB7DB1610DD"
+			tasks: [{
+				id: "01371612D75C374B"
+				type: "item"
+				item: "draconicevolution:grinder"
+			}]
+		}
+		{
+			x: 0.0d
+			y: -4.0d
+			dependencies: ["483176E0A1140E9D"]
+			id: "6B4806B8CFB7C448"
+			tasks: [{
+				id: "62F32885190E7B72"
+				type: "item"
+				item: {
+					id: "draconicevolution:wyvern_sword"
+					Count: 1b
+					ForgeCaps: {
+						Parent: {
+							module_host: {
+								provider_id: [I;
+									1659407968
+									-1847770524
+									-1562955364
+									-1405276797
+								]
+								modules: [ ]
+								properties: { }
+							}
+							energy: {
+								energy: 0
+							}
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: -4.5d
+			y: -4.0d
+			dependencies: ["2EC397BF043326E4"]
+			id: "0221B011E44E8330"
+			tasks: [{
+				id: "6BFA8B0ED9174BF6"
+				type: "item"
+				item: "draconicevolution:draconium_energy_module"
+			}]
+		}
+		{
+			x: -1.5d
+			y: -7.0d
+			dependencies: ["483176E0A1140E9D"]
+			id: "468AC5F65B7CD4B6"
+			tasks: [
+				{
+					id: "1A004D58D20F00AD"
+					type: "item"
+					item: "draconicevolution:energy_pylon"
+					count: 2L
+				}
+				{
+					id: "4439D502C1BA8987"
+					type: "item"
+					item: "draconicevolution:energy_core"
+				}
+			]
+		}
+		{
+			x: -1.5d
+			y: -5.5d
+			dependencies: ["064D8D073645CB3B"]
+			id: "483176E0A1140E9D"
+			tasks: [{
+				id: "6709011350A58EA1"
+				type: "item"
+				item: "draconicevolution:wyvern_crafting_injector"
+				count: 8L
+			}]
+		}
+		{
+			x: 0.0d
+			y: -5.5d
+			dependencies: ["483176E0A1140E9D"]
+			id: "409EB5D089421D47"
+			tasks: [{
+				id: "7E151BF62BDFEA46"
+				type: "item"
+				item: "draconicevolution:awakened_crafting_injector"
+				count: 8L
+			}]
+		}
+		{
+			x: 1.5d
+			y: -5.5d
+			dependencies: [
+				"409EB5D089421D47"
+				"6B4806B8CFB7C448"
+			]
+			id: "6C959DDC141C2BD4"
+			tasks: [{
+				id: "101B7A5DE253E173"
+				type: "item"
+				item: {
+					id: "draconicevolution:draconic_sword"
+					Count: 1b
+					ForgeCaps: {
+						Parent: {
+							module_host: {
+								provider_id: [I;
+									-559377933
+									1046692727
+									-1488447516
+									-833821223
+								]
+								modules: [ ]
+								properties: { }
+							}
+							energy: {
+								energy: 0
+							}
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: 3.0d
+			y: -5.5d
+			dependencies: ["6C959DDC141C2BD4"]
+			id: "7C6ED25A4F60DA69"
+			tasks: [{
+				id: "4C2B2C26EDDE5F33"
+				type: "item"
+				item: {
+					id: "draconicevolution:draconic_staff"
+					Count: 1b
+					ForgeCaps: {
+						Parent: {
+							module_host: {
+								provider_id: [I;
+									1191318198
+									1137659556
+									-1078821711
+									-2043000279
+								]
+								modules: [ ]
+								properties: {
+									mining_speed: {
+										hud: 1b
+										value: 1.0d
+									}
+								}
+							}
+							energy: {
+								energy: 0
+							}
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: 0.0d
+			y: -7.0d
+			dependencies: ["483176E0A1140E9D"]
+			id: "77EDD148AA368B41"
+			tasks: [{
+				id: "2B978C9C8F660DDB"
+				type: "item"
+				item: {
+					id: "draconicevolution:wyvern_chestpiece"
+					Count: 1b
+					ForgeCaps: {
+						Parent: {
+							module_host: {
+								provider_id: [I;
+									938931461
+									-1390983009
+									-1298250337
+									2009875816
+								]
+								modules: [ ]
+								properties: { }
+							}
+							energy: {
+								energy: 0
+							}
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: 1.5d
+			y: -7.0d
+			dependencies: [
+				"77EDD148AA368B41"
+				"409EB5D089421D47"
+			]
+			id: "50156EF219E96E0E"
+			tasks: [{
+				id: "299352688CE5C3B9"
+				type: "item"
+				item: {
+					id: "draconicevolution:draconic_chestpiece"
+					Count: 1b
+					ForgeCaps: {
+						Parent: {
+							module_host: {
+								provider_id: [I;
+									-34591335
+									-351518519
+									-1753638239
+									-331870181
+								]
+								modules: [ ]
+								properties: { }
+							}
+							energy: {
+								energy: 0
+							}
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: 5.0d
+			y: -7.0d
+			shape: "gear"
+			dependencies: [
+				"50156EF219E96E0E"
+				"7C6ED25A4F60DA69"
+			]
+			size: 2.0d
+			id: "55792B101EA65D98"
+			tasks: [{
+				id: "114405E774B40044"
+				type: "item"
+				item: "draconicevolution:chaos_shard"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

@@ -1,0 +1,261 @@
+{
+	id: "6436BD0828DBFC30"
+	group: ""
+	order_index: 1
+	filename: "6436BD0828DBFC30"
+	title: "轰鸣工业"
+	icon: "pneumaticcraft:ingot_iron_compressed"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: 0.0d
+			y: 0.0d
+			dependencies: ["0E6C8BABC76D0F33"]
+			id: "3F9C1B5F63FBD514"
+			tasks: [{
+				id: "0DEEA5F184D7541B"
+				type: "item"
+				item: "pneumaticcraft:ingot_iron_compressed"
+			}]
+		}
+		{
+			x: 6.0d
+			y: 1.5d
+			description: ["放下斧头，收集树内的胶质。肥料可以加快胶质的生产速度。"]
+			dependencies: ["0E6C8BABC76D0F33"]
+			id: "03B1B8079F77963B"
+			tasks: [{
+				id: "07B716D87578B640"
+				type: "item"
+				item: "thermal:device_tree_extractor"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 0.0d
+			description: ["使用燃料将空气压缩"]
+			dependencies: ["3F9C1B5F63FBD514"]
+			id: "3D06074F7CAF8E7D"
+			tasks: [{
+				id: "441A89CE9CB31F57"
+				type: "item"
+				item: "pneumaticcraft:air_compressor"
+			}]
+		}
+		{
+			title: "高压舱室"
+			x: 3.0d
+			y: 0.0d
+			shape: "hexagon"
+			description: ["组成3×3×3空心立方体，气阀用于接压缩空气，接口用于处理物品输入输出"]
+			dependencies: ["3D06074F7CAF8E7D"]
+			id: "744573A85CDC0667"
+			tasks: [
+				{
+					id: "03261220512527BB"
+					type: "item"
+					item: "pneumaticcraft:pressure_tube"
+				}
+				{
+					id: "03774E3ABB6495C6"
+					type: "item"
+					item: "pneumaticcraft:pressure_chamber_wall"
+					count: 23L
+				}
+				{
+					id: "0E64FCB3E425A9DF"
+					type: "item"
+					item: "pneumaticcraft:pressure_chamber_valve"
+				}
+				{
+					id: "18CAFA831D7BC802"
+					type: "item"
+					item: "pneumaticcraft:pressure_chamber_interface"
+					count: 2L
+				}
+			]
+		}
+		{
+			x: 5.5d
+			y: -1.5d
+			dependencies: ["744573A85CDC0667"]
+			id: "0BD0FEA316CAF939"
+			tasks: [{
+				id: "7010177DC2D285D1"
+				type: "item"
+				item: "pneumaticcraft:charging_station"
+			}]
+		}
+		{
+			x: 4.5d
+			y: 0.0d
+			dependencies: ["744573A85CDC0667"]
+			id: "7E677B21F33777C2"
+			tasks: [{
+				id: "5FE58AB3CD713403"
+				type: "item"
+				item: "pneumaticcraft:thermopneumatic_processing_plant"
+			}]
+		}
+		{
+			title: "生物塑料"
+			x: 6.0d
+			y: 0.0d
+			description: ["将树脂和硫粉混合生产生物塑料板（你确定不应该是橡胶吗）"]
+			dependencies: [
+				"7E677B21F33777C2"
+				"03B1B8079F77963B"
+			]
+			id: "104376046278910E"
+			tasks: [{
+				id: "30E30A2901CF0377"
+				type: "item"
+				item: "pneumaticcraft:plastic"
+			}]
+		}
+		{
+			title: "网上购物"
+			x: 7.5d
+			y: 0.0d
+			description: ["将肥料卖出再买回电路板模具和各种种子。智能的无人机将会充当快递员。"]
+			dependencies: [
+				"0BD0FEA316CAF939"
+				"104376046278910E"
+			]
+			id: "345920F121F83770"
+			tasks: [{
+				id: "42C46D813E63E414"
+				type: "item"
+				item: "pneumaticcraft:amadron_tablet"
+			}]
+		}
+		{
+			x: 3.0d
+			y: -1.5d
+			dependencies: ["744573A85CDC0667"]
+			id: "42E3B340ACB44395"
+			tasks: [{
+				id: "1188EF5AB186CA29"
+				type: "item"
+				item: "pneumaticcraft:fluid_mixer"
+			}]
+		}
+		{
+			x: 3.0d
+			y: -3.0d
+			dependencies: ["42E3B340ACB44395"]
+			id: "0686F71C375A02F6"
+			tasks: [{
+				id: "1EC6445C7FC41CD1"
+				type: "item"
+				item: "minecraft:obsidian"
+			}]
+		}
+		{
+			x: 7.5d
+			y: -3.0d
+			dependencies: [
+				"345920F121F83770"
+				"0686F71C375A02F6"
+			]
+			id: "6CCF5D41C303AE24"
+			tasks: [{
+				id: "3701826805D55C94"
+				type: "item"
+				item: "pneumaticcraft:printed_circuit_board"
+			}]
+		}
+		{
+			title: "智能无人机"
+			icon: {
+				id: "pneumaticcraft:drone"
+				Count: 1b
+				tag: {
+					"pneumaticcraft:air": 120000
+				}
+			}
+			x: 9.0d
+			y: -3.0d
+			dependencies: ["6CCF5D41C303AE24"]
+			id: "2CBC485F0CB7C99A"
+			tasks: [
+				{
+					id: "0A33707AD40E0B73"
+					type: "item"
+					item: "pneumaticcraft:programmer"
+				}
+				{
+					id: "77E8F86EDC0DAB60"
+					type: "item"
+					item: "pneumaticcraft:drone"
+				}
+				{
+					id: "5C2D7C33BBCC6A44"
+					type: "item"
+					item: "pneumaticcraft:programming_puzzle"
+				}
+				{
+					id: "5CE972610984C471"
+					type: "item"
+					item: "pneumaticcraft:gps_tool"
+				}
+			]
+		}
+		{
+			x: 7.5d
+			y: -4.5d
+			shape: "hexagon"
+			dependencies: ["6CCF5D41C303AE24"]
+			id: "11EE635ABD1F1BDA"
+			tasks: [{
+				id: "5D053FA8051E96F9"
+				type: "item"
+				item: "pneumaticcraft:pneumatic_dynamo"
+			}]
+		}
+		{
+			icon: "pneumaticcraft:heat_frame"
+			x: 7.5d
+			y: 1.5d
+			dependencies: ["104376046278910E"]
+			id: "2A1320CFF666C09C"
+			tasks: [
+				{
+					id: "4886E3BCE9105202"
+					type: "item"
+					item: "pneumaticcraft:heat_frame"
+				}
+				{
+					id: "68C0645EC7133AFD"
+					type: "item"
+					item: "pneumaticcraft:heat_pipe"
+				}
+			]
+		}
+		{
+			x: 9.0d
+			y: 1.5d
+			dependencies: ["2A1320CFF666C09C"]
+			id: "2FC6D6C3CD24736A"
+			tasks: [{
+				id: "023B4F188EF6B623"
+				type: "item"
+				item: "pneumaticcraft:vortex_tube"
+			}]
+		}
+		{
+			x: 10.5d
+			y: 1.5d
+			shape: "hexagon"
+			dependencies: ["2FC6D6C3CD24736A"]
+			id: "39F15FBF7D37A2FE"
+			tasks: [{
+				id: "08487E72ED38D133"
+				type: "item"
+				item: "thermal:ice_charge"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

@@ -14,7 +14,7 @@
 	#DAMAGE: After 10 seconds, slowly ramps up the damage
 	#EXPLOSION: Explodes after 10 seconds
 	#Allowed Values: NO_DAMAGE, DAMAGE, EXPLOSION
-	"Reaction Type" = "DAMAGE"
+	"Reaction Type" = "EXPLOSION"
 	#How much EXP should base experience pearls give?
 	#Range: 1 ~ 128
 	"EXP Given from EXP Pearls" = 10

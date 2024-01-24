@@ -1,0 +1,469 @@
+{
+	id: "08042818FDB48171"
+	group: ""
+	order_index: 0
+	filename: "08042818FDB48171"
+	title: "万物伊始"
+	icon: "minecraft:oak_sapling"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "万物起源"
+			x: 0.0d
+			y: 0.0d
+			description: [
+				"从一棵树苗开始……也许并不是？"
+				"你可以在树苗旁边按 Shift 键加速其生长。"
+				"任务线中六边形形状的任务可以解锁其他章节的任务。"
+			]
+			id: "0F8C87AC61EDC59A"
+			tasks: [{
+				id: "4D11DD78608A1680"
+				type: "item"
+				item: "minecraft:oak_sapling"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 0.0d
+			description: ["工作台，用于制造各种东西。"]
+			dependencies: ["0F8C87AC61EDC59A"]
+			id: "618A76811F7458E9"
+			tasks: [{
+				id: "0C07B82923A9717A"
+				type: "item"
+				item: "minecraft:crafting_table"
+			}]
+		}
+		{
+			x: 4.5d
+			y: 0.0d
+			description: ["将树叶等各种有机质填入其中堆肥，获得骨粉这一肥料。"]
+			dependencies: ["2A6ADB4D8CEA75A9"]
+			id: "5D35CDA3C67F9EE6"
+			tasks: [{
+				id: "4649195D738DFA01"
+				type: "item"
+				item: "minecraft:composter"
+			}]
+		}
+		{
+			x: 3.0d
+			y: 0.0d
+			description: ["一把简易的剪刀，用于剪下树叶。"]
+			dependencies: ["618A76811F7458E9"]
+			id: "2A6ADB4D8CEA75A9"
+			tasks: [{
+				id: "1E14634F5B8F8279"
+				type: "item"
+				item: {
+					id: "woodenshears:wooden_shears"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			title: "活力石头"
+			x: 6.0d
+			y: 0.0d
+			description: ["真神奇！将骨粉与地面的安山岩砖块结合成的母岩，会在时间流逝下长出矿芽。也许可以用镐子收获它。"]
+			dependencies: ["5D35CDA3C67F9EE6"]
+			id: "790805CA685AF497"
+			tasks: [{
+				id: "288DE2A0A899B722"
+				type: "item"
+				item: "kubejs:budding_andesite"
+			}]
+		}
+		{
+			x: 7.5d
+			y: 0.0d
+			dependencies: ["790805CA685AF497"]
+			id: "4E5CCD0CB5D710CF"
+			tasks: [{
+				id: "77D600B7692C2534"
+				type: "item"
+				item: "minecraft:andesite"
+			}]
+		}
+		{
+			title: "锤碎它"
+			icon: {
+				id: "immersiveengineering:hammer"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+			}
+			x: 9.0d
+			y: 0.0d
+			description: ["嗯，这是把锤子。左键安山岩（或圆石）和沙砾将它们锤碎成沙砾和沙子。"]
+			dependencies: ["4E5CCD0CB5D710CF"]
+			id: "7815012924A92956"
+			tasks: [
+				{
+					id: "329D2A1456CE2BF6"
+					type: "item"
+					item: {
+						id: "immersiveengineering:hammer"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "05646A33913D49A0"
+					type: "item"
+					item: "minecraft:gravel"
+				}
+				{
+					id: "601E5557C0B79DDF"
+					type: "item"
+					item: "minecraft:sand"
+				}
+			]
+		}
+		{
+			title: "改变形状"
+			x: 7.5d
+			y: -1.5d
+			description: ["这把凿子可以把安山岩变成具有生长潜能的样子，不过其他样子用作建筑也是极好的。"]
+			dependencies: ["4E5CCD0CB5D710CF"]
+			id: "20F3C6E0AA2A0558"
+			tasks: [{
+				id: "6CE36D2A5A500282"
+				type: "item"
+				item: {
+					id: "rechiseled:chisel"
+					Count: 1b
+					tag: { }
+				}
+			}]
+		}
+		{
+			title: "高能混合物"
+			x: 7.5d
+			y: 3.0d
+			description: ["二硝一硫一碳"]
+			dependencies: ["08DBFD4DC8685622"]
+			id: "675E0B669C927173"
+			tasks: [{
+				id: "070249BAC079DDD2"
+				type: "item"
+				item: "minecraft:gunpowder"
+			}]
+		}
+		{
+			title: "热门话题"
+			x: 7.5d
+			y: 1.5d
+			dependencies: ["4E5CCD0CB5D710CF"]
+			id: "08DBFD4DC8685622"
+			tasks: [{
+				id: "64D4A374CE2373D9"
+				type: "item"
+				item: "minecraft:furnace"
+			}]
+		}
+		{
+			title: "泥土变戏法"
+			x: 10.5d
+			y: 0.0d
+			description: [
+				"2 沙砾 + 2 泥土 = 4 砂土"
+				"砂土再锄一下变回泥土，相当于沙砾换泥土。"
+			]
+			dependencies: ["7815012924A92956"]
+			id: "6A0899DF0C592331"
+			tasks: [{
+				id: "1D67C950F0D62D66"
+				type: "item"
+				item: "minecraft:coarse_dirt"
+			}]
+			rewards: [{
+				id: "1E67037F3DAE2FA1"
+				type: "item"
+				item: "minecraft:ice"
+				count: 4
+			}]
+		}
+		{
+			title: "更大更安全的箱子"
+			x: 9.0d
+			y: -1.5d
+			dependencies: ["7815012924A92956"]
+			id: "1D47B95A1287DC6D"
+			tasks: [{
+				id: "6219279A3EF79EC9"
+				type: "item"
+				item: "cyclic:crate"
+			}]
+		}
+		{
+			title: "集中储存"
+			x: 9.0d
+			y: -3.0d
+			description: ["单独放多种同一物品的抽屉，左键拿出右键放入"]
+			dependencies: ["1D47B95A1287DC6D"]
+			id: "1B0C3AD9B51F1F0F"
+			tasks: [{
+				id: "278CAFB171916C46"
+				type: "item"
+				item: "storagedrawers:oak_full_drawers_1"
+			}]
+			rewards: [{
+				id: "221DD8AB80530EA9"
+				type: "item"
+				item: "storagedrawers:drawer_key"
+			}]
+		}
+		{
+			x: 12.0d
+			y: 0.0d
+			description: ["将沙子丢入水中获得黏土块。"]
+			dependencies: ["6A0899DF0C592331"]
+			id: "504AD287C34DA47E"
+			tasks: [{
+				id: "68A0D6EB71D9D80E"
+				type: "item"
+				item: "minecraft:clay_ball"
+			}]
+		}
+		{
+			title: "黏土桶"
+			x: 12.0d
+			y: 1.5d
+			dependencies: [
+				"08DBFD4DC8685622"
+				"504AD287C34DA47E"
+			]
+			id: "7DA33640F3DFB9D6"
+			tasks: [{
+				id: "22031181D4F5032A"
+				type: "item"
+				item: "ceramics:empty_clay_bucket"
+			}]
+		}
+		{
+			title: "裂解熔化"
+			x: 9.75d
+			y: 3.0d
+			description: [
+				"右键沙砾有 50% 概率将它融化成熔岩。"
+				"合成它需要TNT爆炸，可以用左上角的声明区块功能阻止 TNT 破坏方块。"
+			]
+			dependencies: ["675E0B669C927173"]
+			id: "7CE84D640BA714AB"
+			tasks: [{
+				id: "77AE5D2628EAFDC3"
+				type: "item"
+				item: "thermal:earth_charge"
+			}]
+		}
+		{
+			title: "下界蔓延"
+			icon: "minecraft:netherrack"
+			x: 12.0d
+			y: 3.0d
+			description: [
+				"你没有钻石镐，通过浇筑制造下界传送门。然而一股特殊的力量阻止你亲身进入下界。"
+				"然而传送门周围的方块却被侵染成了下界的模样……"
+			]
+			dependencies: [
+				"7CE84D640BA714AB"
+				"7DA33640F3DFB9D6"
+			]
+			id: "2A05156D7CE026FE"
+			tasks: [{
+				id: "2301820995645EC0"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "下界矿物"
+			icon: "minecraft:nether_gold_ore"
+			x: 13.5d
+			y: 1.5d
+			description: ["泥土和石头在被侵染成下界岩的同时也夹杂了一些下界的矿物。"]
+			dependencies: ["2A05156D7CE026FE"]
+			id: "2573B3FC5A949830"
+			tasks: [
+				{
+					id: "454BE728855131DB"
+					type: "item"
+					item: "minecraft:gold_nugget"
+				}
+				{
+					id: "790F8A9CB8B5F573"
+					type: "item"
+					item: "minecraft:quartz"
+				}
+			]
+		}
+		{
+			x: 13.5d
+			y: 3.0d
+			description: ["沙子被侵染成灵魂沙"]
+			dependencies: ["2A05156D7CE026FE"]
+			id: "63C3F8A266F91DD4"
+			tasks: [{
+				id: "7A61DA496505695B"
+				type: "item"
+				item: "minecraft:soul_sand"
+			}]
+		}
+		{
+			x: 15.0d
+			y: 3.0d
+			description: ["向下界传送门丢入注灵粉会加快其的侵染速度。"]
+			dependencies: ["63C3F8A266F91DD4"]
+			id: "6F173621445983EC"
+			tasks: [{
+				id: "6599EEDE35416177"
+				type: "item"
+				item: "thermal_extra:soul_infused_dust"
+			}]
+		}
+		{
+			x: 10.5d
+			y: 4.5d
+			description: ["向下界传送门丢入煤炭或木炭或阻止它的侵染。"]
+			dependencies: ["2A05156D7CE026FE"]
+			id: "612EFA5216A3AE0E"
+			tasks: [{
+				id: "1D0FA3BEC6F8F48C"
+				type: "item"
+				item: "minecraft:coal"
+			}]
+		}
+		{
+			icon: "kubejs:budding_mine"
+			x: 13.5d
+			y: 0.0d
+			shape: "hexagon"
+			description: ["将金融入石头和安山岩之间，便能产出源源不断的矿物！然而这个母岩不能自我生长，需要给它一点肥料。"]
+			dependencies: ["2573B3FC5A949830"]
+			id: "0E6C8BABC76D0F33"
+			tasks: [
+				{
+					id: "5BF5719A5727F48F"
+					type: "item"
+					item: "kubejs:budding_mine"
+				}
+				{
+					id: "469EF5615A22DAB8"
+					type: "item"
+					item: "thermal:phytogro"
+				}
+			]
+		}
+		{
+			icon: "kubejs:budding_gem_mine"
+			x: 15.0d
+			y: 0.0d
+			description: [
+				"在高压下往安山岩埋入铅质和石英种子，得到能够生长出宝石的母岩。"
+				"同样需要肥料的滋养。长出的矿芽比较脆弱，只有特制的工具才能开采它。"
+			]
+			dependencies: [
+				"0E6C8BABC76D0F33"
+				"744573A85CDC0667"
+			]
+			id: "548722F76BF84A57"
+			tasks: [
+				{
+					id: "7BADECD5BFF9B1A1"
+					type: "item"
+					item: "kubejs:budding_gem_mine"
+				}
+				{
+					id: "439999E760709519"
+					type: "item"
+					item: {
+						id: "ae2:nether_quartz_cutting_knife"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+			]
+		}
+		{
+			x: 13.5d
+			y: 4.5d
+			description: ["偶尔的，被侵染的下界岩被一抹绿色覆盖……"]
+			dependencies: ["2A05156D7CE026FE"]
+			id: "3AFD4C2789D6D2F4"
+			tasks: [{
+				id: "333C5B8725B50369"
+				type: "item"
+				item: "minecraft:twisting_vines"
+			}]
+		}
+		{
+			x: 15.0d
+			y: 4.5d
+			dependencies: ["3AFD4C2789D6D2F4"]
+			id: "184E75CEC4E7A9BF"
+			tasks: [{
+				id: "0C0703B925A19B4E"
+				type: "item"
+				item: "minecraft:ender_pearl"
+			}]
+		}
+		{
+			x: 12.0d
+			y: 4.5d
+			description: ["向下界传送门丢入双子物质粉，部分方块可能会被侵染成远古残骸。"]
+			dependencies: ["2A05156D7CE026FE"]
+			id: "63B0E02EC61EAF49"
+			tasks: [{
+				id: "3CDFAAB6BAF4E594"
+				type: "item"
+				item: "thermal_extra:twinite_dust"
+			}]
+		}
+		{
+			x: 12.0d
+			y: 6.0d
+			dependencies: ["63B0E02EC61EAF49"]
+			id: "3CE5127FD2FC5EA3"
+			tasks: [{
+				id: "7D82EEDBF7F0C8D4"
+				type: "item"
+				item: "minecraft:netherite_scrap"
+			}]
+		}
+		{
+			x: 15.0d
+			y: -1.5d
+			dependencies: ["35E0D9F5BDFA9921"]
+			id: "3B2290CFDD90D1BF"
+			tasks: [{
+				id: "72BE5B1D658D7AC6"
+				type: "item"
+				item: "thermal:device_rock_gen"
+			}]
+		}
+		{
+			title: "合金窑"
+			x: 13.5d
+			y: -1.5d
+			description: ["8 个窑砖组成合金窑，制作简单的合金。"]
+			dependencies: ["0E6C8BABC76D0F33"]
+			id: "35E0D9F5BDFA9921"
+			tasks: [{
+				id: "7A92445426A7FEE0"
+				type: "item"
+				item: "immersiveengineering:alloybrick"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

@@ -1,7 +1,15 @@
 [
   {
+    "name": "minecraft:stone",
+    "weight": 300,
+    "dimensions": [
+      "minecraft:overworld"
+    ],
+    "biomes": []
+  },
+  {
     "name": "minecraft:coal_ore",
-    "weight": 4,
+    "weight": 60,
     "dimensions": [
       "minecraft:overworld"
     ],
@@ -9,7 +17,15 @@
   },
   {
     "name": "minecraft:iron_ore",
-    "weight": 3,
+    "weight": 40,
+    "dimensions": [
+      "minecraft:overworld"
+    ],
+    "biomes": []
+  },
+  {
+    "name": "minecraft:copper_ore",
+    "weight": 35,
     "dimensions": [
       "minecraft:overworld"
     ],
@@ -17,7 +33,7 @@
   },
   {
     "name": "minecraft:gold_ore",
-    "weight": 1,
+    "weight": 20,
     "dimensions": [
       "minecraft:overworld"
     ],
@@ -25,14 +41,6 @@
   },
   {
     "name": "minecraft:diamond_ore",
-    "weight": 1,
-    "dimensions": [
-      "minecraft:overworld"
-    ],
-    "biomes": []
-  },
-  {
-    "name": "minecraft:lapis_ore",
     "weight": 2,
     "dimensions": [
       "minecraft:overworld"
@@ -40,8 +48,16 @@
     "biomes": []
   },
   {
+    "name": "minecraft:lapis_ore",
+    "weight": 20,
+    "dimensions": [
+      "minecraft:overworld"
+    ],
+    "biomes": []
+  },
+  {
     "name": "minecraft:redstone_ore",
-    "weight": 4,
+    "weight": 24,
     "dimensions": [
       "minecraft:overworld"
     ],
@@ -49,7 +65,71 @@
   },
   {
     "name": "minecraft:emerald_ore",
+    "weight": 2,
+    "dimensions": [
+      "minecraft:overworld"
+    ],
+    "biomes": []
+  },
+  {
+    "name": "thermal:tin_ore",
+    "weight": 30,
+    "dimensions": [
+      "minecraft:overworld"
+    ],
+    "biomes": []
+  },
+  {
+    "name": "thermal:lead_ore",
+    "weight": 15,
+    "dimensions": [
+      "minecraft:overworld"
+    ],
+    "biomes": []
+  },
+  {
+    "name": "thermal:silver_ore",
+    "weight": 20,
+    "dimensions": [
+      "minecraft:overworld"
+    ],
+    "biomes": []
+  },
+  {
+    "name": "thermal:nickel_ore",
+    "weight": 24,
+    "dimensions": [
+      "minecraft:overworld"
+    ],
+    "biomes": []
+  },
+  {
+    "name": "mekanism:osmium_ore",
+    "weight": 18,
+    "dimensions": [
+      "minecraft:overworld"
+    ],
+    "biomes": []
+  },
+  {
+    "name": "mekanism:uranium_ore",
+    "weight": 10,
+    "dimensions": [
+      "minecraft:overworld"
+    ],
+    "biomes": []
+  },
+  {
+    "name": "draconicevolution:overworld_draconium_ore",
     "weight": 1,
+    "dimensions": [
+      "minecraft:overworld"
+    ],
+    "biomes": []
+  },
+  {
+    "name": "mysticalagriculture:prosperity_ore",
+    "weight": 10,
     "dimensions": [
       "minecraft:overworld"
     ],

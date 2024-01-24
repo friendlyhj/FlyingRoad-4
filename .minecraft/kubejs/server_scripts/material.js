@@ -222,7 +222,7 @@ onEvent('recipes', event => {
         }
     })
     event.custom({
-        'type': 'thermal:crystallizer',
+        'type': 'thermal:bottler',
         'ingredients': [
             {
                 'fluid': 'thermal:redstone',
@@ -363,6 +363,27 @@ onEvent('recipes', event => {
         ]
     })
 
+    event.custom({
+        'type': 'lychee:block_interacting',
+        'item_in': { 'tag': 'forge:axes' },
+        'block_in': { 'blocks': ['crimson_stem'] },
+        'post': [
+            {
+                'type': 'place',
+                'block': 'stripped_crimson_stem'
+            },
+            {
+                'type': 'drop_item',
+                'item': 'weeping_vines',
+                'contextual': {
+                    'type': 'chance',
+                    'chance': 0.1
+                }
+            },
+            { 'type': 'damage_item' }
+        ]
+    })
+
     event.recipes.mekanism.enriching('miniutilities:ender_dust', 'twisting_vines')
     event.recipes.mekanism.enriching('mysticalagriculture:inferium_essence', 'thermal:phytogro')
 
@@ -371,8 +392,61 @@ onEvent('recipes', event => {
     event.remove({ 'id': 'ae2:smelting/silicon_from_certus_quartz_dust' })
     event.remove({ 'id': 'ae2:blasting/silicon_from_certus_quartz_dust' })
 
-    event.recipes.thermal.smelter('4x ae2:silicon' , ['3x sand', 'ae2:certus_quartz_dust', '#minecraft:coals']).energy(16000)
+    event.recipes.thermal.smelter('4x ae2:silicon', ['3x sand', 'ae2:certus_quartz_dust', '#minecraft:coals']).energy(16000)
     event.recipes.thermal.pulverizer('ae2:certus_quartz_dust', '#ae2:all_certus_quartz').energy(2000)
+
+    event.custom({
+        'type': 'thermal:bottler',
+        'ingredients': [
+            {
+                'item': 'minecraft:blackstone'
+            },
+            {
+                'fluid': 'thermal:ender',
+                'amount': 250
+            }
+        ],
+        'result': [
+            {
+                'item': 'minecraft:end_stone'
+            }
+        ]
+    })
+
+    event.recipes.minecraft.crafting_shaped('crying_obsidian', [
+        ' I ',
+        'IOI',
+        ' I '
+    ], {
+        'I': 'thermal:ice_charge',
+        'O': 'obsidian'
+    })
+
+    event.recipes.minecraft.crafting_shaped('end_portal_frame', [
+        'A A',
+        'CCC',
+        'EEE'
+    ], {
+        'A': 'amethyst_block',
+        'C': 'crying_obsidian',
+        'E': 'end_stone'
+    })
+
+    event.recipes.minecraft.crafting_shapeless('mekanism:dust_fluorite', [
+        'glowstone_dust', 'thermal_extra:amethyst_dust'
+    ])
+
+    event.custom({
+        'type': 'lychee:item_inside',
+        'item_in': { 'item': 'glowstone_dust' },
+        'block_in': { 'blocks': ['kubejs:primal_mana'] },
+        'post': [
+            {
+                'type': 'drop_item',
+                'item': 'mekanism:dust_fluorite'
+            }
+        ]
+    })
 })
 
 onEvent('tags.fluids', event => {

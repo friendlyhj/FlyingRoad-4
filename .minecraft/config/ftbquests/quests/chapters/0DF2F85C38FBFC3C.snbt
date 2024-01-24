@@ -1,0 +1,188 @@
+{
+	id: "0DF2F85C38FBFC3C"
+	group: ""
+	order_index: 3
+	filename: "0DF2F85C38FBFC3C"
+	title: "贪婪种矿"
+	icon: "mysticalagriculture:supremium_essence"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: -1.5d
+			y: -1.5d
+			dependencies: ["2E3F66B101110489"]
+			id: "3203396ED7B1AD8E"
+			tasks: [
+				{
+					id: "1DC5700CCA048EC0"
+					type: "item"
+					item: "mysticalagriculture:prosperity_shard"
+					count: 16L
+				}
+				{
+					id: "527739BBB449E16E"
+					type: "item"
+					item: "mysticalagriculture:inferium_essence"
+					count: 64L
+				}
+			]
+		}
+		{
+			x: -1.5d
+			y: 0.0d
+			dependencies: ["3203396ED7B1AD8E"]
+			id: "6CF222D1605CF4FE"
+			tasks: [{
+				id: "0F264F8A454779FF"
+				type: "item"
+				item: {
+					id: "mysticalagriculture:infusion_crystal"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -1.5d
+			y: 1.5d
+			dependencies: ["6CF222D1605CF4FE"]
+			id: "6F6AC14A32BCB774"
+			tasks: [
+				{
+					id: "261C21BE2A15F260"
+					type: "item"
+					item: "mysticalagriculture:infusion_altar"
+				}
+				{
+					id: "3879C1DC2FE35D97"
+					type: "item"
+					item: "mysticalagriculture:infusion_pedestal"
+					count: 8L
+				}
+			]
+		}
+		{
+			x: 0.0d
+			y: 1.5d
+			dependencies: ["6F6AC14A32BCB774"]
+			id: "521A94500598A91A"
+			tasks: [{
+				id: "7E4CEB1149BBBEFA"
+				type: "item"
+				item: "mysticalagriculture:diamond_seeds"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 0.0d
+			dependencies: ["6CF222D1605CF4FE"]
+			id: "7B7ECA67D384CFE7"
+			tasks: [{
+				id: "2FDC002847E3EC61"
+				type: "item"
+				item: "mysticalagriculture:master_infusion_crystal"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 0.0d
+			dependencies: ["7B7ECA67D384CFE7"]
+			id: "467D564EC3A51EC9"
+			tasks: [
+				{
+					id: "03459EB9BFE4A24F"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:supremium_helmet"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "6A41E5E1C90F84F4"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:supremium_chestplate"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "607A23634D1EE916"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:supremium_leggings"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "659104159ACF1E4E"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:supremium_boots"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+			]
+		}
+		{
+			x: 0.0d
+			y: 3.0d
+			dependencies: ["6F6AC14A32BCB774"]
+			id: "6722742657F3B78D"
+			tasks: [{
+				id: "4F1C7B912CDCE3F1"
+				type: "item"
+				item: "mysticalagriculture:draconium_seeds"
+			}]
+		}
+		{
+			x: -1.5d
+			y: 3.0d
+			dependencies: ["6F6AC14A32BCB774"]
+			id: "5053F81D9EBDB30C"
+			tasks: [{
+				id: "2C053C2A2C518C3E"
+				type: "item"
+				item: "mysticalagriculture:soul_extractor"
+			}]
+		}
+		{
+			x: -1.5d
+			y: 4.5d
+			dependencies: ["5053F81D9EBDB30C"]
+			id: "62A3347BC7AEA33B"
+			tasks: [{
+				id: "4E07B47560F6C75D"
+				type: "item"
+				item: "mysticalagriculture:wither_skeleton_seeds"
+			}]
+		}
+		{
+			x: -1.5d
+			y: 6.0d
+			shape: "hexagon"
+			dependencies: ["62A3347BC7AEA33B"]
+			id: "588E5907C394346B"
+			tasks: [{
+				id: "7B23BC1AC29EC570"
+				type: "item"
+				item: "minecraft:nether_star"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

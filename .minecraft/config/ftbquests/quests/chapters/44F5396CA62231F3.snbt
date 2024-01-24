@@ -1,0 +1,598 @@
+{
+	id: "44F5396CA62231F3"
+	group: ""
+	order_index: 2
+	filename: "44F5396CA62231F3"
+	title: "电力时代"
+	icon: "thermal:rf_coil"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: -1.5d
+			y: -3.0d
+			dependencies: ["11EE635ABD1F1BDA"]
+			id: "12DBE2CCE867FE81"
+			tasks: [{
+				id: "2FDF684F4C378852"
+				type: "item"
+				item: "thermal:machine_frame"
+			}]
+			rewards: [{
+				id: "184ED2296DD883F5"
+				type: "item"
+				item: "thermal:wrench"
+			}]
+		}
+		{
+			x: -1.5d
+			y: -1.5d
+			dependencies: ["12DBE2CCE867FE81"]
+			id: "41C7005DF6932566"
+			tasks: [{
+				id: "73DF914AA1168F43"
+				type: "item"
+				item: "cyclic:solidifier"
+			}]
+		}
+		{
+			x: -1.5d
+			y: 0.0d
+			dependencies: ["41C7005DF6932566"]
+			id: "197ABEFE0DAF29B1"
+			tasks: [{
+				id: "54F0270046B43A85"
+				type: "item"
+				item: "thermal:rf_coil"
+			}]
+		}
+		{
+			x: -3.0d
+			y: -1.0d
+			dependencies: ["197ABEFE0DAF29B1"]
+			id: "024BBE2F2C639476"
+			tasks: [{
+				id: "52293C57FCD8005C"
+				type: "item"
+				item: "thermal:machine_pulverizer"
+			}]
+		}
+		{
+			x: -3.5d
+			y: 0.0d
+			dependencies: ["197ABEFE0DAF29B1"]
+			id: "0C34E359F7B4CFF9"
+			tasks: [{
+				id: "4F121038D3D28915"
+				type: "item"
+				item: "thermal:machine_furnace"
+			}]
+		}
+		{
+			x: 0.0d
+			y: -1.0d
+			dependencies: ["197ABEFE0DAF29B1"]
+			id: "1C66E3F189F15901"
+			tasks: [{
+				id: "792CBD0165B0525A"
+				type: "item"
+				item: "thermal:machine_crucible"
+			}]
+		}
+		{
+			x: 0.5d
+			y: 0.0d
+			dependencies: ["197ABEFE0DAF29B1"]
+			id: "2B8B3B7DE1C177F5"
+			tasks: [{
+				id: "6FBCE19A9BB4CA2E"
+				type: "item"
+				item: "thermal:machine_bottler"
+			}]
+		}
+		{
+			x: -1.5d
+			y: 1.5d
+			dependencies: ["197ABEFE0DAF29B1"]
+			id: "6140C3C8E2463A7B"
+			tasks: [{
+				id: "029EB90BA2FE2E98"
+				type: "item"
+				item: "thermal:machine_smelter"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 1.5d
+			dependencies: ["6140C3C8E2463A7B"]
+			id: "097D844ED55E2F8C"
+			tasks: [{
+				id: "217E00156B9776A3"
+				type: "item"
+				item: "thermal:upgrade_augment_1"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 1.5d
+			dependencies: ["097D844ED55E2F8C"]
+			id: "54C3C8178E03A38D"
+			tasks: [{
+				id: "743CECA2312B94A5"
+				type: "item"
+				item: "thermal:upgrade_augment_2"
+			}]
+		}
+		{
+			x: 3.0d
+			y: 1.5d
+			dependencies: ["54C3C8178E03A38D"]
+			id: "098E524371A6C929"
+			tasks: [{
+				id: "68CDD60AC7A75C00"
+				type: "item"
+				item: "thermal:upgrade_augment_3"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 3.0d
+			dependencies: ["097D844ED55E2F8C"]
+			id: "364F50D05C034007"
+			tasks: [{
+				id: "28AB0C89597DC2A9"
+				type: "item"
+				item: "thermal:machine_speed_augment"
+			}]
+		}
+		{
+			x: -1.5d
+			y: 3.0d
+			dependencies: ["6140C3C8E2463A7B"]
+			id: "43969F6F20F81635"
+			tasks: [{
+				id: "6C5734650E20DF36"
+				type: "item"
+				item: "mekanism:steel_casing"
+			}]
+		}
+		{
+			x: -1.5d
+			y: 4.5d
+			dependencies: ["43969F6F20F81635"]
+			id: "1802E0213F2F632D"
+			tasks: [{
+				id: "5E983CF22A60192A"
+				type: "item"
+				item: "mekanism:metallurgic_infuser"
+			}]
+		}
+		{
+			x: -1.5d
+			y: 6.0d
+			dependencies: ["1802E0213F2F632D"]
+			id: "79BF20E7CD3B9626"
+			tasks: [{
+				id: "5C0190720AD41722"
+				type: "item"
+				item: "mekanism:enrichment_chamber"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 6.0d
+			dependencies: ["79BF20E7CD3B9626"]
+			id: "5748BC7A357A64BB"
+			tasks: [
+				{
+					id: "5CAD88F87138BB23"
+					type: "item"
+					item: "mekanism:upgrade_speed"
+				}
+				{
+					id: "315037F2C0FFF03E"
+					type: "item"
+					item: "mekanism:upgrade_energy"
+				}
+			]
+		}
+		{
+			x: -1.5d
+			y: 7.5d
+			dependencies: ["79BF20E7CD3B9626"]
+			id: "062CDEF8AAEAFBEB"
+			tasks: [{
+				id: "4BE71CB181F90959"
+				type: "item"
+				item: "mekanism:electrolytic_separator"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 7.5d
+			dependencies: ["062CDEF8AAEAFBEB"]
+			id: "4E29240A96DA1968"
+			tasks: [{
+				id: "5F0A60D7B2C914DE"
+				type: "item"
+				item: "mekanism:jetpack"
+			}]
+		}
+		{
+			x: -3.0d
+			y: 4.5d
+			dependencies: ["2A71BF45803ED6E0"]
+			id: "45E95B7F45FDF14C"
+			tasks: [{
+				id: "295C77135F7D0BD3"
+				type: "item"
+				item: "pneumaticcraft:flux_compressor"
+			}]
+		}
+		{
+			x: -3.0d
+			y: 3.0d
+			dependencies: ["2825602B2EFA990A"]
+			id: "2A71BF45803ED6E0"
+			tasks: [{
+				id: "4286CEEFDECBB42C"
+				type: "item"
+				item: "thermal:dynamo_stirling"
+			}]
+		}
+		{
+			x: -3.0d
+			y: 7.5d
+			dependencies: ["062CDEF8AAEAFBEB"]
+			id: "1760E15121167DE1"
+			tasks: [{
+				id: "64321B4710302786"
+				type: "item"
+				item: "mekanismgenerators:gas_burning_generator"
+			}]
+		}
+		{
+			x: -1.5d
+			y: 9.0d
+			dependencies: ["062CDEF8AAEAFBEB"]
+			id: "094C2A38F6AC97EA"
+			tasks: [{
+				id: "1F4BE3C4ECBD85B3"
+				type: "item"
+				item: "mekanismgenerators:wind_generator"
+			}]
+		}
+		{
+			x: -3.0d
+			y: 1.5d
+			dependencies: ["6140C3C8E2463A7B"]
+			id: "2825602B2EFA990A"
+			tasks: [{
+				id: "09C3E7E8D96F3EF6"
+				type: "item"
+				item: "ae2:energy_acceptor"
+			}]
+		}
+		{
+			x: -4.5d
+			y: 1.5d
+			dependencies: ["2825602B2EFA990A"]
+			id: "5E25D0EEA7087F6D"
+			tasks: [
+				{
+					id: "359C330208F0E191"
+					type: "item"
+					item: "ae2:charger"
+				}
+				{
+					id: "1CBB9167C305B4BE"
+					type: "item"
+					item: "ae2:inscriber"
+				}
+			]
+		}
+		{
+			x: -6.0d
+			y: 1.5d
+			dependencies: ["5E25D0EEA7087F6D"]
+			id: "67B87D738F6A8071"
+			tasks: [{
+				id: "1A164335B4215E7E"
+				type: "item"
+				item: "ae2:controller"
+			}]
+		}
+		{
+			icon: "ae2:drive"
+			x: -6.0d
+			y: 3.0d
+			dependencies: ["67B87D738F6A8071"]
+			id: "0942ECF2CD794EA7"
+			tasks: [
+				{
+					id: "7825475A9C7D0C3D"
+					type: "item"
+					item: "ae2:drive"
+				}
+				{
+					id: "6086CE56C55F92E0"
+					type: "item"
+					item: "ae2:terminal"
+				}
+				{
+					id: "51E91FD0D6AF1490"
+					type: "item"
+					item: "ae2:fluix_glass_cable"
+					count: 12L
+				}
+			]
+		}
+		{
+			x: -6.0d
+			y: 4.5d
+			dependencies: ["0942ECF2CD794EA7"]
+			id: "0E034F2C9C72503B"
+			tasks: [{
+				id: "6FCA52CCAA0EE80A"
+				type: "item"
+				item: "ae2:cell_component_1k"
+			}]
+			rewards: [{
+				id: "512AF3AC487CEE8E"
+				type: "item"
+				item: "ae2:cell_component_4k"
+			}]
+		}
+		{
+			x: -6.0d
+			y: 6.0d
+			dependencies: ["0E034F2C9C72503B"]
+			id: "340904333097319C"
+			tasks: [{
+				id: "0F2B1F53B3D70AD2"
+				type: "item"
+				item: "ae2:crafting_terminal"
+			}]
+		}
+		{
+			icon: "ae2:molecular_assembler"
+			x: -6.0d
+			y: 7.5d
+			dependencies: ["340904333097319C"]
+			id: "31C1F747F0419914"
+			tasks: [
+				{
+					id: "1B0BC66E0F61B17C"
+					type: "item"
+					item: "ae2:pattern_encoding_terminal"
+				}
+				{
+					id: "7B695AB0EFF48C35"
+					type: "item"
+					item: "ae2:pattern_provider"
+					count: 2L
+				}
+				{
+					id: "6C121E7B9FB367F3"
+					type: "item"
+					item: "ae2:molecular_assembler"
+					count: 2L
+				}
+			]
+			rewards: [{
+				id: "6F6C31C6AF2F3B03"
+				type: "item"
+				item: "ae2:pattern_access_terminal"
+			}]
+		}
+		{
+			x: -7.5d
+			y: 6.0d
+			dependencies: ["340904333097319C"]
+			id: "64791B1A6C14DDEE"
+			tasks: [
+				{
+					id: "6D6EF31256F6F7C1"
+					type: "item"
+					item: "ae2:wireless_crafting_terminal"
+				}
+				{
+					id: "6F9174CD15D8845C"
+					type: "item"
+					item: "ae2:wireless_access_point"
+				}
+				{
+					id: "4E32E8703C3ED5D1"
+					type: "item"
+					item: "ae2:security_station"
+				}
+			]
+		}
+		{
+			x: -7.5d
+			y: 7.5d
+			dependencies: ["31C1F747F0419914"]
+			id: "65AD271A5FDEF142"
+			tasks: [{
+				id: "0E9A53407A6CF836"
+				type: "item"
+				item: "ae2:speed_card"
+			}]
+		}
+		{
+			x: -7.5d
+			y: 1.5d
+			dependencies: ["67B87D738F6A8071"]
+			id: "4B5916A237F717E2"
+			tasks: [{
+				id: "33823D00419EC706"
+				type: "item"
+				item: "compactmachines:personal_shrinking_device"
+			}]
+		}
+		{
+			x: -9.0d
+			y: 1.5d
+			dependencies: ["4B5916A237F717E2"]
+			id: "394E09E33F484439"
+			tasks: [{
+				id: "328DE5A73C4524FE"
+				type: "item"
+				item: "compactmachines:machine_normal"
+			}]
+		}
+		{
+			x: -10.5d
+			y: 1.5d
+			dependencies: ["394E09E33F484439"]
+			id: "526EC07AB210E1CA"
+			tasks: [{
+				id: "14B6871E413C6F69"
+				type: "item"
+				item: {
+					id: "compactmachines:tunnel"
+					Count: 1b
+					tag: {
+						definition: {
+							id: "compactmachines:item"
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: 4.5d
+			y: 7.5d
+			shape: "hexagon"
+			dependencies: ["466AD95B3CEAE868"]
+			id: "2E3F66B101110489"
+			tasks: [{
+				id: "2BE7142E7E2D7F59"
+				type: "item"
+				item: "miniutilities:quantum_quarry"
+			}]
+		}
+		{
+			x: 3.0d
+			y: 7.5d
+			dependencies: ["523D0D633964702B"]
+			id: "466AD95B3CEAE868"
+			tasks: [{
+				id: "4E9C99C007445A93"
+				type: "item"
+				item: "minecraft:end_portal_frame"
+				count: 12L
+			}]
+		}
+		{
+			x: 1.5d
+			y: 7.5d
+			dependencies: ["4E29240A96DA1968"]
+			id: "523D0D633964702B"
+			tasks: [{
+				id: "32816F6CBDA39F78"
+				type: "item"
+				item: "mekanism:atomic_disassembler"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 9.0d
+			dependencies: ["062CDEF8AAEAFBEB"]
+			id: "6B527D2992FDDE14"
+			tasks: [
+				{
+					id: "78DBE972FAB7C1EA"
+					type: "item"
+					item: "mekanismgenerators:fission_reactor_casing"
+				}
+				{
+					id: "73B2A019329033D4"
+					type: "item"
+					item: "mekanismgenerators:fission_reactor_port"
+				}
+				{
+					id: "4F4326E02BE9FF54"
+					type: "item"
+					item: "mekanismgenerators:fission_reactor_logic_adapter"
+				}
+				{
+					id: "134EBF91AEA0CFD9"
+					type: "item"
+					item: "mekanismgenerators:turbine_casing"
+				}
+				{
+					id: "3073CD092FC11C3E"
+					type: "item"
+					item: "mekanismgenerators:turbine_valve"
+				}
+				{
+					id: "395D11E127ADC9A2"
+					type: "item"
+					item: "mekanismgenerators:saturating_condenser"
+				}
+				{
+					id: "2930908177B73A76"
+					type: "item"
+					item: "mekanismgenerators:turbine_rotor"
+				}
+				{
+					id: "6D7FAF4995D9759C"
+					type: "item"
+					item: "mekanismgenerators:rotational_complex"
+				}
+				{
+					id: "709A1DB97656A114"
+					type: "item"
+					item: "mekanism:pressure_disperser"
+				}
+			]
+		}
+		{
+			x: 1.5d
+			y: 9.0d
+			dependencies: ["6B527D2992FDDE14"]
+			id: "2DA79CFFBBC3EF5D"
+			tasks: [{
+				id: "2B6FE4132D260998"
+				type: "item"
+				item: "mekanism:solar_neutron_activator"
+			}]
+		}
+		{
+			x: 3.0d
+			y: 9.0d
+			dependencies: ["2DA79CFFBBC3EF5D"]
+			id: "14A00E0254B34E74"
+			tasks: [
+				{
+					id: "701841BF21D19BA9"
+					type: "item"
+					item: "mekanism:sps_casing"
+				}
+				{
+					id: "55D59F484E60737B"
+					type: "item"
+					item: "mekanism:sps_port"
+				}
+				{
+					id: "3BC4EED26EBBE03A"
+					type: "item"
+					item: "mekanism:supercharged_coil"
+				}
+			]
+		}
+		{
+			x: 4.5d
+			y: 9.0d
+			dependencies: ["14A00E0254B34E74"]
+			id: "09E5D384AC069FD4"
+			tasks: [{
+				id: "56C044D471B169BE"
+				type: "item"
+				item: "minecraft:end_crystal"
+			}]
+		}
+	]
+	quest_links: [ ]
+}
