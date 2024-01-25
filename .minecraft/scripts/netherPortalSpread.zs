@@ -55,7 +55,6 @@ public class WeightedList<T> {
     }
 
     public pick(random as Random) as T throws IllegalArgumentException {
-        print("" + this.totalWeight);
         val n = random.nextInt(this.totalWeight);
         for i in 0 .. this.weightedMap.length {
             var x = this.weightedMap[i];
