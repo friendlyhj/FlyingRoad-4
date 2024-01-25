@@ -1,0 +1,20 @@
+{
+
+    "block.compactcrafting.rescan_proxy": "微缩力场代理器（重新扫描）",
+    "block.compactcrafting.match_proxy": "微缩力场代理器（匹配）",
+  
+    "item.compactcrafting.projector_dish": "微缩力场投影仪面板",
+    "item.compactcrafting.base": "基座",
+  
+    "compactcrafting.top.current_recipe": "配方: ",
+    "compactcrafting.top.awaiting_catalyst": "等待催化剂……",
+    "compactcrafting.top.progress": "%s / %s",
+  
+    "tooltip.compactcrafting.proxy_bound": "绑定至： %s",
+    "tooltip.compactcrafting.proxy_hint": "使用代理器来运用红石进行微缩合成自动化",
+    "tooltip.compactcrafting.proxy_bind_hint": "Shift + 右键一个投影仪以绑定一个微缩力场",
+    "tooltip.compactcrafting.proxy_unbind_hint": "Shift + 右键空气以取消绑定",
+  
+    "messages.compactcrafting.no_field_cap": "位于 %s 的方块没有微缩力场。",
+    "messages.compactcrafting.no_field_found": "找不到微缩力场信息"
+}

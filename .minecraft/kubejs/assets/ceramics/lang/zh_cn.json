@@ -1,0 +1,15 @@
+{
+    "item.ceramics.fluid_clay_bucket": "黏土桶",
+    "item.ceramics.fluid_clay_bucket.filled": "%s黏土桶",
+    "item.ceramics.empty_clay_bucket": "空黏土桶",
+    "item.ceramics.empty_clay_bucket.tooltip": "盛装炽热液体时会裂开",
+    "item.ceramics.empty_cracked_clay_bucket.tooltip": "倒出流体时桶会损坏",
+    "item.ceramics.cracked_fluid_clay_bucket": "破裂黏土桶",
+    "item.ceramics.cracked_fluid_clay_bucket.filled": "%s黏土桶",
+    "item.ceramics.cracked_fluid_clay_bucket.tooltip": "倒出流体时桶会损坏",
+    "item.ceramics.solid_clay_bucket": "黏土桶",
+    "item.ceramics.solid_clay_bucket.filled": "%s黏土桶",
+    "item.ceramics.cracked_solid_clay_bucket": "破裂黏土桶",
+    "item.ceramics.cracked_solid_clay_bucket.filled": "%s黏土桶",
+    "item.ceramics.cracked_solid_clay_bucket.tooltip": "倒出流体时桶会损坏"
+}

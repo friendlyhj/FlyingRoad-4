@@ -1,0 +1,7 @@
+{
+    "item.pneumaticcraft.printed_circuit_board": "完工的印刷电路板",
+    "item.pneumaticcraft.solar_wafer": "太阳能薄片",
+    "item.pneumaticcraft.solar_cell": "太阳能模块",
+    "block.pneumaticcraft.solar_compressor": "太阳能压缩机",
+    "gui.tooltip.block.pneumaticcraft.solar_compressor" : "使用太阳能来生产压缩空气的高级空气压缩机。它接受的热量越高效率越高，但过热会使压缩机停止工作，需要手动修复。"
+}
