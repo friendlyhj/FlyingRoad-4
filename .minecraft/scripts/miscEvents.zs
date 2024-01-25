@@ -68,7 +68,7 @@ CTEventManager.register<EntityJoinWorldEvent>(event => {
 
 CTEventManager.register<PlayerLoggedInEvent>(event => {
     var level = event.entity.level;
-    if (level.isClientSide()) {
+    if (!level.isClientSide()) {
         val serverLevel = level as ServerLevel;
         serverLevel.server.executeCommand("/gamerule keepInventory true", true);
     }
