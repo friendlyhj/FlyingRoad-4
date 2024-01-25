@@ -277,3 +277,8 @@ onEvent('recipes', event => {
     //     'post':  {  'type': 'drop_item',  'item': 'item:minecraft:stick'}
     // })
 })
+
+onEvent('item.tags', event => {
+    event.add('lychee:item_exploding_catalysts', 'ae2:tiny_tnt')
+    event.add('lychee:block_exploding_catalysts', 'ae2:tiny_tnt')
+})

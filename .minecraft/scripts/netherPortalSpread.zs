@@ -4,8 +4,10 @@ import crafttweaker.api.event.block.PortalSpawnEvent;
 import crafttweaker.api.event.block.BlockNeighborNotifyEvent;
 import crafttweaker.api.event.tick.WorldTickEvent;
 import crafttweaker.api.events.CTEventManager;
+import crafttweaker.api.world.Level;
 import crafttweaker.api.world.ServerLevel;
 import crafttweaker.api.block.BlockState;
+import crafttweaker.api.block.Block;
 import crafttweaker.api.data.IData;
 import crafttweaker.api.data.IntData;
 import crafttweaker.api.data.ListData;
@@ -13,7 +15,10 @@ import crafttweaker.api.data.MapData;
 import crafttweaker.api.data.IntArrayData;
 import crafttweaker.api.util.math.BlockPos;
 import crafttweaker.api.util.math.Random;
+import crafttweaker.api.util.Direction;
+import crafttweaker.api.tag.type.KnownTag;
 import stdlib.List;
+import stdlib.IllegalArgumentException;
 import math.Functions;
 
 public expand IData {
@@ -22,31 +27,116 @@ public expand IData {
     }
 }
 
-public class WeightedBlockState {
-    public val block as BlockState;
+public class WeightedEntry<T> {
+    public val object as T;
     public val weight as int;
 
-    public this(block as BlockState, weight as int) {
-        this.block = block;
+    public this(object as T, weight as int) {
+        this.object = object;
         this.weight = weight;
     }
 }
 
+public class WeightedList<T> {
+    public val elements as WeightedEntry<T>[];
+    public val totalWeight as int;
+    public val weightedMap as int[];
+
+    public this(elements as WeightedEntry<T>[]) {
+        this.elements = elements;
+        var totalWeight as int = 0;
+        this.weightedMap = new int[](elements.length);
+        for i in 0 .. elements.length {
+            val entry = elements[i];
+            totalWeight += entry.weight;
+            this.weightedMap[i] = totalWeight;
+        }
+        this.totalWeight = totalWeight; 
+    }
+
+    public pick(random as Random) as T throws IllegalArgumentException {
+        print("" + this.totalWeight);
+        val n = random.nextInt(this.totalWeight);
+        for i in 0 .. this.weightedMap.length {
+            var x = this.weightedMap[i];
+            if (n < x) {
+                return this.elements[i].object;
+            }
+        }
+        throw new IllegalArgumentException("not possible");
+    }
+}
+
+public expand WeightedList<BlockState> {
+    public in(element as BlockState) as bool {
+        for e in this.elements {
+            if (e.object == element) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
 public expand BlockState {
-    public %(weight as int) as WeightedBlockState {
-        return new WeightedBlockState(this, weight);
+    public %(weight as int) as WeightedEntry<BlockState> {
+        return new WeightedEntry<BlockState>(this, weight);
+    }
+}
+
+public expand string {
+    public %(weight as int) as WeightedEntry<string> {
+        return new WeightedEntry<string>(this, weight);
     }
 }
 
 public class SpreadRules {
-    public static val rules as WeightedBlockState[][BlockState] = {
-        <blockstate:minecraft:cobblestone> : [
-            <blockstate:minecraft:netherrack> % 90,
-            <blockstate:minecraft:nether_quartz_ore> % 10,
-            <blockstate:minecraft:nether_gold_ore> % 10,
-            <blockstate:minecraft:blackstone> % 50,
-            <blockstate:minecraft:basalt:axis=y> % 20
-        ]
+    public static val groups as WeightedList<BlockState>[string] = {
+        "wastes": new WeightedList<BlockState>([
+            <blockstate:minecraft:netherrack> % 85,
+            <blockstate:minecraft:nether_quartz_ore> % 15,
+            <blockstate:minecraft:nether_gold_ore> % 10
+        ]),
+        "soul": new WeightedList<BlockState>([
+            <blockstate:minecraft:soul_sand> % 60,
+            <blockstate:minecraft:soul_soil> % 40
+        ]),
+        "crimson": new WeightedList<BlockState>([
+            <blockstate:minecraft:crimson_nylium> % 1
+        ]),
+        "nylium": new WeightedList<BlockState>([
+            <blockstate:minecraft:warped_nylium> % 1
+        ]),
+        "basalt": new WeightedList<BlockState>([
+            <blockstate:minecraft:basalt:axis=y> % 40,
+            <blockstate:minecraft:blackstone> % 40,
+            <blockstate:minecraft:magma_block> % 20
+        ])
+    };
+    public static val rules as WeightedList<string>[KnownTag<Block>] = {
+        <tag:blocks:forge:stone>: new WeightedList<string>([
+            "wastes" % 80,
+            "crimson" % 20,
+            "nylium" % 20,
+            "basalt" % 20,
+            "soul" % 20
+        ]),
+        <tag:blocks:forge:cobblestone>: new WeightedList<string>([
+            "wastes" % 80,
+            "crimson" % 20,
+            "nylium" % 20,
+            "basalt" % 20,
+            "soul" % 20
+        ]),
+        <tag:blocks:minecraft:dirt>: new WeightedList<string>([
+            "wastes" % 80,
+            "crimson" % 20,
+            "nylium" % 20,
+            "soul" % 50
+        ]),
+        <tag:blocks:forge:sand>: new WeightedList<string>([
+            "soul" % 1
+        ])
     };
 }
 
@@ -144,29 +234,57 @@ public function tickPortal(level as ServerLevel, pos as BlockPos, time as int, m
         }
         if (!canTransformVectors.isEmpty) {
             val transformVector = canTransformVectors[level.random.nextInt(canTransformVectors.length as int)];
-            val transformBlocks = SpreadRules.rules[level.getBlockState(pos.offset(transformVector))];
-            val weightedMap = new int[](transformBlocks.length);
-            var totalWeight = 0;
-            for i in 0 .. transformBlocks.length {
-                val entry = transformBlocks[i];
-                totalWeight += entry.weight;
-                weightedMap[i] = totalWeight;
-            }
-            val n = level.random.nextInt(totalWeight);
-            for i in 0 .. weightedMap.length {
-                var x = weightedMap[i];
-                if (n < x) {
-                    val transformBlock = transformBlocks[i].block;
-                    level.setBlockAndUpdate(pos.offset(transformVector), transformBlock);
-                    return 1;
-                }
-            }
+            val transformPos = pos.offset(transformVector);
+            val transformBlock = transform(level.getBlockState(transformPos), transformPos, level);
+            level.setBlockAndUpdate(transformPos, transformBlock);
+            return 1;
         }
         currentDistance++;
     }
     return 1;
 }
 
-public function canTransform(block as BlockState) as bool {
-    return block in SpreadRules.rules;
+public function canTransform(blockState as BlockState) as bool {
+    for blockTag in SpreadRules.rules {
+        if (blockTag.contains(blockState.block)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+public function transform(blockState as BlockState, pos as BlockPos, level as ServerLevel) as BlockState {
+    val nearBlocks as int[string] = {};
+    for side in Direction.values() {
+        val nearBlock = level.getBlockState(pos.relative(side));
+        for name, group in SpreadRules.groups {
+            if (nearBlock in group) {
+                if (name in nearBlocks) {
+                    nearBlocks[name] = nearBlocks[name] + 1;
+                } else {
+                    nearBlocks[name] = 1;
+                }
+            }
+        }
+    }
+    var group as string = "";
+    if (!nearBlocks.isEmpty) {
+        val weightedList = new List<WeightedEntry<string>>();
+        for name, weight in nearBlocks {
+            weightedList.add(name % weight);
+        }
+        group = new WeightedList<string>(weightedList).pick(level.random);
+    } else {
+        for blockTag, list in SpreadRules.rules {
+            if (blockTag.contains(blockState.block)) {
+                group = list.pick(level.random);
+                break;
+            }
+        }
+    }
+    if (!group.isEmpty) {
+        return SpreadRules.groups[group].pick(level.random);
+    } else {
+        return blockState;
+    }
 }

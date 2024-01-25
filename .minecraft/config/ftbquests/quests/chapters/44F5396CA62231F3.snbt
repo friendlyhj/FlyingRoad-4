@@ -18,11 +18,25 @@
 				type: "item"
 				item: "thermal:machine_frame"
 			}]
-			rewards: [{
-				id: "184ED2296DD883F5"
-				type: "item"
-				item: "thermal:wrench"
-			}]
+			rewards: [
+				{
+					id: "184ED2296DD883F5"
+					type: "item"
+					item: "thermal:wrench"
+				}
+				{
+					id: "28DFDE9B7ED5B3DA"
+					type: "item"
+					item: "pipez:item_pipe"
+					count: 16
+				}
+				{
+					id: "7B33A857834DFD23"
+					type: "item"
+					item: "pipez:energy_pipe"
+					count: 16
+				}
+			]
 		}
 		{
 			x: -1.5d

@@ -144,6 +144,7 @@ onEvent('recipes', event => {
         'minecraft:beetroot_seeds',
         'minecraft:carrot',
         'minecraft:potato',
+        'minecraft:cactus',
         'minecraft:sugar_cane',
         'immersiveengineering:seed',
         'thermal:amaranth_seeds',
@@ -169,7 +170,8 @@ onEvent('recipes', event => {
         'thermal:bell_pepper_seeds',
         'thermal:eggplant_seeds',
         'thermal:green_bean_seeds',
-        'thermal:peanut_seeds'
+        'thermal:peanut_seeds',
+        'minecraft:ink_sac'
     ]
     plants.forEach(plant => {
         event.custom({
@@ -188,6 +190,31 @@ onEvent('recipes', event => {
             'level': 0
         })
     })
+    let presses = [
+        'ae2:calculation_processor_press',
+        'ae2:engineering_processor_press',
+        'ae2:logic_processor_press',
+        'ae2:silicon_press'
+    ]
+    presses.forEach(press => {
+        event.custom({
+            'type': 'pneumaticcraft:amadron',
+            'input': {
+                'type': 'ITEM',
+                'id': 'minecraft:emerald',
+                'amount': 8
+            },
+            'output': {
+                'type': 'ITEM',
+                'id': press,
+                'amount': 1
+            },
+            'static': true,
+            'level': 0
+        })
+    })
+
+
     event.custom({
         'type': 'pneumaticcraft:pressure_chamber',
         'inputs': [
@@ -447,6 +474,27 @@ onEvent('recipes', event => {
             }
         ]
     })
+
+    event.custom({
+        'type': 'thermal:crystallizer',
+        'ingredients': [
+            {
+                'fluid': 'lava',
+                'amount': 2000
+            },
+            {
+                'item': 'thermal_extra:amethyst_dust'
+            }
+        ],
+        'result': [
+            {
+                'item': 'ae2:sky_stone_block'
+            }
+        ],
+        'energy': 10000
+    })
+
+    event.remove({ 'id': 'immersiveengineering:crafting/gunpowder_from_dusts'})
 })
 
 onEvent('tags.fluids', event => {

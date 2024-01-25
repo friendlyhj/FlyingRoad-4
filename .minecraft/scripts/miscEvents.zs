@@ -2,7 +2,10 @@ import crafttweaker.api.event.block.BlockNeighborNotifyEvent;
 import crafttweaker.api.events.CTEventManager;
 import crafttweaker.api.util.Direction;
 import crafttweaker.api.event.entity.EntityStruckByLightningEvent;
+import crafttweaker.api.event.entity.EntityJoinWorldEvent;
+import crafttweaker.api.event.entity.player.PlayerLoggedInEvent;
 import crafttweaker.api.entity.type.item.ItemEntity;
+import crafttweaker.api.world.ServerLevel;
 
 CTEventManager.register<BlockNeighborNotifyEvent>(event => {
     
@@ -31,7 +34,6 @@ CTEventManager.register<EntityStruckByLightningEvent>(event => {
         val count = item.amount;
         var newCount = 0;
         if (<item:thermal:niter_dust>.matches(item)) {
-            print("hit");
             for i in 0 .. count {
                 if (entity.level.random.nextInt(4) == 0) {
                     newCount++;
@@ -51,5 +53,23 @@ CTEventManager.register<EntityStruckByLightningEvent>(event => {
         if (<item:thermal:blitz_powder>.matches(item)) {
             event.cancel();
         }
+    }
+});
+
+CTEventManager.register<EntityJoinWorldEvent>(event => {
+    if (event.world.dimension == <resource:minecraft:the_end>) {
+        return;
+    }
+    val type = event.entity.getType();
+    if (type.category == <constant:minecraft:mobcategory:monster> && type.commandString != "<entitytype:minecraft:wither>") {
+        event.cancel();
+    }
+});
+
+CTEventManager.register<PlayerLoggedInEvent>(event => {
+    var level = event.entity.level;
+    if (level.isClientSide()) {
+        val serverLevel = level as ServerLevel;
+        serverLevel.server.executeCommand("/gamerule keepInventory true", true);
     }
 });
