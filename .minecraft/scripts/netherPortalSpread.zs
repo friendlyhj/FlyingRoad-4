@@ -17,6 +17,7 @@ import crafttweaker.api.util.math.BlockPos;
 import crafttweaker.api.util.math.Random;
 import crafttweaker.api.util.Direction;
 import crafttweaker.api.tag.type.KnownTag;
+import crafttweaker.api.entity.type.item.ItemEntity;
 import stdlib.List;
 import stdlib.IllegalArgumentException;
 import math.Functions;
@@ -160,9 +161,69 @@ public class MathUtils {
     }
 }
 
+public class Modifiers {
+    public static val SPEED as int = 1;
+    public static val NETHERITE as int = 2;
+    public static val STOP as int = 4;
+}
+
+public function hasModifier(modifiers as int, toCheck as int) as bool {
+    return (modifiers & toCheck) != 0;
+}
+
+public function addModifier(modifiers as int, toAdd as int) as int {
+    return modifiers | toAdd;
+}
+
+public function removeModifier(modifiers as int, toRemove as int) as int {
+    return modifiers & (0 - toRemove - 1);
+}
+
 CTEventManager.register<EntityTravelToDimensionEvent>(event => {
     if (event.dimension == <resource:minecraft:the_nether>) {
         event.cancel();
+        val entity = event.entity;
+
+        if (entity is ItemEntity) {
+            val pos = entity.blockPosition;
+            val level = entity.level;
+            if (level.isClientSide) return;
+            val serverLevel = level as ServerLevel;
+            val customData = serverLevel.customData;
+            var nearestDistance as int = 2147483647;
+            var nearestPortalIndex as int = 0-1;
+            val data = customData.getData();
+            val portalData = data.getData<ListData>("Portals") as ListData;
+            for index in 0 .. portalData.size {
+                val elementData = portalData.getAt(index) as MapData;
+                val posData = elementData.getData<IntArrayData>("pos");
+                val portalPos = new BlockPos(posData.getAt(0).asInt(), posData.getAt(1).asInt(), posData.getAt(2).asInt());
+                val distance = portalPos.distManhattan(pos);
+                if (distance < nearestDistance) {
+                    nearestDistance = distance;
+                    nearestPortalIndex = index;
+                }
+            }
+            if (nearestPortalIndex >= 0) {
+                val itemEntity = entity as ItemEntity;
+                val item = itemEntity.item;
+                var addedModifier as int = 0;
+                if (<item:thermal_extra:soul_infused_dust>.matches(item)) {
+                    addedModifier = Modifiers.SPEED;
+                } else if (<item:thermal_extra:twinite_dust>.matches(item)) {
+                    addedModifier = Modifiers.NETHERITE;
+                } else if (<tag:items:minecraft:coals>.asIIngredient().matches(item)) {
+                    addedModifier = Modifiers.STOP;
+                }
+                val toChangePortalData = portalData.getAt(nearestPortalIndex) as MapData;
+                if (addedModifier == Modifiers.SPEED) {
+                    toChangePortalData.put("time", 0);
+                }
+                toChangePortalData.put("modifier", addModifier((toChangePortalData.getAt("modifier") as IData).asInt(), addedModifier));
+                customData.setData(data);
+                entity.setRemoved(<constant:minecraft:entity/removalreason:discarded>);
+            }
+        }
     }
 });
 
@@ -198,16 +259,9 @@ CTEventManager.register<WorldTickEvent>(event => {
             if (level.getBlockState(pos) == <blockstate:minecraft:nether_portal>) {
                 val time = elementData.getData<IntData>("time").asInt();
                 val modifier = elementData.getData<IntData>("modifier").asInt();
-                val result = tickPortal(serverLevel, pos, time, modifier);
-                if (result == 0) {
-                    elementData.put("time", time + 1);
-                }
-                if (result == 1) {
-                    elementData.put("time", 0);
-                }
-                if (result == 2) {
-                    elementData.put("modifier", 0);
-                }
+                val newModifier = tickPortal(serverLevel, pos, time, modifier);
+                elementData.put("modifier", newModifier);
+                elementData.put("time", time + 1);
                 newList.add(elementData);
             }
         }
@@ -216,11 +270,23 @@ CTEventManager.register<WorldTickEvent>(event => {
     customData.setData(data);
 });
 
-// WAITING: 0
-// SPREAD: 1
-// MODIFIER_FINISH: 2
+// return new modifier
 public function tickPortal(level as ServerLevel, pos as BlockPos, time as int, modifier as int) as int {
-    if (time != 20) return 0;
+    var newModifier as int = modifier;
+    var interval as int = 100;
+
+    if (hasModifier(modifier, Modifiers.STOP)) {
+        return newModifier;
+    }
+
+    if (hasModifier(modifier, Modifiers.SPEED)) {
+        interval = 40;
+        if (time % 8000 == 0) {
+            newModifier = removeModifier(modifier, Modifiers.SPEED);
+        }
+    }
+
+    if (time % interval != 0) return newModifier;
     var currentDistance = 1;
     while (currentDistance < 9) {
         var vectors = MathUtils.INSTANCE.vectorDistance[currentDistance];
@@ -234,13 +300,21 @@ public function tickPortal(level as ServerLevel, pos as BlockPos, time as int, m
         if (!canTransformVectors.isEmpty) {
             val transformVector = canTransformVectors[level.random.nextInt(canTransformVectors.length as int)];
             val transformPos = pos.offset(transformVector);
-            val transformBlock = transform(level.getBlockState(transformPos), transformPos, level);
+            var transformBlock = transform(level.getBlockState(transformPos), transformPos, level);
+            if (hasModifier(modifier, Modifiers.NETHERITE)) {
+                if (level.random.nextInt(100) == 42) {
+                    transformBlock = <blockstate:minecraft:ancient_debris>;
+                    if (level.random.nextInt(4) == 0) {
+                        newModifier = removeModifier(modifier, Modifiers.NETHERITE);
+                    }
+                }
+            }
             level.setBlockAndUpdate(transformPos, transformBlock);
-            return 1;
+            return newModifier;
         }
         currentDistance++;
     }
-    return 1;
+    return newModifier;
 }
 
 public function canTransform(blockState as BlockState) as bool {
