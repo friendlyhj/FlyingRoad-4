@@ -303,6 +303,26 @@
 					type: "item"
 					item: "ae2:inscriber"
 				}
+				{
+					id: "5EEDB2D94D32DE85"
+					type: "item"
+					item: "ae2:calculation_processor_press"
+				}
+				{
+					id: "3704BE36BAB84BEA"
+					type: "item"
+					item: "ae2:engineering_processor_press"
+				}
+				{
+					id: "1DA663C0B7CCA34A"
+					type: "item"
+					item: "ae2:logic_processor_press"
+				}
+				{
+					id: "14DEE854F12D62ED"
+					type: "item"
+					item: "ae2:silicon_press"
+				}
 			]
 		}
 		{

@@ -254,7 +254,10 @@
 			title: "裂解熔化"
 			x: 9.75d
 			y: 3.0d
-			description: ["右键沙砾有 50% 概率将它融化成熔岩。"]
+			description: [
+				"右键沙砾有 50% 概率将它融化成熔岩。"
+				"合成需要爆炸，利用左上角声明区块功能可以阻止爆炸破坏方块。"
+			]
 			dependencies: ["675E0B669C927173"]
 			id: "7CE84D640BA714AB"
 			tasks: [{
@@ -460,6 +463,27 @@
 				id: "7A92445426A7FEE0"
 				type: "item"
 				item: "immersiveengineering:alloybrick"
+			}]
+		}
+		{
+			title: "生物群系蔓延"
+			icon: "minecraft:book"
+			x: 13.5d
+			y: 6.0d
+			description: [
+				"下界的蔓延会随机根据某一生物群系选择方块。若某一方块与某一下界生物群系的方块相邻，则它只能侵染成该生物群系的方块。"
+				"以下为各生物群系的方块："
+				"下界荒地：下界岩、下界金矿石、下界石英矿石"
+				"灵魂沙峡谷：灵魂沙、灵魂土"
+				"绯红森林：绯红菌岩"
+				"诡异森林：诡异菌岩"
+				"玄武岩三角洲：玄武岩、黑石、岩浆块"
+			]
+			dependencies: ["3AFD4C2789D6D2F4"]
+			id: "3FBDB5D7EDD809AA"
+			tasks: [{
+				id: "3240EA65BECB4D77"
+				type: "checkmark"
 			}]
 		}
 	]
