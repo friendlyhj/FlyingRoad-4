@@ -25,3 +25,6 @@ natives
 !.minecraft/patchouli_books/**
 !.minecraft/scripts/
 !.minecraft/scripts/**
+!.minecraft/packmenu/
+!.minecraft/packmenu/**
+.minecraft/packmenu/resources.zip

@@ -420,7 +420,14 @@ onEvent('recipes', event => {
     event.remove({ 'id': 'ae2:blasting/silicon_from_certus_quartz_dust' })
 
     event.recipes.thermal.smelter('4x ae2:silicon', ['3x sand', 'ae2:certus_quartz_dust', '#minecraft:coals']).energy(16000)
+    event.recipes.thermal.smelter('mekanism:ingot_steel', ['iron_ingot', '4x mekanism:dust_coal']).energy(6000)
+    event.recipes.thermal.smelter('mekanism:ingot_steel', ['iron_ingot', '4x mekanism:dust_charcoal']).energy(6000)
     event.recipes.thermal.pulverizer('ae2:certus_quartz_dust', '#ae2:all_certus_quartz').energy(2000)
+    event.recipes.thermal.pulverizer('mekanism:dust_coal', 'coal').energy(2000)
+    event.recipes.thermal.pulverizer('mekanism:dust_charcoal', 'charcoal').energy(2000)
+
+    event.recipes.mekanism.crushing('thermal_extra:amethyst_dust', 'amethyst_shard');
+    event.recipes.mekanism.crushing('thermal_extra:soul_sand_dust', 'soul_sand');
 
     event.custom({
         'type': 'thermal:bottler',
@@ -437,7 +444,8 @@ onEvent('recipes', event => {
             {
                 'item': 'minecraft:end_stone'
             }
-        ]
+        ],
+        'energy': 4000
     })
 
     event.recipes.minecraft.crafting_shaped('crying_obsidian', [

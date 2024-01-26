@@ -113,7 +113,7 @@
   },
   {
     "name": "mekanism:uranium_ore",
-    "weight": 10,
+    "weight": 15,
     "dimensions": [
       "minecraft:overworld"
     ],

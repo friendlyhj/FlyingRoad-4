@@ -183,6 +183,17 @@
 				item: "minecraft:nether_star"
 			}]
 		}
+		{
+			x: -3.0d
+			y: 3.0d
+			dependencies: ["6F6AC14A32BCB774"]
+			id: "74D2B1909C7B4228"
+			tasks: [{
+				id: "36393C6B59D97CA0"
+				type: "item"
+				item: "mysticalagriculture:inferium_growth_accelerator"
+			}]
+		}
 	]
 	quest_links: [ ]
 }

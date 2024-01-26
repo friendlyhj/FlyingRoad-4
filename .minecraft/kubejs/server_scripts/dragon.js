@@ -3,7 +3,7 @@ onEvent('recipes', event => {
     event.remove({ 'output': 'draconicevolution:wyvern_core' })
     event.remove({ 'output': 'draconicevolution:grinder' })
     event.remove({ 'output': 'draconicevolution:generator' })
-    event.remove({ 'output': 'draconicevolution:basic_crafting_injector'})
+    event.remove({ 'output': 'draconicevolution:basic_crafting_injector' })
 
     event.recipes.minecraft.crafting_shaped('draconicevolution:draconium_core', [
         'ABA',
@@ -88,6 +88,142 @@ onEvent('recipes', event => {
             }
         },
         'outputs': [{ 'id': 'draconicevolution:basic_crafting_injector', 'Count': 2 }]
+    })
+
+    event.remove({ 'id': 'draconicevolution:components/wyvern_energy_core' })
+    event.recipes.minecraft.crafting_shaped('draconicevolution:wyvern_energy_core', [
+        'IAI',
+        'BCB',
+        'IAI'
+    ], {
+        'I': '#forge:ingots/electrum',
+        'A': 'thermal:signalum_plate',
+        'B': 'mekanism:dust_lithium',
+        'C': 'draconicevolution:draconium_core'
+    })
+
+    let tools = [
+        'shovel',
+        'hoe',
+        'pickaxe',
+        'axe',
+        'sword',
+        'bow'
+    ]
+
+    event.remove({ 'id': '/draconicevolution:tools/wyvern_.*/' })
+
+    tools.forEach(tool => {
+        event.custom({
+            'type': 'draconicevolution:fusion_crafting',
+            'result': {
+                'item': `draconicevolution:wyvern_${tool}`
+            },
+            'catalyst': {
+                'item': `mysticalagriculture:imperium_${tool}`
+            },
+            'total_energy': 8000000,
+            'tier': 'WYVERN',
+            'ingredients': [
+                {
+                    'item': 'draconicevolution:draconium_core'
+                },
+                {
+                    'tag': 'forge:ingots/draconium'
+                },
+                {
+                    'tag': 'forge:ingots/draconium'
+                },
+                {
+                    'item': 'draconicevolution:basic_relay_crystal'
+                },
+                {
+                    'item': 'draconicevolution:wyvern_energy_core'
+                },
+                {
+                    'item': 'draconicevolution:basic_relay_crystal'
+                }
+            ]
+        })
+    })
+
+    event.custom({
+        'type': 'draconicevolution:fusion_crafting',
+        'result': {
+            'item': 'draconicevolution:wyvern_chestpiece'
+        },
+        'catalyst': {
+            'item': 'mysticalagriculture:supremium_chestplate'
+        },
+        'total_energy': 8000000,
+        'tier': 'WYVERN',
+        'ingredients': [
+            {
+                'item': 'draconicevolution:draconium_core'
+            },
+            {
+                'tag': 'forge:ingots/draconium'
+            },
+            {
+                'tag': 'forge:ingots/draconium'
+            },
+            {
+                'item': 'draconicevolution:basic_relay_crystal'
+            },
+            {
+                'item': 'draconicevolution:wyvern_energy_core'
+            },
+            {
+                'item': 'draconicevolution:basic_relay_crystal'
+            }
+        ]
+    })
+
+    event.remove({ 'id': 'draconicevolution:awakened_draconium_block' })
+
+    event.custom({
+        'type': 'draconicevolution:fusion_crafting',
+        'result': {
+            'item': 'draconicevolution:awakened_draconium_block',
+            'count': 4
+        },
+        'catalyst': {
+            "count": 4,
+            "items": [
+                {
+                    "tag": "forge:storage_blocks/draconium"
+                }
+            ],
+            "type": "draconicevolution:ingredient_stack"
+        },
+        'total_energy': 200000000,
+        'tier': 'WYVERN',
+        'ingredients': [
+            {
+                'item': 'draconicevolution:dragon_heart'
+            },
+            {
+                'item': 'mekanism:pellet_antimatter'
+            },
+            {
+                'item': 'draconicevolution:draconium_core'
+            },
+            {
+                'item': 'draconicevolution:draconium_core'
+            },
+            {
+                'item': 'draconicevolution:draconium_core'
+            },
+            {
+                'item': 'draconicevolution:draconium_core'
+            },
+            {
+                'item': 'draconicevolution:draconium_core'
+            },
+            {
+                'item': 'draconicevolution:draconium_core'
+            }
+        ]
     })
 
 });

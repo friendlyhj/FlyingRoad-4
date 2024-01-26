@@ -1,0 +1,9 @@
+!!dev.wuffs.squatgrow.config.SquatGrowConfig
+allowAdventureTwerking: true
+chance: 0.5
+debug: false
+enableMysticalCrops: false
+ignoreList: ['minecraft:oak_sapling', 'minecraft:spruce_sapling', 'minecraft:birch_sapling',
+  'minecraft:jungle_sapling', 'minecraft:acacia_sapling', 'minecraft:dark_oak_sapling']
+range: 3
+useWhitelist: true

@@ -4,7 +4,7 @@
     "End": {
     
       // Should end generate as in default world type? [default: false]
-      "Default": false,
+      "Default": true,
       
       // Should the main island be generated as normal? [default: true]
       "mainIsland": true
@@ -154,9 +154,9 @@
     // These are resource lists. See https://moddingx.org/libx/org/moddingx/libx/util/data/ResourceList.html#use_resource_lists_in_configs
     "biomes": {
       "minecraft:overworld": {
-        "allow_list": false,
+        "allow_list": true,
         "elements": [
-          "minecraft:*ocean*"
+          "minecraft:*plain*"
         ]
       },
       "minecraft:the_nether": {

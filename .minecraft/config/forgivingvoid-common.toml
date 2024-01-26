@@ -6,7 +6,7 @@ triggerAtDistanceBelow = 32
 damageOnFall = 19
 #The height from which the player will be falling after falling through the void.
 #Range: > -2147483648
-fallingHeight = 300
+fallingHeight = 400
 #Prevent death on void fall (limits damage to leave at least 0.5 hearts)
 preventDeath = false
 #Set to false to make Forgiving Void not trigger in the overworld void (dimension 0).

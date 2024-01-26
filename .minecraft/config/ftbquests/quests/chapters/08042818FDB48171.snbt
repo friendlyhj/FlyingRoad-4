@@ -66,6 +66,18 @@
 					}
 				}
 			}]
+			rewards: [{
+				id: "15213560EECC4CF4"
+				type: "item"
+				item: {
+					id: "constructionwand:diamond_wand"
+					Count: 1b
+					tag: {
+						wand_options: { }
+						Damage: 0
+					}
+				}
+			}]
 		}
 		{
 			title: "活力石头"
@@ -396,10 +408,10 @@
 			]
 		}
 		{
-			x: 13.5d
+			x: 15.0d
 			y: 4.5d
 			description: ["偶尔的，被侵染的下界岩被一抹绿色覆盖……"]
-			dependencies: ["2A05156D7CE026FE"]
+			dependencies: ["3FBDB5D7EDD809AA"]
 			id: "3AFD4C2789D6D2F4"
 			tasks: [{
 				id: "333C5B8725B50369"
@@ -408,7 +420,7 @@
 			}]
 		}
 		{
-			x: 15.0d
+			x: 16.5d
 			y: 4.5d
 			dependencies: ["3AFD4C2789D6D2F4"]
 			id: "184E75CEC4E7A9BF"
@@ -469,7 +481,7 @@
 			title: "生物群系蔓延"
 			icon: "minecraft:book"
 			x: 13.5d
-			y: 6.0d
+			y: 4.5d
 			description: [
 				"下界的蔓延会随机根据某一生物群系选择方块。若某一方块与某一下界生物群系的方块相邻，则它只能侵染成该生物群系的方块。"
 				"以下为各生物群系的方块："
@@ -479,11 +491,22 @@
 				"诡异森林：诡异菌岩"
 				"玄武岩三角洲：玄武岩、黑石、岩浆块"
 			]
-			dependencies: ["3AFD4C2789D6D2F4"]
+			dependencies: ["2A05156D7CE026FE"]
 			id: "3FBDB5D7EDD809AA"
 			tasks: [{
 				id: "3240EA65BECB4D77"
 				type: "checkmark"
+			}]
+		}
+		{
+			x: 12.0d
+			y: -1.5d
+			dependencies: ["0E6C8BABC76D0F33"]
+			id: "61F4369CE3021B8F"
+			tasks: [{
+				id: "0C81598FD5760023"
+				type: "item"
+				item: "botanypots:terracotta_hopper_botany_pot"
 			}]
 		}
 	]
