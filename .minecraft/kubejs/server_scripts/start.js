@@ -65,17 +65,14 @@ onEvent('recipes', event => {
         'block_in': { 'blocks': ['minecraft:andesite', 'minecraft:cobblestone'] },
         'post': [
             { 'type': 'damage_item', 'damage': 1 },
-            { 'type': 'place', 'block': 'minecraft:gravel' }
-        ]
-    })
-
-    event.custom({
-        'type': 'lychee:block_clicking',
-        'item_in': { 'item': 'immersiveengineering:hammer' },
-        'block_in': { 'blocks': ['gravel'] },
-        'post': [
-            { 'type': 'damage_item', 'damage': 1 },
-            { 'type': 'place', 'block': 'sand' }
+            {
+                'type': 'random',
+                'rolls': 1,
+                'entries': [
+                    { 'type': 'place', 'block': 'gravel', weight: 1 },
+                    { 'type': 'place', 'block': 'sand', weight: 1 }
+                ]
+            }
         ]
     })
 

@@ -5,6 +5,7 @@
 instance.cfg
 mmc-pack.json
 natives
+.packignore
 
 ## Config
 !.minecraft/config/
