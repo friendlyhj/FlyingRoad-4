@@ -93,9 +93,9 @@ public expand string {
 public class SpreadRules {
     public static val groups as WeightedList<BlockState>[string] = {
         "wastes": new WeightedList<BlockState>([
-            <blockstate:minecraft:netherrack> % 85,
+            <blockstate:minecraft:netherrack> % 75,
             <blockstate:minecraft:nether_quartz_ore> % 15,
-            <blockstate:minecraft:nether_gold_ore> % 10
+            <blockstate:minecraft:nether_gold_ore> % 15
         ]),
         "soul": new WeightedList<BlockState>([
             <blockstate:minecraft:soul_sand> % 60,

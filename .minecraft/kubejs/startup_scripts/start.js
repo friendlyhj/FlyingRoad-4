@@ -24,12 +24,10 @@ onEvent('block.registry', event => {
     event.create('budding_mine')
         .tagBlock('minecraft:mineable/pickaxe')
         .material('rock')
-        .noDrops()
 
     event.create('budding_gem_mine')
         .tagBlock('minecraft:mineable/pickaxe')
         .material('rock')
-        .noDrops()
 
     event.create('mine_bud')
         .fullBlock(false)

@@ -338,6 +338,22 @@ onEvent('recipes', event => {
         ]
     })
 
+    event.custom({
+        'type': 'pneumaticcraft:pressure_chamber',
+        'inputs': [
+            {
+                'item': 'cyclic:compressed_cobblestone'
+            }
+        ],
+        'pressure': 1.6,
+        'results': [
+            {
+                'item': 'sand',
+                'count': 9
+            }
+        ]
+    })
+
     event.recipes.minecraft.crafting_shaped('9x kubejs:mithril_ingot', ['kubejs:mithril_block'])
     event.recipes.minecraft.crafting_shaped('kubejs:mithril_block', [
         'AAA',

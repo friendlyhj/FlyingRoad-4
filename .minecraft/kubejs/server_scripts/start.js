@@ -51,13 +51,6 @@ onEvent('recipes', event => {
         P: 'kubejs:andesite_rock',
         T: 'stick'
     })
-    event.recipes.minecraft.crafting_shaped('furnace', [
-        'SSS',
-        'S S',
-        'SSS'
-    ], {
-        S: 'andesite'
-    })
 
     event.custom({
         'type': 'lychee:block_clicking',
@@ -154,14 +147,14 @@ onEvent('recipes', event => {
             {
                 'type': 'random',
                 'entries': [
-                    { 'type': 'drop_item', 'item': 'minecraft:raw_iron', count: 1, weight: 200 },
+                    { 'type': 'drop_item', 'item': 'minecraft:raw_iron', count: 1, weight: 250 },
                     { 'type': 'drop_item', 'item': 'minecraft:raw_copper', count: 1, weight: 175 },
                     { 'type': 'drop_item', 'item': 'thermal:raw_tin', count: 1, weight: 145 },
                     { 'type': 'drop_item', 'item': 'thermal:raw_nickel', count: 1, weight: 130 },
                     { 'type': 'drop_item', 'item': 'thermal:raw_silver', count: 1, weight: 125 },
                     { 'type': 'drop_item', 'item': 'thermal:raw_lead', count: 1, weight: 120 },
                     { 'type': 'drop_item', 'item': 'mekanism:raw_osmium', count: 1, weight: 100 },
-                    { 'type': 'drop_item', 'item': 'mekanism:raw_uranium', count: 1, weight: 25 },
+                    { 'type': 'drop_item', 'item': 'mekanism:raw_uranium', count: 1, weight: 40 },
                 ]
             }
         ]
@@ -212,7 +205,7 @@ onEvent('recipes', event => {
         'inputs': [
             {
                 'type': 'pneumaticcraft:stacked_item',
-                'item': 'minecraft:andesite',
+                'item': 'rechiseled:andesite_brick_pattern_connecting',
                 'count': 8
             },
             {
@@ -236,10 +229,9 @@ onEvent('recipes', event => {
         'type': 'pneumaticcraft:pressure_chamber',
         'inputs': [
             {
-                'item': 'stone'
-            },
-            {
-                'item': 'andesite'
+                'type': 'pneumaticcraft:stacked_item',
+                'item': 'rechiseled:andesite_brick_pattern_connecting',
+                'count': 2
             },
             {
                 'item': 'gold_ingot'
@@ -273,4 +265,9 @@ onEvent('recipes', event => {
     //     'block_in': { 'blocks': ['block:minecraft:stone'] },
     //     'post':  {  'type': 'drop_item',  'item': 'item:minecraft:stick'}
     // })
+})
+
+onEvent('item.tags', event => {
+    event.add('stone_crafting_materials', 'andesite');
+    event.add('stone_tool_materials', 'andesite');
 })

@@ -293,8 +293,15 @@
 			]
 			id: "2A05156D7CE026FE"
 			tasks: [{
-				id: "2301820995645EC0"
-				type: "checkmark"
+				id: "5A2E8E0A9F8F74DE"
+				type: "item"
+				item: {
+					id: "minecraft:flint_and_steel"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
 			}]
 		}
 		{
