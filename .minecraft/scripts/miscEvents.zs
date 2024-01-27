@@ -4,6 +4,7 @@ import crafttweaker.api.util.Direction;
 import crafttweaker.api.event.entity.EntityStruckByLightningEvent;
 import crafttweaker.api.event.entity.EntityJoinWorldEvent;
 import crafttweaker.api.event.entity.player.PlayerLoggedInEvent;
+import crafttweaker.api.event.entity.player.interact.RightClickBlockEvent;
 import crafttweaker.api.entity.type.item.ItemEntity;
 import crafttweaker.api.world.ServerLevel;
 
@@ -71,5 +72,11 @@ CTEventManager.register<PlayerLoggedInEvent>(event => {
     if (!level.isClientSide()) {
         val serverLevel = level as ServerLevel;
         serverLevel.server.executeCommand("/gamerule keepInventory true", true);
+    }
+});
+
+CTEventManager.register<RightClickBlockEvent>(event => {
+    if (<item:thermal:earth_charge>.matches(event.itemStack) && event.player.level.getBlockState(event.blockPos) == <blockstate:minecraft:obsidian>) {
+        event.cancel();
     }
 });

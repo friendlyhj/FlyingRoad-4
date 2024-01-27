@@ -413,11 +413,19 @@
 					count: 2L
 				}
 			]
-			rewards: [{
-				id: "6F6C31C6AF2F3B03"
-				type: "item"
-				item: "ae2:pattern_access_terminal"
-			}]
+			rewards: [
+				{
+					id: "6F6C31C6AF2F3B03"
+					type: "item"
+					item: "ae2:pattern_access_terminal"
+				}
+				{
+					id: "40C63C2161E957F1"
+					type: "item"
+					item: "ae2:blank_pattern"
+					count: 16
+				}
+			]
 		}
 		{
 			x: -7.5d

@@ -1,5 +1,8 @@
 {
     "ModSettings": {
+        "villager_trading_enable": {
+            "value": false
+        },
         "first_run": false
     },
     "GuiSettings": {
@@ -11,6 +14,87 @@
         },
         "enable_profiles_ui": {
             "value": false
+        }
+    },
+    "AutoRefillSettings": {
+        "refill_armor": {
+            "value": false
+        },
+        "refill_before_tool_break": {
+            "value": false
+        },
+        "allow_break_for_non_enchanted": {
+            "value": true
+        },
+        "type_visual_replace_success_notification": "CHAT",
+        "visual_replace_failed_notification": {
+            "value": false
+        },
+        "audio_replace_failed_notification": {
+            "value": false
+        },
+        "type_visual_replace_failed_notification": "CHAT"
+    },
+    "Hotkeys": {
+        "reload_custom_configs": {
+            "main": {
+                "keys": "I,Y"
+            }
+        },
+        "sort_inventory": {
+            "main": {
+                "keys": "I"
+            }
+        },
+        "move_all_items": {
+            "main": {
+                "keys": "I,T"
+            }
+        },
+        "throw_all_items": {
+            "main": {
+                "keys": "I,M"
+            }
+        },
+        "open_gui_editor": {
+            "main": {
+                "keys": "I,G"
+            }
+        },
+        "apply_profile": {
+            "main": {
+                "keys": "I,H"
+            }
+        },
+        "next_profile": {
+            "main": {
+                "keys": "I,Z"
+            }
+        },
+        "prev_profile": {
+            "main": {
+                "keys": "I,X"
+            }
+        },
+        "profile_1": {
+            "main": {
+                "keys": "I,1"
+            }
+        },
+        "profile_2": {
+            "main": {
+                "keys": "I,2"
+            }
+        },
+        "profile_3": {
+            "main": {
+                "keys": "I,3"
+            }
+        },
+        "save_as_profile": {
+            "main": {
+                "keys": "I,P"
+            }
         }
     }
 }
