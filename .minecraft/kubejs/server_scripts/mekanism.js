@@ -20,4 +20,6 @@ onEvent('recipes', event => {
         'F': 'mekanism:steel_casing',
         'I': '#forge:ingots/invar'
     })
+
+    event.remove({'id': 'mekanism:nucleosynthesizing/dragon_egg'})
 });
