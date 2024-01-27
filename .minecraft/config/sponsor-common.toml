@@ -1,0 +1,10 @@
+#The name of your modpack
+modpackName = "kubejs.modpack.name"
+#URL of sponsor list
+sponsorListURL = "https://gitee.com/youyihj/flyingroad-sponsors/raw/main/SPONSOR.txt"
+#Length of sponsor list
+#Range: 1 ~ 10
+sponsorListLength = 5
+#Link to sponsor
+sponsorLink = "https://afdian.net/@youyihj"
+

@@ -14,5 +14,7 @@
     "item.kubejs.mithril_gear": "秘银齿轮",
     "item.kubejs.primal_mana_bucket": "元始魔力桶",
 
-    "fluid.kubejs.primal_mana": "元始魔力"
+    "fluid.kubejs.primal_mana": "元始魔力",
+
+    "kubejs.modpack.name": "飞翔之路 4"
 }

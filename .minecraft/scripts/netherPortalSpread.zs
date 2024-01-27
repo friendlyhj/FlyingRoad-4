@@ -256,7 +256,7 @@ CTEventManager.register<WorldTickEvent>(event => {
             val elementData = element as MapData;
             val posData = elementData.getData<IntArrayData>("pos");
             val pos = new BlockPos(posData.getAt(0).asInt(), posData.getAt(1).asInt(), posData.getAt(2).asInt());
-            if (level.getBlockState(pos) == <blockstate:minecraft:nether_portal>) {
+            if (level.getBlockState(pos).block == <block:minecraft:nether_portal>) {
                 val time = elementData.getData<IntData>("time").asInt();
                 val modifier = elementData.getData<IntData>("modifier").asInt();
                 val newModifier = tickPortal(serverLevel, pos, time, modifier);

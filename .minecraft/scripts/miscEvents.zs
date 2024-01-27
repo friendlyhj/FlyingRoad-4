@@ -5,6 +5,7 @@ import crafttweaker.api.event.entity.EntityStruckByLightningEvent;
 import crafttweaker.api.event.entity.EntityJoinWorldEvent;
 import crafttweaker.api.event.entity.player.PlayerLoggedInEvent;
 import crafttweaker.api.event.entity.player.interact.RightClickBlockEvent;
+import crafttweaker.api.event.entity.player.interact.RightClickItemEvent;
 import crafttweaker.api.entity.type.item.ItemEntity;
 import crafttweaker.api.world.ServerLevel;
 
@@ -77,6 +78,15 @@ CTEventManager.register<PlayerLoggedInEvent>(event => {
 
 CTEventManager.register<RightClickBlockEvent>(event => {
     if (<item:thermal:earth_charge>.matches(event.itemStack) && event.player.level.getBlockState(event.blockPos) == <blockstate:minecraft:obsidian>) {
+        event.cancel();
+    }
+    if (<tag:items:ae2:knife>.asIIngredient().matches(event.itemStack) && !event.player.isShiftKeyDown) {
+        event.cancel();
+    }
+});
+
+CTEventManager.register<RightClickItemEvent>(event => {
+    if (<tag:items:ae2:knife>.asIIngredient().matches(event.itemStack) && !event.player.isShiftKeyDown) {
         event.cancel();
     }
 });

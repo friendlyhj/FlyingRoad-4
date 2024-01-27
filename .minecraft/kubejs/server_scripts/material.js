@@ -179,7 +179,7 @@ onEvent('recipes', event => {
             'input': {
                 'type': 'ITEM',
                 'id': 'minecraft:emerald',
-                'amount': 4
+                'amount': 2
             },
             'output': {
                 'type': 'ITEM',
@@ -207,6 +207,39 @@ onEvent('recipes', event => {
             'output': {
                 'type': 'ITEM',
                 'id': press,
+                'amount': 1
+            },
+            'static': true,
+            'level': 0
+        })
+    })
+
+    let animals = [
+        'minecraft:axolotl_spawn_egg',
+        'minecraft:bee_spawn_egg',
+        'minecraft:cat_spawn_egg',
+        'minecraft:chicken_spawn_egg', 
+        'minecraft:cow_spawn_egg',
+        'minecraft:fox_spawn_egg',
+        'minecraft:horse_spawn_egg',
+        'minecraft:parrot_spawn_egg',
+        'minecraft:pig_spawn_egg',
+        'minecraft:rabbit_spawn_egg',
+        'minecraft:ocelot_spawn_egg',
+        'minecraft:sheep_spawn_egg'
+    ]
+
+    animals.forEach(animal => {
+        event.custom({
+            'type': 'pneumaticcraft:amadron',
+            'input': {
+                'type': 'ITEM',
+                'id': 'minecraft:emerald',
+                'amount': 6
+            },
+            'output': {
+                'type': 'ITEM',
+                'id': animal,
                 'amount': 1
             },
             'static': true,
