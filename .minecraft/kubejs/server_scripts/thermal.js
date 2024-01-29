@@ -9,7 +9,7 @@ onEvent('recipes', event => {
         'C': '#forge:gears/constantan',
         'G': 'glass',
         'P': 'piston',
-        'S': 'thermal:redstone_servo'
+        'S': 'hopper'
     })
     event.remove({'id': 'thermal:machine_frame'})
     event.recipes.minecraft.crafting_shaped('thermal:machine_frame', [

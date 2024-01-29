@@ -122,6 +122,31 @@ onEvent('recipes', event => {
     })
 
     event.custom({
+        'type': 'pneumaticcraft:thermo_plant',
+        'fluid_input': {
+            'type': 'pneumaticcraft:fluid',
+            'tag': 'thermal:resin',
+            'amount': 1000
+        },
+        'item_input': {
+            'item': 'redstone'
+        },
+        'temperature': {
+            'min_temp': 373
+        },
+        'fluid_output': {
+            'type': 'pneumaticcraft:fluid',
+            'fluid': 'pneumaticcraft:lubricant',
+            'amount': 1000
+        },
+        'speed': 1.0,
+        'exothermic': false
+    })
+
+    event.remove({'id': 'pneumaticcraft:thermo_plant/lubricant_from_biodiesel'})
+    event.remove({'id': 'pneumaticcraft:thermo_plant/lubricant_from_diesel'})
+
+    event.custom({
         'type': 'pneumaticcraft:amadron',
         'input': {
             'type': 'ITEM',
@@ -146,6 +171,7 @@ onEvent('recipes', event => {
         'minecraft:potato',
         'minecraft:cactus',
         'minecraft:sugar_cane',
+        'minecraft:bamboo',
         'immersiveengineering:seed',
         'thermal:amaranth_seeds',
         'thermal:barley_seeds',
@@ -418,6 +444,10 @@ onEvent('recipes', event => {
     event.recipes.thermal.press('bone', '6x bone_meal')
     event.recipes.minecraft.crafting_shapeless('bone_meal', ['thermal:phytogro'])
 
+    event.recipes.minecraft.crafting_shapeless('thermal_extra:soul_sand_dust', [
+        'soul_sand', 'immersiveengineering:hammer'
+    ])
+
     event.custom({
         'type': 'lychee:block_interacting',
         'item_in': { 'tag': 'forge:axes' },
@@ -516,8 +546,8 @@ onEvent('recipes', event => {
         'E': 'end_stone'
     })
 
-    event.recipes.minecraft.crafting_shapeless('mekanism:dust_fluorite', [
-        'glowstone_dust', 'thermal_extra:amethyst_dust'
+    event.recipes.minecraft.crafting_shapeless('8x mekanism:dust_fluorite', [
+        '8x glowstone_dust', 'thermal_extra:amethyst_dust'
     ])
 
     event.custom({
@@ -548,8 +578,32 @@ onEvent('recipes', event => {
                 'item': 'ae2:sky_stone_block'
             }
         ],
-        'energy': 10000
+        'energy': 8000
     })
+
+    event.custom({
+        'type': 'thermal:crystallizer',
+        'ingredients': [
+            {
+                'fluid': 'water',
+                'amount': 500
+            },
+            {
+                'item': 'dirt'
+            }
+        ],
+        'result': [
+            {
+                'item': 'thermal:phytosoil'
+            }
+        ],
+        'energy': 2500
+    })
+
+    event.remove({ 'id': 'thermal:phytosoil' })
+    event.recipes.minecraft.crafting_shapeless('32x thermal:phytogro', [
+        'thermal:phytosoil', 'thermal:apatite_dust', 'thermal:apatite_dust', 'thermal:niter_dust'
+    ])
 
     event.remove({ 'id': 'immersiveengineering:crafting/gunpowder_from_dusts'})
 })

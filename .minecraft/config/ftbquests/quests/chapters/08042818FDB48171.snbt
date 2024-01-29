@@ -114,7 +114,7 @@
 			}
 			x: 9.0d
 			y: 0.0d
-			description: ["嗯，这是把锤子。左键安山岩（或圆石）和沙砾将它们锤碎成沙砾和沙子。"]
+			description: ["嗯，这是把锤子。左键安山岩（或圆石）将它们锤碎成沙砾和沙子。"]
 			dependencies: ["4E5CCD0CB5D710CF"]
 			id: "7815012924A92956"
 			tasks: [
@@ -309,7 +309,7 @@
 			icon: "minecraft:nether_gold_ore"
 			x: 13.5d
 			y: 1.5d
-			description: ["泥土和石头在被侵染成下界岩的同时也夹杂了一些下界的矿物。"]
+			description: ["泥土和石头等方块在被侵染成下界岩的同时也夹杂了一些下界的矿物。"]
 			dependencies: ["2A05156D7CE026FE"]
 			id: "2573B3FC5A949830"
 			tasks: [
@@ -470,6 +470,19 @@
 				type: "item"
 				item: "thermal:device_rock_gen"
 			}]
+			rewards: [
+				{
+					id: "4795DCA21AA77E08"
+					type: "item"
+					item: "thermal:wrench"
+				}
+				{
+					id: "471CC3DA2E7750B6"
+					type: "item"
+					item: "pipez:item_pipe"
+					count: 16
+				}
+			]
 		}
 		{
 			title: "合金窑"
@@ -515,6 +528,24 @@
 				type: "item"
 				item: "botanypots:terracotta_hopper_botany_pot"
 			}]
+		}
+		{
+			x: 16.5d
+			y: 0.0d
+			dependencies: ["548722F76BF84A57"]
+			id: "3CD13653AE55E671"
+			tasks: [
+				{
+					id: "68B756D173AAFA04"
+					type: "item"
+					item: "projectred_integration:toggle_latch_gate"
+				}
+				{
+					id: "6418CCF909542891"
+					type: "item"
+					item: "projectred_integration:timer_gate"
+				}
+			]
 		}
 	]
 	quest_links: [ ]

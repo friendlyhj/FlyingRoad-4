@@ -18,25 +18,12 @@
 				type: "item"
 				item: "thermal:machine_frame"
 			}]
-			rewards: [
-				{
-					id: "184ED2296DD883F5"
-					type: "item"
-					item: "thermal:wrench"
-				}
-				{
-					id: "28DFDE9B7ED5B3DA"
-					type: "item"
-					item: "pipez:item_pipe"
-					count: 16
-				}
-				{
-					id: "7B33A857834DFD23"
-					type: "item"
-					item: "pipez:energy_pipe"
-					count: 16
-				}
-			]
+			rewards: [{
+				id: "7B33A857834DFD23"
+				type: "item"
+				item: "pipez:energy_pipe"
+				count: 16
+			}]
 		}
 		{
 			x: -1.5d
@@ -633,6 +620,28 @@
 				id: "56C044D471B169BE"
 				type: "item"
 				item: "minecraft:end_crystal"
+			}]
+		}
+		{
+			x: 2.0d
+			y: 0.0d
+			dependencies: ["2B8B3B7DE1C177F5"]
+			id: "61194BCB82A647D3"
+			tasks: [{
+				id: "63A4315C2A90132A"
+				type: "item"
+				item: "thermal:machine_crystallizer"
+			}]
+		}
+		{
+			x: 3.5d
+			y: 0.0d
+			dependencies: ["61194BCB82A647D3"]
+			id: "7AF08319D54473D8"
+			tasks: [{
+				id: "09D09D0B6CB7CC1F"
+				type: "item"
+				item: "thermal:phytosoil"
 			}]
 		}
 	]

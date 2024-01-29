@@ -90,6 +90,26 @@ public expand string {
     }
 }
 
+public expand <T> List<T> {
+    public random(random as Random, size as int) as List<T> {
+        if (size > this.length as int) {
+            return this;
+        } else {
+            val indexes as int[] = new int[](size, 0-1);
+            val list as List<T> = new List<T>();
+            for i in 0 .. size {
+                var nextIndex as int = 0-1;
+                while (nextIndex in indexes) {
+                    nextIndex = random.nextInt(this.length as int);
+                }
+                indexes[i] = nextIndex;
+                list.add(this[nextIndex]);
+            }
+            return list;
+        }
+    }
+}
+
 public class SpreadRules {
     public static val groups as WeightedList<BlockState>[string] = {
         "wastes": new WeightedList<BlockState>([
@@ -298,18 +318,20 @@ public function tickPortal(level as ServerLevel, pos as BlockPos, time as int, m
             }
         }
         if (!canTransformVectors.isEmpty) {
-            val transformVector = canTransformVectors[level.random.nextInt(canTransformVectors.length as int)];
-            val transformPos = pos.offset(transformVector);
-            var transformBlock = transform(level.getBlockState(transformPos), transformPos, level);
-            if (hasModifier(modifier, Modifiers.NETHERITE)) {
-                if (level.random.nextInt(100) == 42) {
-                    transformBlock = <blockstate:minecraft:ancient_debris>;
-                    if (level.random.nextInt(4) == 0) {
-                        newModifier = removeModifier(modifier, Modifiers.NETHERITE);
+            val transformVectors = canTransformVectors.random(level.random, currentDistance);
+            for transformVector in transformVectors {
+                val transformPos = pos.offset(transformVector);
+                var transformBlock = transform(level.getBlockState(transformPos), transformPos, level);
+                if (hasModifier(modifier, Modifiers.NETHERITE)) {
+                    if (level.random.nextInt(100) == 42) {
+                        transformBlock = <blockstate:minecraft:ancient_debris>;
+                        if (level.random.nextInt(4) == 0) {
+                            newModifier = removeModifier(modifier, Modifiers.NETHERITE);
+                        }
                     }
                 }
+                level.setBlockAndUpdate(transformPos, transformBlock);
             }
-            level.setBlockAndUpdate(transformPos, transformBlock);
             return newModifier;
         }
         currentDistance++;

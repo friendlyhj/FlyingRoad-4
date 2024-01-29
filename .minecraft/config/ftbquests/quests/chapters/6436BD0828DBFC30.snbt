@@ -75,6 +75,12 @@
 					count: 2L
 				}
 			]
+			rewards: [{
+				id: "1C5D64F946F03954"
+				type: "item"
+				item: "pneumaticcraft:security_upgrade"
+				count: 2
+			}]
 		}
 		{
 			x: 5.5d
@@ -96,6 +102,12 @@
 				id: "5FE58AB3CD713403"
 				type: "item"
 				item: "pneumaticcraft:thermopneumatic_processing_plant"
+			}]
+			rewards: [{
+				id: "78D0745CFC91B7F4"
+				type: "item"
+				item: "minecraft:gold_ingot"
+				count: 4
 			}]
 		}
 		{

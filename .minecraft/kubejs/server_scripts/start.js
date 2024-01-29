@@ -1,12 +1,12 @@
 onEvent('recipes', event => {
     event.recipes.minecraft.crafting_shapeless('kubejs:budding_andesite', [
-        'rechiseled:andesite_brick_pattern_connecting', 'bone_meal'
+        '#kubejs:vivid_andesite', 'bone_meal'
     ])
 
     event.recipes.minecraft.crafting_shapeless('3x kubejs:budding_andesite', [
-        'rechiseled:andesite_brick_pattern_connecting',
-        'rechiseled:andesite_brick_pattern_connecting',
-        'rechiseled:andesite_brick_pattern_connecting',
+        '#kubejs:vivid_andesite',
+        '#kubejs:vivid_andesite',
+        '#kubejs:vivid_andesite',
         'thermal:phytogro'
     ])
 
@@ -62,8 +62,8 @@ onEvent('recipes', event => {
                 'type': 'random',
                 'rolls': 1,
                 'entries': [
-                    { 'type': 'place', 'block': 'gravel', weight: 1 },
-                    { 'type': 'place', 'block': 'sand', weight: 1 }
+                    { 'type': 'place', 'block': 'gravel', weight: 2 },
+                    { 'type': 'place', 'block': 'sand', weight: 3 }
                 ]
             }
         ]
@@ -205,7 +205,7 @@ onEvent('recipes', event => {
         'inputs': [
             {
                 'type': 'pneumaticcraft:stacked_item',
-                'item': 'rechiseled:andesite_brick_pattern_connecting',
+                'tag': 'kubejs:vivid_andesite',
                 'count': 8
             },
             {
@@ -230,7 +230,7 @@ onEvent('recipes', event => {
         'inputs': [
             {
                 'type': 'pneumaticcraft:stacked_item',
-                'item': 'rechiseled:andesite_brick_pattern_connecting',
+                'tag': 'kubejs:vivid_andesite',
                 'count': 2
             },
             {
@@ -270,4 +270,6 @@ onEvent('recipes', event => {
 onEvent('item.tags', event => {
     event.add('stone_crafting_materials', 'andesite');
     event.add('stone_tool_materials', 'andesite');
+    event.add('kubejs:vivid_andesite', 'rechiseled:andesite_brick_pattern_connecting')
+    event.add('kubejs:vivid_andesite', 'rechiseled:andesite_brick_pattern')
 })

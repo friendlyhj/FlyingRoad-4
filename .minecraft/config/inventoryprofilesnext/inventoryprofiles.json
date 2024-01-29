@@ -56,6 +56,16 @@
                 "keys": "I,M"
             }
         },
+        "scroll_to_chest": {
+            "main": {
+                "keys": ""
+            }
+        },
+        "scroll_to_inventory": {
+            "main": {
+                "keys": ""
+            }
+        },
         "open_gui_editor": {
             "main": {
                 "keys": "I,G"
