@@ -1,0 +1,8 @@
+{
+    "mekanism.client.gui.machine.GuiElectrolyticSeparator": {
+        "ignore": true
+    },
+    "mekanism.common.inventory.container.tile.MekanismTileContainer": {
+        "ignore": true
+    }
+}
