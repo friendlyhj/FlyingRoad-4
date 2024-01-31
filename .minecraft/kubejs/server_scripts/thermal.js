@@ -8,7 +8,7 @@ onEvent('recipes', event => {
         'L': '#forge:ingots/lead',
         'C': '#forge:gears/constantan',
         'G': 'glass',
-        'P': 'piston',
+        'P': 'cyclic:compressed_cobblestone',
         'S': 'hopper'
     })
     event.remove({'id': 'thermal:machine_frame'})

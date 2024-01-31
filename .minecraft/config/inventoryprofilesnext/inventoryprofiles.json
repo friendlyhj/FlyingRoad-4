@@ -14,7 +14,8 @@
         },
         "enable_profiles_ui": {
             "value": false
-        }
+        },
+        "continuous_crafting_saved_value": false
     },
     "AutoRefillSettings": {
         "refill_armor": {

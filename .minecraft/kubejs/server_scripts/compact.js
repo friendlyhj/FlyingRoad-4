@@ -1,5 +1,6 @@
 onEvent('recipes', event => {
     event.remove({ 'id': '/compactmachines:machine_.*/' })
+    event.remove({ 'id': 'compactmachines:wall' })
 
     let map = [
         ['minecraft:copper_block', 'compactmachines:machine_tiny', 3],

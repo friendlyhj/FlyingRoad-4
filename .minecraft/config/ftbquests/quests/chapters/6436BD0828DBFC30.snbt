@@ -187,8 +187,8 @@
 					"pneumaticcraft:air": 120000
 				}
 			}
-			x: 9.0d
-			y: -3.0d
+			x: 7.5d
+			y: -4.5d
 			description: [
 				"使用无人机来自动操作矿物母岩。需要在编程器消耗编程拼图编程无人机程序。"
 				"在编程器页面中，使用物品左击可创建物品过滤模块，使用定位工具Shift+左击可创建区域过滤模块。"
@@ -221,15 +221,31 @@
 			]
 		}
 		{
-			x: 7.5d
-			y: -4.5d
+			x: 12.0d
+			y: -3.0d
 			shape: "hexagon"
-			dependencies: ["6CCF5D41C303AE24"]
+			dependencies: ["18532503D25A6C87"]
 			id: "11EE635ABD1F1BDA"
 			tasks: [{
 				id: "5D053FA8051E96F9"
 				type: "item"
 				item: "pneumaticcraft:pneumatic_dynamo"
+			}]
+			rewards: [{
+				id: "221139F3B1373921"
+				type: "item"
+				item: {
+					id: "thermal:energy_cell"
+					Count: 1b
+					tag: {
+						BlockEntityTag: {
+							EnergyMax: 1000000
+							EnergySend: 1000
+							Energy: 0
+							EnergyRecv: 1000
+						}
+					}
+				}
 			}]
 		}
 		{
@@ -272,6 +288,60 @@
 				id: "08487E72ED38D133"
 				type: "item"
 				item: "thermal:ice_charge"
+			}]
+		}
+		{
+			x: 9.0d
+			y: -3.0d
+			dependencies: ["6CCF5D41C303AE24"]
+			id: "5B0B477E3B72AF26"
+			tasks: [
+				{
+					id: "63F47661FB2462AB"
+					type: "item"
+					item: "pneumaticcraft:assembly_controller"
+				}
+				{
+					id: "04C1B14125B68794"
+					type: "item"
+					item: "pneumaticcraft:assembly_platform"
+				}
+				{
+					id: "335E1F22CF30A2DA"
+					type: "item"
+					item: "pneumaticcraft:assembly_io_unit_import"
+				}
+				{
+					id: "61B9C4FEC2139B31"
+					type: "item"
+					item: "pneumaticcraft:assembly_io_unit_export"
+				}
+				{
+					id: "07AE87D69B2FAD03"
+					type: "item"
+					item: "pneumaticcraft:assembly_drill"
+				}
+				{
+					id: "70BF71BD9792ECD6"
+					type: "item"
+					item: "pneumaticcraft:assembly_laser"
+				}
+				{
+					id: "57067303E11AF3E0"
+					type: "item"
+					item: "pneumaticcraft:assembly_program_drill_laser"
+				}
+			]
+		}
+		{
+			x: 10.5d
+			y: -3.0d
+			dependencies: ["5B0B477E3B72AF26"]
+			id: "18532503D25A6C87"
+			tasks: [{
+				id: "5A8AF9410F1E5C26"
+				type: "item"
+				item: "pneumaticcraft:advanced_air_compressor"
 			}]
 		}
 	]

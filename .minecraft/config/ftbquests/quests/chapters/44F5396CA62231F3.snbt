@@ -242,15 +242,24 @@
 			}]
 		}
 		{
+			title: "乙烯发电"
 			x: -3.0d
 			y: 7.5d
+			description: ["简单，易用，高效！"]
 			dependencies: ["062CDEF8AAEAFBEB"]
 			id: "1760E15121167DE1"
-			tasks: [{
-				id: "64321B4710302786"
-				type: "item"
-				item: "mekanismgenerators:gas_burning_generator"
-			}]
+			tasks: [
+				{
+					id: "64321B4710302786"
+					type: "item"
+					item: "mekanismgenerators:gas_burning_generator"
+				}
+				{
+					id: "470C74001A75DB12"
+					type: "item"
+					item: "mekanism:pressurized_reaction_chamber"
+				}
+			]
 		}
 		{
 			x: -1.5d
@@ -500,6 +509,12 @@
 				type: "item"
 				item: "miniutilities:quantum_quarry"
 			}]
+			rewards: [{
+				id: "2311E5A71842E9F0"
+				type: "item"
+				item: "miniutilities:speed_upgrade"
+				count: 4
+			}]
 		}
 		{
 			x: 3.0d
@@ -525,8 +540,13 @@
 			}]
 		}
 		{
+			title: "裂变反应堆"
 			x: 0.0d
 			y: 9.0d
+			description: [
+				"大型核裂变反应堆，消耗冷却剂和裂变燃料生产蒸汽和钋等材料，蒸汽可进入蒸汽涡轮发电。"
+				"冷却剂必须充足，不然反应堆会过热爆炸并导致辐射泄漏！"
+			]
 			dependencies: ["062CDEF8AAEAFBEB"]
 			id: "6B527D2992FDDE14"
 			tasks: [
@@ -544,6 +564,16 @@
 					id: "4F4326E02BE9FF54"
 					type: "item"
 					item: "mekanismgenerators:fission_reactor_logic_adapter"
+				}
+				{
+					id: "2F4B0609533656A4"
+					type: "item"
+					item: "mekanismgenerators:fission_fuel_assembly"
+				}
+				{
+					id: "2DBA99177D9A6CC1"
+					type: "item"
+					item: "mekanismgenerators:control_rod_assembly"
 				}
 				{
 					id: "134EBF91AEA0CFD9"
@@ -642,6 +672,17 @@
 				id: "09D09D0B6CB7CC1F"
 				type: "item"
 				item: "thermal:phytosoil"
+			}]
+		}
+		{
+			x: -6.0d
+			y: 9.0d
+			dependencies: ["31C1F747F0419914"]
+			id: "2A6DCC6B2EDB38FA"
+			tasks: [{
+				id: "0D6CD38616005A57"
+				type: "item"
+				item: "ae2:crafting_card"
 			}]
 		}
 	]

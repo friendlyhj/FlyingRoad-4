@@ -348,6 +348,21 @@
 				item: "draconicevolution:chaos_shard"
 			}]
 		}
+		{
+			x: -1.5d
+			y: -4.0d
+			dependencies: ["483176E0A1140E9D"]
+			id: "0BCF879ABD45E8E0"
+			tasks: [{
+				id: "4F8567B7A8A942EE"
+				type: "item"
+				item: {
+					id: "draconicevolution:advanced_dislocator"
+					Count: 1b
+					tag: { }
+				}
+			}]
+		}
 	]
 	quest_links: [ ]
 }

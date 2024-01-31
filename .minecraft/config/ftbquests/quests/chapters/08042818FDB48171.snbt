@@ -352,7 +352,7 @@
 		{
 			x: 10.5d
 			y: 4.5d
-			description: ["向下界传送门丢入煤炭或木炭或阻止它的侵染。"]
+			description: ["向下界传送门丢入煤炭或木炭以阻止它的侵染。"]
 			dependencies: ["2A05156D7CE026FE"]
 			id: "612EFA5216A3AE0E"
 			tasks: [{
@@ -463,6 +463,7 @@
 		{
 			x: 15.0d
 			y: -1.5d
+			description: ["在造石机旁边倒上水和熔岩便可产生源源不断的圆石。"]
 			dependencies: ["35E0D9F5BDFA9921"]
 			id: "3B2290CFDD90D1BF"
 			tasks: [{
@@ -530,8 +531,10 @@
 			}]
 		}
 		{
+			title: "红石控制"
 			x: 16.5d
 			y: 0.0d
+			description: ["必要的红石控制自动化。计时器可以每隔一定时间发出一次红石脉冲。T锁存器有两个输出端，输入端每次接受到一次红石脉冲，就会换一个输出端发出红石信号。"]
 			dependencies: ["548722F76BF84A57"]
 			id: "3CD13653AE55E671"
 			tasks: [
@@ -546,6 +549,12 @@
 					item: "projectred_integration:timer_gate"
 				}
 			]
+			rewards: [{
+				id: "7A871E6D0219B051"
+				type: "item"
+				item: "projectred_transmission:red_alloy_wire"
+				count: 12
+			}]
 		}
 	]
 	quest_links: [ ]

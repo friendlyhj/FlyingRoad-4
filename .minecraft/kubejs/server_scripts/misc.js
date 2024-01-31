@@ -31,7 +31,69 @@ onEvent('recipes', event => {
     event.remove({'id': 'cyclic:uncrafter'})
     event.remove({'id': 'minecraft:end_crystal'})
     event.remove({'id': '/cyclic:.*_pipe/'})
+    event.remove({'id': 'cyclic:miner'})
+    event.remove({'id': 'cyclic:crusher'})
+    event.remove({'id': 'cyclic:user'})
 
     event.remove({'id': 'mysticalagriculture:soulium_dagger'})
     event.recipes.minecraft.smithing('mysticalagriculture:soulium_dagger', 'golden_sword', 'thermal_extra:soul_infused_block')
+
+    event.recipes.minecraft.crafting_shaped('cyclic:miner', [
+        'LPL',
+        'CDC',
+        'DDD'
+    ], {
+        'L': 'lapis_block',
+        'P': 'iron_pickaxe',
+        'C': 'copper_ingot',
+        'D': 'thermal:lead_ingot'
+    })
+
+    event.recipes.minecraft.crafting_shaped('cyclic:user', [
+        'GOG',
+        'CFC',
+        'AWA'
+    ], {
+        'G': 'gold_ingot',
+        'O': 'obsidian',
+        'C': 'pneumaticcraft:printed_circuit_board',
+        'F': 'thermal:machine_frame',
+        'A': '#forge:gears/bronze',
+        'W': 'thermal:rf_coil'
+    })
+
+    event.remove({ 'id': 'projectred_core:red_ingot' })
+    event.recipes.thermal.smelter('projectred_core:red_ingot', ['copper_ingot', '3x redstone'])
+    event.custom({
+        'type': 'immersiveengineering:alloy',
+        'time': 200,
+        'result': {
+            'item': 'projectred_core:red_ingot'
+        },
+        'input0': {
+            'count': 3,
+            'base_ingredient': {
+                'item': 'redstone'
+            }
+        },
+        'input1': {
+            'item': 'copper_ingot'
+        }
+    })
+
+    event.remove({ 'id': 'cyclic:eye_teleport' })
+    event.remove({ 'id': 'cyclic:eye_teleport_rev' })
+    event.recipes.minecraft.crafting_shaped('cyclic:eye_teleport', [
+        'EEE',
+        'EOE',
+        'EEE'
+    ], {
+        'E': 'ender_pearl',
+        'O': 'obsidian'
+    })
+})
+
+onEvent('item.tags', event => {
+    event.remove('forge:storage_blocks', 'cyclic:eye_teleport')
+    event.remove('forge:storage_blocks/ender_pearl', 'cyclic:eye_teleport')
 })

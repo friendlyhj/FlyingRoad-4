@@ -444,10 +444,6 @@ onEvent('recipes', event => {
     event.recipes.thermal.press('bone', '6x bone_meal')
     event.recipes.minecraft.crafting_shapeless('bone_meal', ['thermal:phytogro'])
 
-    event.recipes.minecraft.crafting_shapeless('thermal_extra:soul_sand_dust', [
-        'soul_sand', 'immersiveengineering:hammer'
-    ])
-
     event.custom({
         'type': 'lychee:block_interacting',
         'item_in': { 'tag': 'forge:axes' },
