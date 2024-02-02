@@ -2,10 +2,12 @@
 import crafttweaker.api.event.entity.EntityTravelToDimensionEvent;
 import crafttweaker.api.event.block.PortalSpawnEvent;
 import crafttweaker.api.event.block.BlockNeighborNotifyEvent;
+import crafttweaker.api.event.block.BlockPlaceEvent;
 import crafttweaker.api.event.tick.WorldTickEvent;
 import crafttweaker.api.events.CTEventManager;
 import crafttweaker.api.world.Level;
 import crafttweaker.api.world.ServerLevel;
+import crafttweaker.api.world.CraftTweakerSavedData;
 import crafttweaker.api.block.BlockState;
 import crafttweaker.api.block.Block;
 import crafttweaker.api.data.IData;
@@ -210,20 +212,9 @@ CTEventManager.register<EntityTravelToDimensionEvent>(event => {
             if (level.isClientSide) return;
             val serverLevel = level as ServerLevel;
             val customData = serverLevel.customData;
-            var nearestDistance as int = 2147483647;
-            var nearestPortalIndex as int = 0-1;
+            var nearestPortalIndex as int = findNearestPortal(customData, pos);
             val data = customData.getData();
             val portalData = data.getData<ListData>("Portals") as ListData;
-            for index in 0 .. portalData.size {
-                val elementData = portalData.getAt(index) as MapData;
-                val posData = elementData.getData<IntArrayData>("pos");
-                val portalPos = new BlockPos(posData.getAt(0).asInt(), posData.getAt(1).asInt(), posData.getAt(2).asInt());
-                val distance = portalPos.distManhattan(pos);
-                if (distance < nearestDistance) {
-                    nearestDistance = distance;
-                    nearestPortalIndex = index;
-                }
-            }
             if (nearestPortalIndex >= 0) {
                 val itemEntity = entity as ItemEntity;
                 val item = itemEntity.item;
@@ -279,7 +270,7 @@ CTEventManager.register<WorldTickEvent>(event => {
             if (level.getBlockState(pos).block == <block:minecraft:nether_portal>) {
                 val time = elementData.getData<IntData>("time").asInt();
                 val modifier = elementData.getData<IntData>("modifier").asInt();
-                val newModifier = tickPortal(serverLevel, pos, time, modifier);
+                val newModifier = tickPortal(serverLevel, pos, time, modifier, elementData);
                 elementData.put("modifier", newModifier);
                 elementData.put("time", time + 1);
                 newList.add(elementData);
@@ -290,8 +281,23 @@ CTEventManager.register<WorldTickEvent>(event => {
     customData.setData(data);
 });
 
+CTEventManager.register<BlockPlaceEvent>(event => {
+    val level = event.entity.level;
+    if (level.isClientSide || event.state != <blockstate:minecraft:composter:level=0>) return;
+    val serverLevel = level as ServerLevel;
+    val customData = serverLevel.customData;
+    val pos = event.pos;
+    val portalIndex = findNearestPortal(customData, pos);
+    if (portalIndex >= 0) {
+        val data = customData.data;
+        val portalData = (data.getData<ListData>("Portals") as ListData).getAt(portalIndex) as MapData;
+        portalData.put("detector", [pos.x, pos.y, pos.z]);
+        customData.setData(data);
+    }
+});
+
 // return new modifier
-public function tickPortal(level as ServerLevel, pos as BlockPos, time as int, modifier as int) as int {
+public function tickPortal(level as ServerLevel, pos as BlockPos, time as int, modifier as int, data as MapData) as int {
     var newModifier as int = modifier;
     var interval as int = 100;
 
@@ -301,8 +307,9 @@ public function tickPortal(level as ServerLevel, pos as BlockPos, time as int, m
 
     if (hasModifier(modifier, Modifiers.SPEED)) {
         interval = 40;
-        if (time % 8000 == 0) {
+        if (time % 8001 == 0) {
             newModifier = removeModifier(modifier, Modifiers.SPEED);
+            notifyDetector(3, level, data);
         }
     }
 
@@ -313,7 +320,6 @@ public function tickPortal(level as ServerLevel, pos as BlockPos, time as int, m
         var canTransformVectors = new List<BlockPos>();
         for vector in vectors {
             if (canTransform(level.getBlockState(pos.offset(vector)))) {
-                print("added" + vector.toString());
                 canTransformVectors.add(vector);
             }
         }
@@ -327,6 +333,7 @@ public function tickPortal(level as ServerLevel, pos as BlockPos, time as int, m
                         transformBlock = <blockstate:minecraft:ancient_debris>;
                         if (level.random.nextInt(4) == 0) {
                             newModifier = removeModifier(modifier, Modifiers.NETHERITE);
+                            notifyDetector(6, level, data);
                         }
                     }
                 }
@@ -381,5 +388,45 @@ public function transform(blockState as BlockState, pos as BlockPos, level as Se
         return SpreadRules.groups[group].pick(level.random);
     } else {
         return blockState;
+    }
+}
+
+public function findNearestPortal(customData as CraftTweakerSavedData, pos as BlockPos) as int {
+    val data = customData.getData();
+    val portalData = data.getData<ListData>("Portals") as ListData;
+    var nearestDistance as int = 128;
+    var nearestPortalIndex as int = 0-1;
+    for index in 0 .. portalData.size {
+        val elementData = portalData.getAt(index) as MapData;
+        val posData = elementData.getData<IntArrayData>("pos");
+        val portalPos = new BlockPos(posData.getAt(0).asInt(), posData.getAt(1).asInt(), posData.getAt(2).asInt());
+        val distance = portalPos.distManhattan(pos);
+        if (distance < nearestDistance) {
+            nearestDistance = distance;
+            nearestPortalIndex = index;
+        }
+    }
+    return nearestPortalIndex;
+}
+
+public function notifyDetector(signal as int, level as ServerLevel, data as MapData) as void {
+    if (data.contains("detector")) {
+        level.sequence(data)
+            .run((level, ctx) => {
+                val posData = ctx.data.getData<IntArrayData>("detector");
+                val pos = new BlockPos(posData.getAt(0).asInt(), posData.getAt(1).asInt(), posData.getAt(2).asInt());
+                if (level.getBlockState(pos) == <blockstate:minecraft:composter:level=0>) {
+                    level.setBlockAndUpdate(pos, <blockstate:minecraft:composter:level=${signal}>);
+                }
+            })
+            .sleep(10)
+            .run((level, ctx) => {
+                val posData = ctx.data.getData<IntArrayData>("detector");
+                val pos = new BlockPos(posData.getAt(0).asInt(), posData.getAt(1).asInt(), posData.getAt(2).asInt());
+                if (level.getBlockState(pos) == <blockstate:minecraft:composter:level=${signal}>) {
+                    level.setBlockAndUpdate(pos, <blockstate:minecraft:composter:level=0>);
+                }
+            })
+            .start();
     }
 }
