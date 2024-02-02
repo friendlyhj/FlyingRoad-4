@@ -143,8 +143,8 @@ onEvent('recipes', event => {
         'exothermic': false
     })
 
-    event.remove({'id': 'pneumaticcraft:thermo_plant/lubricant_from_biodiesel'})
-    event.remove({'id': 'pneumaticcraft:thermo_plant/lubricant_from_diesel'})
+    event.remove({ 'id': 'pneumaticcraft:thermo_plant/lubricant_from_biodiesel' })
+    event.remove({ 'id': 'pneumaticcraft:thermo_plant/lubricant_from_diesel' })
 
     event.custom({
         'type': 'pneumaticcraft:amadron',
@@ -244,7 +244,7 @@ onEvent('recipes', event => {
         'minecraft:axolotl_spawn_egg',
         'minecraft:bee_spawn_egg',
         'minecraft:cat_spawn_egg',
-        'minecraft:chicken_spawn_egg', 
+        'minecraft:chicken_spawn_egg',
         'minecraft:cow_spawn_egg',
         'minecraft:fox_spawn_egg',
         'minecraft:horse_spawn_egg',
@@ -342,6 +342,8 @@ onEvent('recipes', event => {
         event.recipes.thermal.smelter(`mekanism:ingot_${ore}`, [`mekanism:dust_${ore}`, 'fire_charge']).energy(8000)
         event.recipes.thermal.smelter(`mekanism:ingot_${ore}`, [`mekanism:raw_${ore}`, 'fire_charge']).energy(8000)
     })
+
+    event.remove({ 'id': '/immersiveengineering:smelting/ingot_uranium.*/' })
 
     event.recipes.thermal.smelter('minecraft:blaze_powder', ['minecraft:magma_block', '3x thermal:sulfur_dust']).energy(6000)
     event.recipes.minecraft.crafting_shaped('kubejs:osmium_gear', [
@@ -601,7 +603,7 @@ onEvent('recipes', event => {
         'thermal:phytosoil', 'thermal:apatite_dust', 'thermal:apatite_dust', 'thermal:niter_dust'
     ])
 
-    event.remove({ 'id': 'immersiveengineering:crafting/gunpowder_from_dusts'})
+    event.remove({ 'id': 'immersiveengineering:crafting/gunpowder_from_dusts' })
 })
 
 onEvent('tags.fluids', event => {

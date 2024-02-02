@@ -104,6 +104,7 @@
 		{
 			x: -4.5d
 			y: -7.0d
+			description: ["自动杀死凋灵。"]
 			dependencies: ["2EC397BF043326E4"]
 			id: "35E1DEB7DB1610DD"
 			tasks: [{

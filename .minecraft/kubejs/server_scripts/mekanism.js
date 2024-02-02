@@ -22,4 +22,32 @@ onEvent('recipes', event => {
     })
 
     event.remove({'id': 'mekanism:nucleosynthesizing/dragon_egg'})
+    event.remove({'output': 'mekanismgenerators:heat_generator'})
+    event.remove({'output': 'mekanismgenerators:wind_generator'})
+    event.remove({'output': 'mekanismgenerators:gas_burning_generator'})
+
+    event.recipes.minecraft.crafting_shaped('mekanismgenerators:wind_generator', [
+        ' G ',
+        'PCP',
+        'PRP'
+    ], {
+        'G': 'kubejs:osmium_gear',
+        'P': 'pneumaticcraft:plastic',
+        'C': 'mekanism:advanced_control_circuit',
+        'R': 'ae2:energy_acceptor'
+    })
+
+    event.recipes.minecraft.crafting_shaped('mekanismgenerators:gas_burning_generator', [
+        'ETE',
+        'PFP',
+        'CRC'
+    ], {
+        'E': 'mekanism:elite_control_circuit',
+        'T': 'mekanism:basic_chemical_tank',
+        'P': 'ae2:fluix_block',
+        'R': 'ae2:energy_acceptor',
+        'F': 'mekanism:steel_casing',
+        'C': '#forge:gears/invar'
+    })
+
 });

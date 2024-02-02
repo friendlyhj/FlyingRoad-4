@@ -2,6 +2,14 @@
     "item.pneumaticcraft.printed_circuit_board": "完工的印刷电路板",
     "item.pneumaticcraft.solar_wafer": "太阳能薄片",
     "item.pneumaticcraft.solar_cell": "太阳能模块",
+    "item.pneumaticcraft.module_expansion_card" : "模块括展卡",
+    "item.pneumaticcraft.unassembled_netherite_drill_bit" : "未组装的下界合金钻头",
     "block.pneumaticcraft.solar_compressor": "太阳能压缩机",
-    "gui.tooltip.block.pneumaticcraft.solar_compressor" : "使用太阳能来生产压缩空气的高级空气压缩机。它接受的热量越高效率越高，但过热会使压缩机停止工作，需要手动修复。"
+    "block.pneumaticcraft.manual_compressor" : "手动压缩机",
+    "gui.tooltip.block.pneumaticcraft.solar_compressor" : "使用太阳能来生产压缩空气的高级空气压缩机。它接受的热量越高效率越高，但过热会使压缩机停止工作，需要手动修复。",
+    "gui.tooltip.item.pneumaticcraft.safety_tube_module" : "§b此模块会在管道压力达到 4.9 bar（对于高级压力管道则是 19.9 bar）时排出空气。虽然这能防止爆炸，但排出空气是能量损失和燃料浪费。${br}${br}安装模块括展卡后，可以通过 GUI 精确配置阈值。",
+    "gui.tooltip.item.pneumaticcraft.pressure_gauge_module" : "§9公式：红石信号强度 = 2.0 x 压力（bar）${br}${br}§b此模块发出红石信号，其强度取决于管道内部的压力。${br}${br}安装模块括展卡后，可以通过 GUI 精确配置阈值。",
+    "gui.tooltip.item.pneumaticcraft.regulator_tube_module" : "此模块会根据接受到的红石信号强度来限制低端管道的压力，无信号为 4.9 bar，满值信号为 0 bar（不允许空气传输），其他信号等级插值处理。空气永远可以“向后”通过调节器，可以让调节器作为一个单向阀使用。§b${br}安装模块括展卡后，可以通过 GUI 精确配置阈值。",
+    "gui.tooltip.item.pneumaticcraft.redstone_module" : "§b此模块发射红石信号至连接的压力管道上的其他红石模块，手持染料右键来设置频道，手持扳手右键来切换输入输出。${br}${br}安装模块括展卡后，可以设置额外的信号处理功能。",
+    "gui.tooltip.block.pneumaticcraft.manual_compressor" : "一个早期的压缩机，它通过人力劳动和饥饿值来生产压缩空气。对此压缩机按住右键以泵出和压缩空气，压缩机的压力越高，泵气所需的时间就越长。"
 }

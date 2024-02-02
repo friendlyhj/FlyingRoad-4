@@ -196,6 +196,12 @@
 					item: "mekanism:upgrade_energy"
 				}
 			]
+			rewards: [{
+				id: "041DFC52B68A9C5F"
+				type: "item"
+				item: "mekanism:upgrade_muffling"
+				count: 2
+			}]
 		}
 		{
 			x: -1.5d
@@ -220,8 +226,8 @@
 			}]
 		}
 		{
-			x: -3.0d
-			y: 4.5d
+			x: -4.5d
+			y: 3.0d
 			dependencies: ["2A71BF45803ED6E0"]
 			id: "45E95B7F45FDF14C"
 			tasks: [{
@@ -246,7 +252,10 @@
 			x: -3.0d
 			y: 7.5d
 			description: ["简单，易用，高效！"]
-			dependencies: ["062CDEF8AAEAFBEB"]
+			dependencies: [
+				"062CDEF8AAEAFBEB"
+				"094C2A38F6AC97EA"
+			]
 			id: "1760E15121167DE1"
 			tasks: [
 				{
@@ -262,9 +271,12 @@
 			]
 		}
 		{
-			x: -1.5d
-			y: 9.0d
-			dependencies: ["062CDEF8AAEAFBEB"]
+			x: -3.0d
+			y: 4.5d
+			dependencies: [
+				"2A71BF45803ED6E0"
+				"1802E0213F2F632D"
+			]
 			id: "094C2A38F6AC97EA"
 			tasks: [{
 				id: "1F4BE3C4ECBD85B3"
@@ -502,6 +514,7 @@
 			x: 4.5d
 			y: 7.5d
 			shape: "hexagon"
+			description: ["虚空造矿，是获取活化水晶碎片的唯一方式。速度升级可以提高其的工作速度和耗电，右键放入，Shift + 右键取出。"]
 			dependencies: ["466AD95B3CEAE868"]
 			id: "2E3F66B101110489"
 			tasks: [{
@@ -519,6 +532,7 @@
 		{
 			x: 3.0d
 			y: 7.5d
+			description: ["别摆错传送门框架的方向！不要忘记收集龙息！"]
 			dependencies: ["523D0D633964702B"]
 			id: "466AD95B3CEAE868"
 			tasks: [{
@@ -538,10 +552,15 @@
 				type: "item"
 				item: "mekanism:atomic_disassembler"
 			}]
+			rewards: [{
+				id: "564D40507DC52F5F"
+				type: "item"
+				item: "mekanism:basic_energy_cube"
+			}]
 		}
 		{
 			title: "裂变反应堆"
-			x: 0.0d
+			x: -1.5d
 			y: 9.0d
 			description: [
 				"大型核裂变反应堆，消耗冷却剂和裂变燃料生产蒸汽和钋等材料，蒸汽可进入蒸汽涡轮发电。"
@@ -605,10 +624,15 @@
 					type: "item"
 					item: "mekanism:pressure_disperser"
 				}
+				{
+					id: "3FB94CB5D5E2210D"
+					type: "item"
+					item: "mekanism:isotopic_centrifuge"
+				}
 			]
 		}
 		{
-			x: 1.5d
+			x: 0.0d
 			y: 9.0d
 			dependencies: ["6B527D2992FDDE14"]
 			id: "2DA79CFFBBC3EF5D"
@@ -619,7 +643,7 @@
 			}]
 		}
 		{
-			x: 3.0d
+			x: 1.5d
 			y: 9.0d
 			dependencies: ["2DA79CFFBBC3EF5D"]
 			id: "14A00E0254B34E74"
@@ -642,7 +666,7 @@
 			]
 		}
 		{
-			x: 4.5d
+			x: 3.0d
 			y: 9.0d
 			dependencies: ["14A00E0254B34E74"]
 			id: "09E5D384AC069FD4"
@@ -683,6 +707,31 @@
 				id: "0D6CD38616005A57"
 				type: "item"
 				item: "ae2:crafting_card"
+			}]
+		}
+		{
+			x: 4.5d
+			y: 4.5d
+			dependencies: [
+				"098E524371A6C929"
+				"466AD95B3CEAE868"
+			]
+			id: "61291979CBECA216"
+			tasks: [{
+				id: "2E9AE4133CAF51A7"
+				type: "item"
+				item: "thermal_extra:upgrade_augment"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 6.0d
+			dependencies: ["5748BC7A357A64BB"]
+			id: "2E68F304154C43EA"
+			tasks: [{
+				id: "5761C336A29EEE60"
+				type: "item"
+				item: "mekanism:basic_tier_installer"
 			}]
 		}
 	]

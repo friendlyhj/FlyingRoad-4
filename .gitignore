@@ -28,4 +28,6 @@ natives
 !.minecraft/scripts/**
 !.minecraft/packmenu/
 !.minecraft/packmenu/**
+!.minecraft/hotai/
+!.minecraft/hotai/**
 .minecraft/packmenu/resources.zip

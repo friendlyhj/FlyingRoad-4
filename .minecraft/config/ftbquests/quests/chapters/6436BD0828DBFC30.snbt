@@ -177,6 +177,12 @@
 				type: "item"
 				item: "pneumaticcraft:printed_circuit_board"
 			}]
+			rewards: [{
+				id: "24507635780C9CCB"
+				type: "item"
+				item: "minecraft:emerald"
+				count: 4
+			}]
 		}
 		{
 			title: "智能无人机"
@@ -252,6 +258,7 @@
 			icon: "pneumaticcraft:heat_frame"
 			x: 7.5d
 			y: 1.5d
+			description: ["导热框架可以高效地冷却塑料，也可以充当熔炉使用。导热框架不能直接使用方块热源（冷源），只能通过热管来传输热量。"]
 			dependencies: ["104376046278910E"]
 			id: "2A1320CFF666C09C"
 			tasks: [
@@ -342,6 +349,34 @@
 				id: "5A8AF9410F1E5C26"
 				type: "item"
 				item: "pneumaticcraft:advanced_air_compressor"
+			}]
+		}
+		{
+			x: 3.0d
+			y: 1.5d
+			description: ["通过红石控制，实现达到指定压力关闭压缩机。"]
+			dependencies: ["744573A85CDC0667"]
+			id: "3EAC3B630DEF810D"
+			tasks: [{
+				id: "1ACE7FE9D526D53B"
+				type: "item"
+				item: "pneumaticcraft:pressure_gauge_module"
+			}]
+			rewards: [{
+				id: "093A60B546366716"
+				type: "item"
+				item: "minecraft:comparator"
+			}]
+		}
+		{
+			x: 9.0d
+			y: 0.0d
+			dependencies: ["345920F121F83770"]
+			id: "55CC29AE4A359B69"
+			tasks: [{
+				id: "5F2D633373E9A849"
+				type: "item"
+				item: "pneumaticcraft:speed_upgrade"
 			}]
 		}
 	]

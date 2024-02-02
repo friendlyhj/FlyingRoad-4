@@ -229,11 +229,19 @@
 				type: "item"
 				item: "storagedrawers:oak_full_drawers_1"
 			}]
-			rewards: [{
-				id: "221DD8AB80530EA9"
-				type: "item"
-				item: "storagedrawers:drawer_key"
-			}]
+			rewards: [
+				{
+					id: "221DD8AB80530EA9"
+					type: "item"
+					item: "storagedrawers:drawer_key"
+				}
+				{
+					id: "11EBC9CC5F8F8B0E"
+					type: "item"
+					item: "storagedrawers:iron_storage_upgrade"
+					count: 2
+				}
+			]
 		}
 		{
 			x: 12.0d
@@ -328,7 +336,6 @@
 		{
 			x: 13.5d
 			y: 3.0d
-			description: ["沙子被侵染成灵魂沙"]
 			dependencies: ["2A05156D7CE026FE"]
 			id: "63C3F8A266F91DD4"
 			tasks: [{
@@ -417,7 +424,10 @@
 		{
 			x: 15.0d
 			y: 4.5d
-			description: ["偶尔的，被侵染的下界岩被一抹绿色覆盖……"]
+			description: [
+				"偶尔的，被侵染的下界岩被一抹绿色覆盖……"
+				"菌岩可以用骨粉催出蘑菇等植物，大型蘑菇的菌柄去皮有几率获得藤蔓。"
+			]
 			dependencies: ["3FBDB5D7EDD809AA"]
 			id: "3AFD4C2789D6D2F4"
 			tasks: [{
@@ -554,6 +564,16 @@
 				type: "item"
 				item: "projectred_transmission:red_alloy_wire"
 				count: 12
+			}]
+		}
+		{
+			x: 15.0d
+			y: 1.5d
+			id: "59F3167DD7489D2B"
+			tasks: [{
+				id: "31F49D9C6B205A30"
+				type: "item"
+				item: "minecraft:blast_furnace"
 			}]
 		}
 	]
