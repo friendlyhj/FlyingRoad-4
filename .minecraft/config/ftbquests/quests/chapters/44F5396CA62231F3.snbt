@@ -64,9 +64,9 @@
 			dependencies: ["197ABEFE0DAF29B1"]
 			id: "0C34E359F7B4CFF9"
 			tasks: [{
-				id: "4F121038D3D28915"
+				id: "4B0032A120A1A602"
 				type: "item"
-				item: "thermal:machine_furnace"
+				item: "thermal:machine_press"
 			}]
 		}
 		{

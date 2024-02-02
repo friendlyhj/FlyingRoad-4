@@ -20,13 +20,15 @@ onEvent('block.registry', event => {
         .material('rock')
         .hardness(0)
         .box(2, 0, 2, 14, 8, 14, true)
-    
+
     event.create('budding_mine')
         .tagBlock('minecraft:mineable/pickaxe')
+        .requiresTool(true)
         .material('rock')
 
     event.create('budding_gem_mine')
         .tagBlock('minecraft:mineable/pickaxe')
+        .requiresTool(true)
         .material('rock')
 
     event.create('mine_bud')
@@ -50,8 +52,10 @@ onEvent('block.registry', event => {
         .material('rock')
         .hardness(0)
         .box(2, 0, 2, 14, 8, 14, true)
-    
+
     event.create('mithril_block')
+        .tagBlock('minecraft:mineable/pickaxe')
+        .requiresTool(true)
         .tag('forge:stoarge_blocks/mithril')
         .tag('forge:stoarge_blocks')
 })

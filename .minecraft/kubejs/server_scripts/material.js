@@ -172,6 +172,8 @@ onEvent('recipes', event => {
         'minecraft:cactus',
         'minecraft:sugar_cane',
         'minecraft:bamboo',
+        'minecraft:grass_block',
+        'minecraft:nether_wart',
         'immersiveengineering:seed',
         'thermal:amaranth_seeds',
         'thermal:barley_seeds',
@@ -324,6 +326,25 @@ onEvent('recipes', event => {
             }
         ],
         'energy': 8000
+    })
+
+    event.custom({
+        'type': 'thermal:bottler',
+        'ingredients': [
+            {
+                'fluid': 'water',
+                'amount': 1000
+            },
+            {
+                'item': 'sand'
+            }
+        ],
+        'result': [
+            {
+                'item': 'clay'
+            }
+        ],
+        'energy': 1000
     })
 
     let mekOres = ['osmium', 'uranium']
@@ -609,4 +630,8 @@ onEvent('recipes', event => {
 onEvent('tags.fluids', event => {
     event.add('thermal:resin', ['thermal:resin'])
     event.add('thermal:latex', ['thermal:latex'])
+})
+
+onEvent('item.tags', event => {
+    event.add('ae2:all_quartz_dust', ['mekanism:dust_quartz', 'thermal:quartz_dust'])
 })

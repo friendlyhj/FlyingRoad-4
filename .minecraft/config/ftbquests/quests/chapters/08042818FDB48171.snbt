@@ -347,7 +347,10 @@
 		{
 			x: 15.0d
 			y: 3.0d
-			description: ["向下界传送门丢入注灵粉会加快其的侵染速度。"]
+			description: [
+				"向下界传送门丢入注灵粉会加快其的侵染速度。"
+				"有效期限为 400s。"
+			]
 			dependencies: ["63C3F8A266F91DD4"]
 			id: "6F173621445983EC"
 			tasks: [{
@@ -388,6 +391,12 @@
 					item: "thermal:phytogro"
 				}
 			]
+			rewards: [{
+				id: "79DCAD2F45B316AD"
+				type: "item"
+				item: "minecraft:blast_furnace"
+				count: 2
+			}]
 		}
 		{
 			icon: "kubejs:budding_gem_mine"
@@ -567,13 +576,19 @@
 			}]
 		}
 		{
-			x: 15.0d
-			y: 1.5d
-			id: "59F3167DD7489D2B"
+			title: "过期监测"
+			icon: "minecraft:composter"
+			x: 16.5d
+			y: 3.0d
+			description: [
+				"在一个已激活的下界传送门的侵染范围内放置一个堆肥桶可以监测传送门的状态。"
+				"用比较器连接堆肥桶后，当注灵粉和双子物质粉的效果结束后，会发出强度分别为 3 和 6 的红石脉冲。"
+			]
+			dependencies: ["6F173621445983EC"]
+			id: "430A6E715A55704D"
 			tasks: [{
-				id: "31F49D9C6B205A30"
-				type: "item"
-				item: "minecraft:blast_furnace"
+				id: "34442FCBBECCF0D6"
+				type: "checkmark"
 			}]
 		}
 	]
