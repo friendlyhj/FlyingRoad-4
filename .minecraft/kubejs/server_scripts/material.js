@@ -275,6 +275,22 @@ onEvent('recipes', event => {
         })
     })
 
+    event.custom({
+        'type': 'pneumaticcraft:amadron',
+        'input': {
+            'type': 'ITEM',
+            'id': 'minecraft:emerald',
+            'amount': 1
+        },
+        'output': {
+            'type': 'ITEM',
+            'id': 'immersiveengineering:raw_aluminum',
+            'amount': 6
+        },
+        'static': true,
+        'level': 0
+    })
+
 
     event.custom({
         'type': 'pneumaticcraft:pressure_chamber',

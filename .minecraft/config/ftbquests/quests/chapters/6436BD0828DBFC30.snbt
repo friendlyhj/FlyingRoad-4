@@ -177,12 +177,20 @@
 				type: "item"
 				item: "pneumaticcraft:printed_circuit_board"
 			}]
-			rewards: [{
-				id: "24507635780C9CCB"
-				type: "item"
-				item: "minecraft:emerald"
-				count: 4
-			}]
+			rewards: [
+				{
+					id: "24507635780C9CCB"
+					type: "item"
+					item: "minecraft:emerald"
+					count: 4
+				}
+				{
+					id: "0DE1CD6E8C5359C5"
+					type: "item"
+					item: "pneumaticcraft:plastic"
+					count: 16
+				}
+			]
 		}
 		{
 			title: "智能无人机"

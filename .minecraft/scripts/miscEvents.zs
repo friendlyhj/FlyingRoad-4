@@ -73,6 +73,7 @@ CTEventManager.register<PlayerLoggedInEvent>(event => {
     if (!level.isClientSide()) {
         val serverLevel = level as ServerLevel;
         serverLevel.server.executeCommand("/gamerule keepInventory true", true);
+        serverLevel.server.executeCommand("/gamerule doTraderSpawning false", true)
     }
 });
 
