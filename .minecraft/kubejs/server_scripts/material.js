@@ -376,8 +376,10 @@ onEvent('recipes', event => {
         event.remove({ 'id': `immersiveengineering:arcfurnace/ore_${ore}` })
         event.remove({ 'id': `immersiveengineering:arcfurnace/dust_${ore}` })
 
-        event.recipes.thermal.smelter(`mekanism:ingot_${ore}`, [`mekanism:dust_${ore}`, 'fire_charge']).energy(8000)
-        event.recipes.thermal.smelter(`mekanism:ingot_${ore}`, [`mekanism:raw_${ore}`, 'fire_charge']).energy(8000)
+        event.recipes.thermal.smelter(`mekanism:ingot_${ore}`, [`mekanism:dust_${ore}`, 'fire_charge']).energy(4200)
+        event.recipes.thermal.smelter(`mekanism:ingot_${ore}`, [`mekanism:raw_${ore}`, 'fire_charge']).energy(4200)
+        event.recipes.thermal.smelter(`4x mekanism:ingot_${ore}`, [`4x mekanism:raw_${ore}`, 'thermal:fire_grenade']).energy(6000)
+        event.recipes.thermal.smelter(`4x mekanism:ingot_${ore}`, [`4x mekanism:dust_${ore}`, 'thermal:fire_grenade']).energy(6000)
     })
 
     event.remove({ 'id': '/immersiveengineering:smelting/ingot_uranium.*/' })

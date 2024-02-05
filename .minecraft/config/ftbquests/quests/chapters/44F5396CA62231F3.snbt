@@ -737,12 +737,13 @@
 		{
 			x: 6.0d
 			y: 4.5d
+			description: ["热力机器的工作时间同时受速度和效率影响。所以双子物质的加速效果最好，三个升级可以让机器效率提高到 5.9 倍。"]
 			dependencies: ["61291979CBECA216"]
 			id: "1E8E6608D2B4B587"
 			tasks: [{
-				id: "1C2AF9FA34A05EC8"
+				id: "6FE4D799E54B798E"
 				type: "item"
-				item: "thermal_extra:machine_speed_augment_3"
+				item: "thermal_extra:machine_speed_augment_4"
 			}]
 		}
 	]
