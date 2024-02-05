@@ -4,5 +4,23 @@
     },
     "mekanism.common.inventory.container.tile.MekanismTileContainer": {
         "ignore": true
+    },
+    "appeng.client.gui.me.items.CraftingTermScreen": {
+        "ignore": true
+    },
+    "appeng.menu.me.items.CraftingTermMenu": {
+        "ignore": true
+    },
+    "appeng.client.gui.me.items.PatternEncodingTermScreen": {
+        "ignore": true
+    },
+    "appeng.menu.me.items.PatternEncodingTermMenu": {
+        "ignore": true
+    },
+    "appeng.client.gui.me.interfaceterminal.InterfaceTerminalScreen": {
+        "ignore": true
+    },
+    "appeng.menu.implementations.InterfaceTerminalMenu": {
+        "ignore": true
     }
 }
