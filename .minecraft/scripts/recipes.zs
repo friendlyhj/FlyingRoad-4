@@ -6,7 +6,7 @@ import crafttweaker.api.item.ItemDefinition;
 import crafttweaker.api.item.IItemStack;
 
 public expand KnownTag<ItemDefinition> {
-    public get perferredItem as IItemStack {
+    public get preferredItem as IItemStack {
         if (this.elements.length == 1) {
             return this.elements[0];
         }
@@ -78,7 +78,7 @@ for recipe in craftingTable.getRecipesByOutput(<tag:items:forge:ingots>) {
                 val oreTagName = "forge:ores/" + type;
                 if (itemTagManager.exists(oreTagName)) {
                     craftingTable.removeByName(id);
-                    craftingTable.addShaped("ore_essence_" + type, itemTagManager.tag(oreTagName).perferredItem * output.amount, [
+                    craftingTable.addShaped("ore_essence_" + type, itemTagManager.tag(oreTagName).preferredItem * output.amount, [
                         [ingredients[0], ingredients[1], ingredients[2]],
                         [ingredients[3], ingredients[4], ingredients[5]],
                         [ingredients[6], ingredients[7], ingredients[8]]
