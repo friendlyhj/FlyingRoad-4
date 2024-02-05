@@ -1,6 +1,7 @@
 onEvent('recipes', event => {
     event.remove({ 'id': 'cyclic:crate' })
     event.remove({ 'id': '/cyclic:generator_.*/' })
+    event.remove({ 'id': 'cyclic:crafter' })
     event.remove({ 'id': 'mysticalagriculture:machine_frame' })
     event.recipes.minecraft.crafting_shaped('2x cyclic:crate', [
         'ABA',
@@ -93,6 +94,20 @@ onEvent('recipes', event => {
     })
 
     event.replaceInput({ 'id': 'miniutilities:quantum_quarry' }, 'redstone_block', 'thermal_extra:shellite_block')
+
+    event.remove({ 'id': 'draconicevolution:potentiometer' })
+    event.recipes.minecraft.crafting_shaped('draconicevolution:potentiometer', [
+        'ACC',
+        'CSC',
+        'CCA'
+    ], {
+        'A': 'projectred_core:anode',
+        'C': 'projectred_core:conductive_plate',
+        'S': 'projectred_core:pointer'
+    })
+
+    event.remove({ 'id': 'mysticalagriculture:seed/infusion/fluorite' })
+    event.remove({ 'id': 'mysticalagriculture:essence/mekanism/fluorite' })
 })
 
 onEvent('item.tags', event => {

@@ -526,7 +526,18 @@ onEvent('recipes', event => {
     })
 
     event.recipes.mekanism.enriching('miniutilities:ender_dust', 'twisting_vines')
+
     event.recipes.mekanism.enriching('mysticalagriculture:inferium_essence', 'thermal:phytogro')
+    event.remove({ 'id': 'thermal:phyto_tnt' })
+    event.recipes.minecraft.crafting_shaped('thermal:phyto_tnt', [
+        'PPP',
+        'PGP',
+        'PPP'
+    ], {
+        'P': 'thermal:phytogro',
+        'G': 'gunpowder'
+    })
+    event.recipes.mekanism.enriching('9x mysticalagriculture:inferium_essence', 'thermal:phyto_tnt')
 
     event.recipes.minecraft.crafting_shapeless('coal', ['charcoal'])
 

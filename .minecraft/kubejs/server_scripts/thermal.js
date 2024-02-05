@@ -1,5 +1,5 @@
 onEvent('recipes', event => {
-    event.remove({id: 'thermal:device_rock_gen'})
+    event.remove({ id: 'thermal:device_rock_gen' })
     event.recipes.minecraft.crafting_shaped('thermal:device_rock_gen', [
         'LCL',
         'GPG',
@@ -11,7 +11,7 @@ onEvent('recipes', event => {
         'P': 'cyclic:compressed_cobblestone',
         'S': 'hopper'
     })
-    event.remove({'id': 'thermal:machine_frame'})
+    event.remove({ 'id': 'thermal:machine_frame' })
     event.recipes.minecraft.crafting_shaped('thermal:machine_frame', [
         'MEM',
         'GCG',
@@ -22,6 +22,6 @@ onEvent('recipes', event => {
         'G': 'glass',
         'C': '#forge:gears/tin'
     })
-    event.replaceInput({'output': 'ae2:energy_acceptor'}, '#forge:ingots/copper', '#forge:ingots/signalum')
-    event.replaceInput({'id': '/thermal:dynamo_.*/'}, 'redstone', 'ae2:energy_acceptor')
+    event.replaceInput({ 'output': 'ae2:energy_acceptor' }, '#forge:ingots/copper', '#forge:ingots/signalum')
+    event.replaceInput({ 'id': '/thermal:dynamo_.*/' }, 'redstone', 'ae2:energy_acceptor')
 })

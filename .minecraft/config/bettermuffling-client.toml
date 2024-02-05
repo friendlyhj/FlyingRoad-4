@@ -1,0 +1,7 @@
+
+#Client only configuration settings.
+[client]
+	#Show sound levels and range in the tool tip of the muffling block.
+	#This tooltip is only shown if it has data saved on it.
+	tooltipEnable = true
+

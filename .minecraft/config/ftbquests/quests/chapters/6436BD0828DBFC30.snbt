@@ -370,11 +370,18 @@
 				type: "item"
 				item: "pneumaticcraft:pressure_gauge_module"
 			}]
-			rewards: [{
-				id: "093A60B546366716"
-				type: "item"
-				item: "minecraft:comparator"
-			}]
+			rewards: [
+				{
+					id: "093A60B546366716"
+					type: "item"
+					item: "minecraft:comparator"
+				}
+				{
+					id: "1132915D318D128E"
+					type: "item"
+					item: "draconicevolution:potentiometer"
+				}
+			]
 		}
 		{
 			x: 9.0d
