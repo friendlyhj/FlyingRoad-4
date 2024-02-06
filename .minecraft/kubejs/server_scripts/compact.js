@@ -96,47 +96,4 @@ onEvent('recipes', event => {
         },
         'outputs': [{ 'id': 'compactmachines:wall', 'Count': 16 }]
     })
-
-    event.custom({
-        'type': 'compactcrafting:miniaturization',
-        'layers': [
-            {
-                'type': 'compactcrafting:mixed',
-                'pattern': [
-                    ['-', '-', '-'],
-                    ['-', 'H', '-'],
-                    ['-', '-', '-']
-                ]
-            },
-            {
-                'type': 'compactcrafting:mixed',
-                'pattern': [
-                    ['R', 'R', 'R'],
-                    ['R', 'W', 'R'],
-                    ['R', 'R', 'R']
-                ]
-            }
-        ],
-        'catalyst': {
-            'id': 'redstone',
-            'Count': 1
-        },
-        'components': {
-            'R': {
-                'type': 'compactcrafting:block',
-                'block': 'redstone_wire'
-            },
-            'W': {
-                'type': 'compactcrafting:block',
-                'block': 'compactmachines:wall'
-            },
-            'H': {
-                'type': 'compactcrafting:block',
-                'block': 'hopper'
-            }
-        },
-        'outputs': [{ 'id': 'compactmachines:tunnel', 'Count': 1 }]
-    })
-
-
 })
