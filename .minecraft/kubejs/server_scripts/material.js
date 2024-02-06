@@ -150,8 +150,8 @@ onEvent('recipes', event => {
         'type': 'pneumaticcraft:amadron',
         'input': {
             'type': 'ITEM',
-            'id': 'thermal:phytogro',
-            'amount': 128
+            'id': 'thermal:phyto_tnt',
+            'amount': 16
         },
         'output': {
             'type': 'ITEM',

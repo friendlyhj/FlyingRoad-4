@@ -47,9 +47,9 @@ onEvent('recipes', event => {
             {
                 'type': 'compactcrafting:mixed',
                 'pattern': [
-                    ['-', '-', '-'],
-                    ['-', 'A', '-'],
-                    ['-', '-', '-']
+                    ['O', 'O', 'O'],
+                    ['O', 'A', 'O'],
+                    ['O', 'O', 'O']
                 ]
             },
             {
@@ -85,6 +85,10 @@ onEvent('recipes', event => {
             'C': {
                 'type': 'compactcrafting:block',
                 'block': 'ae2:quartz_block'
+            },
+            'O': {
+                'type': 'compactcrafting:block',
+                'block': 'air'                
             }
         },
         'outputs': [{ 'id': 'draconicevolution:basic_crafting_injector', 'Count': 2 }]
