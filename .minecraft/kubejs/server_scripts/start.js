@@ -12,7 +12,7 @@ onEvent('recipes', event => {
 
     event.custom({
         'type': 'lychee:block_clicking',
-        'item_in': { 'tag': 'forge:pickaxes' },
+        'item_in': { 'tag': 'kubejs:pickaxes' },
         'block_in': { 'blocks': ['kubejs:andesite_bud'] },
         'post': [
             { 'type': 'damage_item', 'damage': 1 },
@@ -139,7 +139,7 @@ onEvent('recipes', event => {
 
     event.custom({
         'type': 'lychee:block_clicking',
-        'item_in': { 'tag': 'forge:pickaxes' },
+        'item_in': { 'tag': 'kubejs:pickaxes' },
         'block_in': { 'blocks': ['kubejs:mine_bud'] },
         'post': [
             { 'type': 'damage_item', 'damage': 1 },

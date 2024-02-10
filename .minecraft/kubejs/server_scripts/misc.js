@@ -108,9 +108,41 @@ onEvent('recipes', event => {
 
     event.remove({ 'id': 'mysticalagriculture:seed/infusion/fluorite' })
     event.remove({ 'id': 'mysticalagriculture:essence/mekanism/fluorite' })
+
+    event.recipes.minecraft.crafting_shaped('hopper', [
+        'M M',
+        'MCM',
+        ' M '
+    ], {
+        'M': '#forge:ingots/bronze',
+        'C': '#forge:chests'
+    })
+
+    event.custom({
+        'type': 'pneumaticcraft:amadron',
+        'input': {
+            'type': 'ITEM',
+            'id': 'thermal:bronze_ingot',
+            'amount': 3
+        },
+        'output': {
+            'type': 'ITEM',
+            'id': 'iron_ingot',
+            'amount': 2
+        },
+        'static': true,
+        'level': 0
+    })
 })
 
 onEvent('item.tags', event => {
     event.remove('forge:storage_blocks', 'cyclic:eye_teleport')
     event.remove('forge:storage_blocks/ender_pearl', 'cyclic:eye_teleport')
+    const pickaxe = java('net.minecraftforge.common.ToolAction').get('pickaxe_dig')
+
+    Item.getList().forEach(item => {
+        if (item.getItemStack().canPerformAction(pickaxe)) {
+            event.add('kubejs:pickaxes', item.id)
+        }
+    })
 })

@@ -198,12 +198,20 @@
 				type: "item"
 				item: "minecraft:coarse_dirt"
 			}]
-			rewards: [{
-				id: "1E67037F3DAE2FA1"
-				type: "item"
-				item: "minecraft:ice"
-				count: 4
-			}]
+			rewards: [
+				{
+					id: "1E67037F3DAE2FA1"
+					type: "item"
+					item: "minecraft:ice"
+					count: 4
+				}
+				{
+					id: "578209A7AD8C2E48"
+					type: "item"
+					item: "minecraft:wheat_seeds"
+					count: 4
+				}
+			]
 		}
 		{
 			title: "更大更安全的箱子"
@@ -431,7 +439,7 @@
 			]
 		}
 		{
-			x: 15.0d
+			x: 13.5d
 			y: 4.5d
 			description: [
 				"偶尔的，被侵染的下界岩被一抹绿色覆盖……"
@@ -446,9 +454,12 @@
 			}]
 		}
 		{
-			x: 16.5d
+			x: 15.0d
 			y: 4.5d
-			dependencies: ["3AFD4C2789D6D2F4"]
+			dependencies: [
+				"3AFD4C2789D6D2F4"
+				"79BF20E7CD3B9626"
+			]
 			id: "184E75CEC4E7A9BF"
 			tasks: [{
 				id: "0C0703B925A19B4E"
@@ -457,10 +468,10 @@
 			}]
 		}
 		{
-			x: 12.0d
+			x: 16.5d
 			y: 4.5d
 			description: ["向下界传送门丢入双子物质粉，部分方块可能会被侵染成远古残骸。"]
-			dependencies: ["2A05156D7CE026FE"]
+			dependencies: ["184E75CEC4E7A9BF"]
 			id: "63B0E02EC61EAF49"
 			tasks: [{
 				id: "3CDFAAB6BAF4E594"
@@ -469,8 +480,8 @@
 			}]
 		}
 		{
-			x: 12.0d
-			y: 6.0d
+			x: 18.0d
+			y: 4.5d
 			dependencies: ["63B0E02EC61EAF49"]
 			id: "3CE5127FD2FC5EA3"
 			tasks: [{
@@ -482,7 +493,10 @@
 		{
 			x: 15.0d
 			y: -1.5d
-			description: ["在造石机旁边倒上水和熔岩便可产生源源不断的圆石。"]
+			description: [
+				"在造石机旁边倒上水和熔岩便可产生源源不断的圆石。"
+				"pipez 的管道需要用扳手 shift + 右键设置提取端才能工作。右键管道提取端可以放入管道升级以及设置过滤选项。"
+			]
 			dependencies: ["35E0D9F5BDFA9921"]
 			id: "3B2290CFDD90D1BF"
 			tasks: [{
@@ -508,7 +522,7 @@
 			title: "合金窑"
 			x: 13.5d
 			y: -1.5d
-			description: ["8 个窑砖组成合金窑，制作简单的合金。"]
+			description: ["将八个窑砖组成立方体，用工程师锤右键组成合金窑，制作简单的合金。"]
 			dependencies: ["0E6C8BABC76D0F33"]
 			id: "35E0D9F5BDFA9921"
 			tasks: [{
@@ -520,7 +534,7 @@
 		{
 			title: "生物群系蔓延"
 			icon: "minecraft:book"
-			x: 13.5d
+			x: 12.0d
 			y: 4.5d
 			description: [
 				"下界的蔓延会随机根据某一生物群系选择方块。若某一方块与某一下界生物群系的方块相邻，则它只能侵染成该生物群系的方块。"
@@ -539,9 +553,9 @@
 			}]
 		}
 		{
-			x: 12.0d
-			y: -1.5d
-			dependencies: ["0E6C8BABC76D0F33"]
+			x: 15.0d
+			y: -3.0d
+			dependencies: ["4B097925585D7798"]
 			id: "61F4369CE3021B8F"
 			tasks: [{
 				id: "0C81598FD5760023"
@@ -589,6 +603,18 @@
 			tasks: [{
 				id: "34442FCBBECCF0D6"
 				type: "checkmark"
+			}]
+		}
+		{
+			x: 13.5d
+			y: -3.0d
+			description: ["青铜锭可以替代铁锭制造漏斗，且能交易成铁锭。这能或多或少地减少前期对铁矿的大量需求。"]
+			dependencies: ["35E0D9F5BDFA9921"]
+			id: "4B097925585D7798"
+			tasks: [{
+				id: "178302EDA1401700"
+				type: "item"
+				item: "thermal:bronze_ingot"
 			}]
 		}
 	]

@@ -48,7 +48,10 @@
 			x: 3.0d
 			y: 0.0d
 			shape: "hexagon"
-			description: ["组成3×3×3空心立方体，气阀用于接压缩空气，接口用于处理物品输入输出"]
+			description: [
+				"组成3×3×3空心立方体，气阀用于接压缩空气，接口用于处理物品输入输出。"
+				"接口的开闭也需要压缩空气驱动，故压气室没压力是不会工作的。用管道或漏斗往输入接口输入物品，输出接口则会自动输出到邻近的容器。"
+			]
 			dependencies: ["3D06074F7CAF8E7D"]
 			id: "744573A85CDC0667"
 			tasks: [
@@ -83,7 +86,7 @@
 			}]
 		}
 		{
-			x: 5.5d
+			x: 5.25d
 			y: -1.5d
 			dependencies: ["744573A85CDC0667"]
 			id: "0BD0FEA316CAF939"
@@ -166,10 +169,10 @@
 		}
 		{
 			x: 7.5d
-			y: -3.0d
+			y: -4.5d
 			dependencies: [
-				"345920F121F83770"
-				"0686F71C375A02F6"
+				"05013D8DFDCC1212"
+				"38D5313D5AAE26B5"
 			]
 			id: "6CCF5D41C303AE24"
 			tasks: [{
@@ -202,7 +205,7 @@
 				}
 			}
 			x: 7.5d
-			y: -4.5d
+			y: -6.0d
 			description: [
 				"使用无人机来自动操作矿物母岩。需要在编程器消耗编程拼图编程无人机程序。"
 				"在编程器页面中，使用物品左击可创建物品过滤模块，使用定位工具Shift+左击可创建区域过滤模块。"
@@ -236,7 +239,7 @@
 		}
 		{
 			x: 12.0d
-			y: -3.0d
+			y: -4.5d
 			shape: "hexagon"
 			dependencies: ["18532503D25A6C87"]
 			id: "11EE635ABD1F1BDA"
@@ -307,7 +310,7 @@
 		}
 		{
 			x: 9.0d
-			y: -3.0d
+			y: -4.5d
 			dependencies: ["6CCF5D41C303AE24"]
 			id: "5B0B477E3B72AF26"
 			tasks: [
@@ -350,7 +353,7 @@
 		}
 		{
 			x: 10.5d
-			y: -3.0d
+			y: -4.5d
 			dependencies: ["5B0B477E3B72AF26"]
 			id: "18532503D25A6C87"
 			tasks: [{
@@ -393,6 +396,47 @@
 				type: "item"
 				item: "pneumaticcraft:speed_upgrade"
 			}]
+		}
+		{
+			x: 7.5d
+			y: -1.5d
+			dependencies: ["345920F121F83770"]
+			id: "787953CB55B57C00"
+			tasks: [{
+				id: "46E96F438B007251"
+				type: "item"
+				item: "pneumaticcraft:pcb_blueprint"
+			}]
+		}
+		{
+			x: 7.5d
+			y: -3.0d
+			dependencies: ["787953CB55B57C00"]
+			id: "05013D8DFDCC1212"
+			tasks: [{
+				id: "6E4700F6AC8F3C69"
+				type: "item"
+				item: "pneumaticcraft:uv_light_box"
+			}]
+		}
+		{
+			x: 3.0d
+			y: -4.5d
+			description: ["查蚀刻酸*桶*的配方！！！"]
+			dependencies: ["0686F71C375A02F6"]
+			id: "38D5313D5AAE26B5"
+			tasks: [
+				{
+					id: "23A0A22959C6C8FB"
+					type: "item"
+					item: "pneumaticcraft:etching_tank"
+				}
+				{
+					id: "4B5BD9C92F09DBFC"
+					type: "item"
+					item: "pneumaticcraft:etching_acid_bucket"
+				}
+			]
 		}
 	]
 	quest_links: [ ]

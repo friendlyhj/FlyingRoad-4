@@ -171,6 +171,7 @@
 		{
 			x: -1.5d
 			y: 6.0d
+			shape: "hexagon"
 			dependencies: ["1802E0213F2F632D"]
 			id: "79BF20E7CD3B9626"
 			tasks: [{
@@ -690,6 +691,7 @@
 		{
 			x: 3.5d
 			y: 0.0d
+			description: ["放到植物盆中效率更高，且能制作更多的肥料。"]
 			dependencies: ["61194BCB82A647D3"]
 			id: "7AF08319D54473D8"
 			tasks: [{
