@@ -88,7 +88,7 @@ onEvent('recipes', event => {
             },
             'O': {
                 'type': 'compactcrafting:block',
-                'block': 'air'                
+                'block': 'air'
             }
         },
         'outputs': [{ 'id': 'draconicevolution:basic_crafting_injector', 'Count': 2 }]
@@ -130,7 +130,7 @@ onEvent('recipes', event => {
             'tier': 'WYVERN',
             'ingredients': [
                 {
-                    'item': 'draconicevolution:draconium_core'
+                    'item': 'draconicevolution:wyvern_core'
                 },
                 {
                     'tag': 'forge:ingots/draconium'
@@ -163,7 +163,7 @@ onEvent('recipes', event => {
         'tier': 'WYVERN',
         'ingredients': [
             {
-                'item': 'draconicevolution:draconium_core'
+                'item': 'draconicevolution:wyvern_core'
             },
             {
                 'tag': 'forge:ingots/draconium'
