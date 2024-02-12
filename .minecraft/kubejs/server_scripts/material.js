@@ -59,7 +59,7 @@ onEvent('recipes', event => {
         'fluid_input': {
             'type': 'pneumaticcraft:fluid',
             'tag': 'thermal:resin',
-            'amount': 150
+            'amount': 100
         },
         'fluid_output': {
             'fluid': 'pneumaticcraft:plastic',
