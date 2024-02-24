@@ -194,6 +194,24 @@
 				item: "mysticalagriculture:inferium_growth_accelerator"
 			}]
 		}
+		{
+			x: -3.0d
+			y: 4.5d
+			dependencies: ["74D2B1909C7B4228"]
+			id: "6A58D344BF09C2AC"
+			tasks: [{
+				id: "6F541B747F25A8E0"
+				type: "item"
+				item: {
+					id: "mysticalagriculture:supremium_watering_can"
+					Count: 1b
+					tag: {
+						Water: 0b
+						Active: 0b
+					}
+				}
+			}]
+		}
 	]
 	quest_links: [ ]
 }

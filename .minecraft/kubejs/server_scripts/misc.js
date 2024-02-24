@@ -133,6 +133,18 @@ onEvent('recipes', event => {
         'static': true,
         'level': 0
     })
+
+    event.remove({ 'output': 'entangled:block' })
+    event.recipes.minecraft.crafting_shaped('entangled:block', [
+        'PAP',
+        'ETE',
+        'PAP'
+    ], {
+        'P': '#forge:plates/soul_infused',
+        'A': 'stripped_crimson_stem',
+        'E': 'ender_pearl',
+        'T': 'tinted_glass'
+    })
 })
 
 onEvent('item.tags', event => {

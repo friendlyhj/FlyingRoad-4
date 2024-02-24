@@ -8,6 +8,30 @@
     "biomes": []
   },
   {
+    "name": "minecraft:granite",
+    "weight": 150,
+    "dimensions": [
+      "minecraft:overworld"
+    ],
+    "biomes": []
+  },
+  {
+    "name": "minecraft:diorite",
+    "weight": 150,
+    "dimensions": [
+      "minecraft:overworld"
+    ],
+    "biomes": []
+  },
+  {
+    "name": "minecraft:andesite",
+    "weight": 150,
+    "dimensions": [
+      "minecraft:overworld"
+    ],
+    "biomes": []
+  },
+  {
     "name": "minecraft:coal_ore",
     "weight": 60,
     "dimensions": [
@@ -129,7 +153,7 @@
   },
   {
     "name": "mysticalagriculture:prosperity_ore",
-    "weight": 10,
+    "weight": 12,
     "dimensions": [
       "minecraft:overworld"
     ],

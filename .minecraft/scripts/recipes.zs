@@ -28,6 +28,12 @@ craftingTable.addShapeless("soul_sand_dust", <item:thermal_extra:soul_sand_dust>
     <item:minecraft:soul_sand>, <item:immersiveengineering:hammer>.anyDamage().transformDamage(1)
 ]);
 
+craftingTable.addShaped("inf_water", <item:ae2:creative_fluid_cell>.withTag({list: [{"#c": "ae2:f" as string, "#": 0 as long, id: "minecraft:water" as string}], unchangeable: true}), [
+    [<item:mekanism:alloy_atomic>, <item:mysticalagriculture:water_essence>, <item:mekanism:alloy_atomic>],
+    [<item:mysticalagriculture:water_essence>, <item:ae2:fluid_storage_cell_256k>, <item:mysticalagriculture:water_essence>],
+    [<item:mekanism:alloy_atomic>, <item:mysticalagriculture:water_essence>, <item:mekanism:alloy_atomic>]
+]);
+
 for recipe in craftingTable.getRecipesByOutput(IIngredientAny.getInstance().onlyIf("thermal extra augment", item => {
     val id = item.registryName;
     return id.namespace == "thermal_extra" && "augment" in id.path;

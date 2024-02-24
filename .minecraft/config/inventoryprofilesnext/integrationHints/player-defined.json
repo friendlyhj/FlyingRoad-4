@@ -22,5 +22,11 @@
     },
     "appeng.menu.implementations.InterfaceTerminalMenu": {
         "ignore": true
+    },
+    "appeng.client.gui.implementations.CellWorkbenchScreen": {
+        "ignore": true
+    },
+    "appeng.menu.implementations.CellWorkbenchMenu": {
+        "ignore": true
     }
 }

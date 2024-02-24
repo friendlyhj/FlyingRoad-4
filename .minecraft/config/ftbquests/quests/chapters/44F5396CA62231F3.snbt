@@ -218,6 +218,7 @@
 		{
 			x: 0.0d
 			y: 7.5d
+			description: ["充入氢气作为燃料实现飞行。"]
 			dependencies: ["062CDEF8AAEAFBEB"]
 			id: "4E29240A96DA1968"
 			tasks: [{
@@ -288,6 +289,7 @@
 		{
 			x: -3.0d
 			y: 1.5d
+			description: ["能源接收器可以把 FE/RF 转换成 AE 能量，用于给 ME 网络供能。"]
 			dependencies: ["6140C3C8E2463A7B"]
 			id: "2825602B2EFA990A"
 			tasks: [{
@@ -297,8 +299,10 @@
 			}]
 		}
 		{
+			title: "充能与电路"
 			x: -4.5d
 			y: 1.5d
+			description: ["这些设备用于制备福鲁伊克斯水晶和 AE 处理器。"]
 			dependencies: ["2825602B2EFA990A"]
 			id: "5E25D0EEA7087F6D"
 			tasks: [
@@ -337,6 +341,10 @@
 		{
 			x: -6.0d
 			y: 1.5d
+			description: [
+				"ME 控制器的每个面都可以提供 32 个频道，每个 AE 设备都需要 1 个频道才能工作。控制器可以摆成多方块结构来给网络提供更多的频道。多方块结构最大为 7×7×7。同一个网络不能存在两个控制器多方块结构。"
+				"同时兼具能源接收器的功能。"
+			]
 			dependencies: ["5E25D0EEA7087F6D"]
 			id: "67B87D738F6A8071"
 			tasks: [{
@@ -346,9 +354,11 @@
 			}]
 		}
 		{
+			title: "架网配电"
 			icon: "ae2:drive"
 			x: -6.0d
 			y: 3.0d
+			description: ["驱动器用于放入存储物品的元件，终端用于存取物品，玻璃线缆为最普通的 ME 线缆，最多可以传输 8 个频道。"]
 			dependencies: ["67B87D738F6A8071"]
 			id: "0942ECF2CD794EA7"
 			tasks: [
@@ -398,9 +408,15 @@
 			}]
 		}
 		{
+			title: "智能化合成"
 			icon: "ae2:molecular_assembler"
 			x: -6.0d
 			y: 7.5d
+			description: [
+				"用样板终端给样板指定输入和输出，放入样板供应器内。然后你可以在终端内「下单」自动合成，下单后配方输入会发配到样板供应器，当配方输出传输到&c同一个样板供应器&r，ME 网络才会认为合成完毕。"
+				"合成所需要的所有物品都会暂存到合成存储器中，更大的合成存储器可以处理更复杂的配方。"
+				"分子装配室是标准化的 AE 自动工作台。合成样板专用于处理分子装配室的自动合成，对于其他模组的「合成」，请采用处理样板。"
+			]
 			dependencies: ["340904333097319C"]
 			id: "31C1F747F0419914"
 			tasks: [
@@ -421,6 +437,11 @@
 					item: "ae2:molecular_assembler"
 					count: 2L
 				}
+				{
+					id: "06183CC23AD7A141"
+					type: "item"
+					item: "ae2:1k_crafting_storage"
+				}
 			]
 			rewards: [
 				{
@@ -437,8 +458,10 @@
 			]
 		}
 		{
+			icon: "ae2:wireless_crafting_terminal"
 			x: -7.5d
 			y: 6.0d
+			description: ["用安全终端给无线终端绑定。"]
 			dependencies: ["340904333097319C"]
 			id: "64791B1A6C14DDEE"
 			tasks: [
@@ -553,11 +576,18 @@
 				type: "item"
 				item: "mekanism:atomic_disassembler"
 			}]
-			rewards: [{
-				id: "564D40507DC52F5F"
-				type: "item"
-				item: "mekanism:basic_energy_cube"
-			}]
+			rewards: [
+				{
+					id: "564D40507DC52F5F"
+					type: "item"
+					item: "mekanism:basic_energy_cube"
+				}
+				{
+					id: "0E731F69E469C7B9"
+					type: "item"
+					item: "mekanism:electric_bow"
+				}
+			]
 		}
 		{
 			title: "裂变反应堆"
@@ -701,15 +731,25 @@
 			}]
 		}
 		{
+			title: "常在自动化"
+			icon: "ae2:crafting_card"
 			x: -6.0d
 			y: 9.0d
+			description: ["ME 输出总线可以将 ME 网络中的指定物品输出，安装合成卡后，当网络没有该物品时将会尝试下单自动合成。"]
 			dependencies: ["31C1F747F0419914"]
 			id: "2A6DCC6B2EDB38FA"
-			tasks: [{
-				id: "0D6CD38616005A57"
-				type: "item"
-				item: "ae2:crafting_card"
-			}]
+			tasks: [
+				{
+					id: "0D6CD38616005A57"
+					type: "item"
+					item: "ae2:crafting_card"
+				}
+				{
+					id: "2DB7AD6F4B0EF9E1"
+					type: "item"
+					item: "ae2:export_bus"
+				}
+			]
 		}
 		{
 			x: 4.5d
@@ -747,6 +787,97 @@
 				type: "item"
 				item: "thermal_extra:machine_speed_augment_4"
 			}]
+		}
+		{
+			title: "物流模组"
+			x: -4.5d
+			y: 7.5d
+			description: [
+				"ME 输入总线用于给 ME 网络输入物品，ME 存储总线用于给 ME 网络指定外部存储，让 ME 网络存储的物品不放到元件内，而是一个容器。"
+				"除此之外，对于只有输入总线和存储总线的网络，可以充当管道使用。输入到输入总线的物品/流体将会直接传输到存储总线连接的容器内。输入总线和存储总线均可以设置过滤，这可以解决 pipez 管道无输出端过滤的窘境。"
+			]
+			dependencies: ["31C1F747F0419914"]
+			id: "634BAB3978DC5D2D"
+			tasks: [
+				{
+					id: "303126BE21B13C0C"
+					type: "item"
+					item: "ae2:import_bus"
+				}
+				{
+					id: "4DA431D810A0E04C"
+					type: "item"
+					item: "ae2:storage_bus"
+				}
+			]
+		}
+		{
+			title: "无限水"
+			x: -3.75d
+			y: 9.0d
+			description: ["使 ME 网络拥有无限的水。该元件不可用元件工作台编辑。"]
+			dependencies: [
+				"6B527D2992FDDE14"
+				"2A6DCC6B2EDB38FA"
+			]
+			id: "18BE6858EACA419D"
+			tasks: [{
+				id: "448AF764141A666D"
+				type: "item"
+				item: {
+					id: "ae2:creative_fluid_cell"
+					Count: 1b
+					tag: {
+						list: [{
+							"#c": "ae2:f"
+							"#": 0L
+							id: "minecraft:water"
+						}]
+						unchangeable: 1b
+					}
+				}
+				match_nbt: true
+			}]
+		}
+		{
+			x: -9.0d
+			y: 6.0d
+			dependencies: ["64791B1A6C14DDEE"]
+			id: "650D04509E06298F"
+			tasks: [{
+				id: "46FD74093B4AA56B"
+				type: "item"
+				item: "ae2wtlib:infinity_booster_card"
+			}]
+		}
+		{
+			title: "超距作用"
+			icon: {
+				id: "entangled:block"
+				Count: 1b
+				tag: { }
+			}
+			x: 0.0d
+			y: 4.5d
+			description: ["纠缠方块可以给绑定的方块一个「分身」"]
+			dependencies: ["79BF20E7CD3B9626"]
+			id: "095AAAA29FFA2493"
+			tasks: [
+				{
+					id: "0474AC10A9032913"
+					type: "item"
+					item: {
+						id: "entangled:block"
+						Count: 1b
+						tag: { }
+					}
+				}
+				{
+					id: "688584CD75B45855"
+					type: "item"
+					item: "entangled:item"
+				}
+			]
 		}
 	]
 	quest_links: [ ]

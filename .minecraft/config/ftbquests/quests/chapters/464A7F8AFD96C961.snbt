@@ -234,7 +234,7 @@
 		}
 		{
 			x: 3.0d
-			y: -5.5d
+			y: -6.0d
 			dependencies: ["6C959DDC141C2BD4"]
 			id: "7C6ED25A4F60DA69"
 			tasks: [{
@@ -340,6 +340,7 @@
 			dependencies: [
 				"50156EF219E96E0E"
 				"7C6ED25A4F60DA69"
+				"6F066044DEA62EB3"
 			]
 			size: 2.0d
 			id: "55792B101EA65D98"
@@ -361,6 +362,37 @@
 					id: "draconicevolution:advanced_dislocator"
 					Count: 1b
 					tag: { }
+				}
+			}]
+		}
+		{
+			x: 3.0d
+			y: -4.0d
+			dependencies: ["6C959DDC141C2BD4"]
+			id: "6F066044DEA62EB3"
+			tasks: [{
+				id: "748EC638990EF032"
+				type: "item"
+				item: {
+					id: "draconicevolution:draconic_bow"
+					Count: 1b
+					ForgeCaps: {
+						Parent: {
+							module_host: {
+								provider_id: [I;
+									518825030
+									-923448831
+									-1565856958
+									740069002
+								]
+								modules: [ ]
+								properties: { }
+							}
+							energy: {
+								energy: 0
+							}
+						}
+					}
 				}
 			}]
 		}

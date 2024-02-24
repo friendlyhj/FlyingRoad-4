@@ -2,7 +2,7 @@ if (Platform.isClientEnvironment()) {
     console.log('register client event handler')
 
     onForgeEvent('net.minecraftforge.client.event.RenderGameOverlayEvent$Text', event => {
-        const mc = java('net.minecraft.client.Minecraft').getInstance()
+        const mc = Client.minecraft
         const fpsPattern = /(\d+) fps/
         if (mc.options.renderDebug) return
         var time = mc.level.dayTime()
@@ -12,7 +12,7 @@ if (Platform.isClientEnvironment()) {
         if (hour >= 24) {
             hour -= 24
         }
-        var minute = Math.round((timeOfDay % 1000) * 0.06)
+        var minute = Math.floor((timeOfDay % 1000) * 0.06)
         event.left.add(`Day ${day} ${hour < 10 ? '0' + hour : hour}:${minute < 10 ? '0' + minute : minute}`)
         var match = mc.fpsString.match(fpsPattern)
         if (match && match.length > 1) {

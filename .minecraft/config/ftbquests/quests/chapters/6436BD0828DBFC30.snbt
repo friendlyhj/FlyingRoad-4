@@ -117,7 +117,10 @@
 			title: "生物塑料"
 			x: 6.0d
 			y: 0.0d
-			description: ["将树脂和硫粉混合生产生物塑料板（你确定不应该是橡胶吗）"]
+			description: [
+				"将树脂和硫粉混合生产生物塑料板（你确定不应该是橡胶吗）"
+				"热气动加工机需要热源才能工作，建议使用岩浆块。"
+			]
 			dependencies: [
 				"7E677B21F33777C2"
 				"03B1B8079F77963B"
@@ -361,6 +364,12 @@
 				type: "item"
 				item: "pneumaticcraft:advanced_air_compressor"
 			}]
+			rewards: [{
+				id: "4C19C5827687336A"
+				type: "item"
+				item: "pneumaticcraft:heat_sink"
+				count: 4
+			}]
 		}
 		{
 			x: 3.0d
@@ -411,6 +420,7 @@
 		{
 			x: 7.5d
 			y: -3.0d
+			description: ["请务必安装速度升级，否则效率感人。"]
 			dependencies: ["787953CB55B57C00"]
 			id: "05013D8DFDCC1212"
 			tasks: [{

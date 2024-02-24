@@ -10,13 +10,11 @@
 	quests: [
 		{
 			title: "万物起源"
-			x: 0.0d
+			x: -1.5d
 			y: 0.0d
 			description: [
 				"从一棵树苗开始……也许并不是？"
 				"你可以在树苗旁边按 Shift 键加速其生长。"
-				"任务线中六边形形状的任务可以解锁其他章节的任务。"
-				"本整合为伪和平模式玩法，主世界内不会生成除凋灵以外的敌对生物。"
 			]
 			id: "0F8C87AC61EDC59A"
 			tasks: [{
@@ -29,7 +27,10 @@
 			x: 1.5d
 			y: 0.0d
 			description: ["工作台，用于制造各种东西。"]
-			dependencies: ["0F8C87AC61EDC59A"]
+			dependencies: [
+				"0CCB4EF5988FCD71"
+				"3D4D9124AB6AAD75"
+			]
 			id: "618A76811F7458E9"
 			tasks: [{
 				id: "0C07B82923A9717A"
@@ -615,6 +616,32 @@
 				id: "178302EDA1401700"
 				type: "item"
 				item: "thermal:bronze_ingot"
+			}]
+		}
+		{
+			title: "伪和平"
+			icon: "minecraft:zombie_head"
+			x: 0.0d
+			y: -1.0d
+			description: ["&c本整合为伪和平模式玩法，主世界内不会生成除凋灵以外的敌对生物。"]
+			dependencies: ["0F8C87AC61EDC59A"]
+			id: "0CCB4EF5988FCD71"
+			tasks: [{
+				id: "28762D0B93ED0DD7"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "任务节点"
+			icon: "ftbquests:book"
+			x: 0.0d
+			y: 1.0d
+			description: ["任务线中六边形形状的任务可以解锁其他章节的任务。"]
+			dependencies: ["0F8C87AC61EDC59A"]
+			id: "3D4D9124AB6AAD75"
+			tasks: [{
+				id: "59290E039D7F022A"
+				type: "checkmark"
 			}]
 		}
 	]
