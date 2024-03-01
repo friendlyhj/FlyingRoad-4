@@ -13,6 +13,7 @@ natives
 .minecraft/config/inventoryprofilesnext
 !.minecraft/defaultconfigs/
 !.minecraft/defaultconfigs/**
+.minecraft/config/jei
 
 ## KubeJS
 !.minecraft/kubejs/

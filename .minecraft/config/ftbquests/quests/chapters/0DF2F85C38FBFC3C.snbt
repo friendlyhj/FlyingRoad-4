@@ -197,6 +197,7 @@
 		{
 			x: -3.0d
 			y: 4.5d
+			description: ["可以放入玩家模拟器使用。"]
 			dependencies: ["74D2B1909C7B4228"]
 			id: "6A58D344BF09C2AC"
 			tasks: [{

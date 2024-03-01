@@ -134,7 +134,7 @@ onEvent('recipes', event => {
         'level': 0
     })
 
-    event.remove({ 'output': 'entangled:block' })
+    event.remove({ 'id': 'entangled:block' })
     event.recipes.minecraft.crafting_shaped('entangled:block', [
         'PAP',
         'ETE',

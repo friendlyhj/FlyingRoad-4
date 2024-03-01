@@ -44,7 +44,7 @@
         },
         "sort_inventory": {
             "main": {
-                "keys": "I"
+                "keys": "BUTTON_3"
             }
         },
         "move_all_items": {

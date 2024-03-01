@@ -644,6 +644,22 @@
 				type: "checkmark"
 			}]
 		}
+		{
+			icon: "thermal:bronze_gear"
+			x: 12.0d
+			y: 6.0d
+			description: [
+				"本整合包对下界传送门的机制做了思索演示。但本整合包没有添加机械动力，你可以自行添加机械动力和 PonderJS (https://www.curseforge.com/minecraft/mc-mods/ponder/files/4715636) 后对下界岩思索来查看。"
+				"当然这包不是给你玩机械动力的。机械动力的所有配方会被移除。"
+			]
+			dependencies: ["3FBDB5D7EDD809AA"]
+			id: "7A1F1A429BA5EE0D"
+			tasks: [{
+				id: "625DA71D3CC45F0F"
+				type: "checkmark"
+				title: "思索"
+			}]
+		}
 	]
 	quest_links: [ ]
 }

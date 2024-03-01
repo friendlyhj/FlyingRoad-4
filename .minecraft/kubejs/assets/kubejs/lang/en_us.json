@@ -1,3 +1,5 @@
 {
-    "kubejs.modpack.name": "FlyingRoad 4"
+    "kubejs.modpack.name": "FlyingRoad 4",
+
+    "item.kubejs.energy_duct_empty": "Energy Duct (Empty)"
 }

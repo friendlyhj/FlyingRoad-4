@@ -214,6 +214,11 @@
 				type: "item"
 				item: "mekanism:electrolytic_separator"
 			}]
+			rewards: [{
+				id: "71619863E140E789"
+				type: "item"
+				item: "thermal:device_water_gen"
+			}]
 		}
 		{
 			x: 0.0d
@@ -337,6 +342,12 @@
 					item: "ae2:silicon_press"
 				}
 			]
+			rewards: [{
+				id: "3B97712E668B54F8"
+				type: "item"
+				item: "minecraft:hopper"
+				count: 3
+			}]
 		}
 		{
 			x: -6.0d
@@ -564,6 +575,15 @@
 				type: "item"
 				item: "minecraft:end_portal_frame"
 				count: 12L
+			}]
+			rewards: [{
+				id: "44B5B5F22B6066F6"
+				type: "item"
+				item: {
+					id: "explorerscompass:explorerscompass"
+					Count: 1b
+					tag: { }
+				}
 			}]
 		}
 		{
@@ -795,6 +815,7 @@
 			description: [
 				"ME 输入总线用于给 ME 网络输入物品，ME 存储总线用于给 ME 网络指定外部存储，让 ME 网络存储的物品不放到元件内，而是一个容器。"
 				"除此之外，对于只有输入总线和存储总线的网络，可以充当管道使用。输入到输入总线的物品/流体将会直接传输到存储总线连接的容器内。输入总线和存储总线均可以设置过滤，这可以解决 pipez 管道无输出端过滤的窘境。"
+				"当然这样的一个小网络也是需要供能的。你可以用石英纤维从主网络供能，石英纤维只传输能量不传输频道。"
 			]
 			dependencies: ["31C1F747F0419914"]
 			id: "634BAB3978DC5D2D"
@@ -808,6 +829,11 @@
 					id: "4DA431D810A0E04C"
 					type: "item"
 					item: "ae2:storage_bus"
+				}
+				{
+					id: "535595778EED097E"
+					type: "item"
+					item: "ae2:quartz_fiber"
 				}
 			]
 		}
@@ -840,8 +866,11 @@
 			}]
 		}
 		{
+			title: "量子访问"
+			icon: "ae2wtlib:infinity_booster_card"
 			x: -9.0d
 			y: 6.0d
+			description: ["使无线终端能够无视距离且跨维度使用。"]
 			dependencies: ["64791B1A6C14DDEE"]
 			id: "650D04509E06298F"
 			tasks: [{

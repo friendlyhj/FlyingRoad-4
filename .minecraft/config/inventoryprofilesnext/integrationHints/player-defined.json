@@ -28,5 +28,11 @@
     },
     "appeng.menu.implementations.CellWorkbenchMenu": {
         "ignore": true
+    },
+    "me.desht.pneumaticcraft.client.gui.FluidTankScreen": {
+        "ignore": true
+    },
+    "me.desht.pneumaticcraft.common.inventory.FluidTankMenu": {
+        "ignore": true
     }
 }

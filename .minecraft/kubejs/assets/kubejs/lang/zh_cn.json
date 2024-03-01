@@ -13,6 +13,7 @@
     "item.kubejs.mithril_ingot": "秘银锭",
     "item.kubejs.mithril_gear": "秘银齿轮",
     "item.kubejs.primal_mana_bucket": "元始魔力桶",
+    "item.kubejs.energy_duct_empty": "能量管道（空）",
 
     "fluid.kubejs.primal_mana": "元始魔力",
     "block.kubejs.primal_mana": "元始魔力",

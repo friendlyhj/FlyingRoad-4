@@ -1,5 +1,5 @@
 onEvent('recipes', event => {
-    event.remove({'id': 'mekanism:steel_casing'})
+    event.remove({ 'id': 'mekanism:steel_casing' })
     event.recipes.minecraft.crafting_shaped('mekanism:steel_casing', [
         'SGS',
         'GCG',
@@ -10,7 +10,7 @@ onEvent('recipes', event => {
         'C': 'kubejs:osmium_gear',
         'F': 'thermal:machine_frame'
     })
-    event.remove({'id': 'mekanism:metallurgic_infuser'})
+    event.remove({ 'id': 'mekanism:metallurgic_infuser' })
     event.recipes.minecraft.crafting_shaped('mekanism:metallurgic_infuser', [
         'RRR',
         'RFR',
@@ -21,10 +21,10 @@ onEvent('recipes', event => {
         'I': '#forge:ingots/invar'
     })
 
-    event.remove({'id': 'mekanism:nucleosynthesizing/dragon_egg'})
-    event.remove({'output': 'mekanismgenerators:heat_generator'})
-    event.remove({'output': 'mekanismgenerators:wind_generator'})
-    event.remove({'output': 'mekanismgenerators:gas_burning_generator'})
+    event.remove({ 'id': 'mekanism:nucleosynthesizing/dragon_egg' })
+    event.remove({ 'output': 'mekanismgenerators:heat_generator' })
+    event.remove({ 'output': 'mekanismgenerators:wind_generator' })
+    event.remove({ 'output': 'mekanismgenerators:gas_burning_generator' })
 
     event.recipes.minecraft.crafting_shaped('mekanismgenerators:wind_generator', [
         ' G ',
@@ -49,5 +49,22 @@ onEvent('recipes', event => {
         'F': 'mekanism:steel_casing',
         'C': '#forge:gears/invar'
     })
+
+    event.remove({ 'id': 'mekanismgenerators:generator/bio' })
+    event.recipes.minecraft.crafting_shaped('mekanismgenerators:bio_generator', [
+        'EAE',
+        'CFC',
+        'GRG'
+    ], {
+        'E': 'redstone',
+        'A': '#forge:alloys/advanced',
+        'C': 'mekanism:bio_fuel',
+        'F': 'mekanism:steel_casing',
+        'G': '#forge:gears/bronze',
+        'R': 'ae2:energy_acceptor'
+    })
+
+    event.remove({ 'id': 'mekanism:transmitter/universal_cable/basic' })
+    event.recipes.minecraft.crafting_shaped('mekanism:basic_universal_cable', [['thermal:energy_duct']])
 
 });

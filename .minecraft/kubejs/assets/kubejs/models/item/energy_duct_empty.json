@@ -1,0 +1,11 @@
+{
+    "parent": "thermal:block/duct_inventory",
+    "textures": {
+        "duct": "thermal:block/ducts/energy_duct",
+        "duct_end": "thermal:block/ducts/energy_duct",
+        "fill": "thermal:block/obsidian_glass"
+    },
+    "visibility": {
+        "inv": true
+    }
+}

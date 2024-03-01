@@ -213,6 +213,7 @@
 				"使用无人机来自动操作矿物母岩。需要在编程器消耗编程拼图编程无人机程序。"
 				"在编程器页面中，使用物品左击可创建物品过滤模块，使用定位工具Shift+左击可创建区域过滤模块。"
 				"无人机各个操作模块需要设置工作区域才能工作。在操作模块右上角拼上区域模块以确定。左上角是区域黑名单，不要搞错。"
+				"将发射器升级放入充气站，无人机便可以自动充气。"
 				"搞不懂无人机也没关系，你可以在后续出电力后使用循环(@cyclic)的各个机器来进行自动化。"
 			]
 			dependencies: ["6CCF5D41C303AE24"]
@@ -239,6 +240,11 @@
 					item: "pneumaticcraft:gps_tool"
 				}
 			]
+			rewards: [{
+				id: "4218B1FBEBC185E8"
+				type: "item"
+				item: "pneumaticcraft:dispenser_upgrade"
+			}]
 		}
 		{
 			x: 12.0d
@@ -275,18 +281,11 @@
 			description: ["导热框架可以高效地冷却塑料，也可以充当熔炉使用。导热框架不能直接使用方块热源（冷源），只能通过热管来传输热量。"]
 			dependencies: ["104376046278910E"]
 			id: "2A1320CFF666C09C"
-			tasks: [
-				{
-					id: "4886E3BCE9105202"
-					type: "item"
-					item: "pneumaticcraft:heat_frame"
-				}
-				{
-					id: "68C0645EC7133AFD"
-					type: "item"
-					item: "pneumaticcraft:heat_pipe"
-				}
-			]
+			tasks: [{
+				id: "4886E3BCE9105202"
+				type: "item"
+				item: "pneumaticcraft:heat_frame"
+			}]
 		}
 		{
 			x: 9.0d

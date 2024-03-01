@@ -72,6 +72,7 @@ onEvent('item.registry', event => {
     event.create('mithril_gear')
         .tag('forge:gears/mithril')
         .tag('forge:gears')
+    event.create('energy_duct_empty')
 })
 
 onEvent('fluid.registry', event => {
