@@ -1,4 +1,4 @@
-const version = '4.1.5'
+const version = '4.2.0'
 const titles = [
     'Made by youyihj',
     'Powered by Minecraft 1.12.2',
