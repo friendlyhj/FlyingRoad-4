@@ -1,7 +1,7 @@
 const version = '4.2.0'
 const titles = [
     'Made by youyihj',
-    'Powered by Minecraft 1.12.2',
+    'Powered by Minecraft 1.18.2',
     '你正在打开的是假的整合包',
     '我准备好了！',
     '圆石数量：2147483647 个',
