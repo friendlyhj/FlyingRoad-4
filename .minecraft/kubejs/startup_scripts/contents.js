@@ -66,7 +66,6 @@ onEvent('block.registry', event => {
         .tagBlock('minecraft:mineable/pickaxe')
         .tagBlock('minecraft:needs_diamond_tool')
         .requiresTool(true)
-        .type()
 })
 
 onEvent('item.registry', event => {
