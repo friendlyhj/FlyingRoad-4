@@ -14,7 +14,7 @@ import crafttweaker.api.capability.IEnergyStorage;
 import stdlib.List;
 
 CTEventManager.register<RightClickBlockEvent>(event => {
-    if (!event.player.level.isClientSide()) {
+    if (!event.player.level.isClientSide() && event.hand == <constant:minecraft:interactionhand:main_hand>) {
         val level = event.player.level as ServerLevel;
         val pos = event.blockPos;
         val block = level.getBlockState(pos);
