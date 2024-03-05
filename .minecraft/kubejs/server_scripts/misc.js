@@ -145,6 +145,44 @@ onEvent('recipes', event => {
         'E': 'ender_pearl',
         'T': 'tinted_glass'
     })
+
+    event.remove({ 'id': 'cyclic:battery_clay' })
+    event.remove({ 'id': 'cyclic:battery' })
+
+    event.recipes.minecraft.crafting_shaped('cyclic:battery', [
+        'ICI',
+        'SRS',
+        'ICI'
+    ], {
+        'S': 'thermal:signalum_ingot',
+        'C': 'thermal:rf_coil',
+        'R': 'redstone_block',
+        'I': 'thermal:invar_plate'
+    })
+
+    event.remove({ 'id': 'cyclic:wireless_energy' })
+    event.remove({ 'id': 'cyclic:wireless_item' })
+    event.remove({ 'id': 'cyclic:wireless_fluid' })
+
+    event.recipes.minecraft.crafting_shaped('cyclic:wireless_item', [
+        'IPI',
+        'CAC',
+        'ISI'
+    ], {
+        'I': 'thermal:invar_plate',
+        'P': 'ender_pearl',
+        'C': 'ae2:charged_certus_quartz_crystal',
+        'A': 'cyclic:gem_amber',
+        'S': 'cut_copper_slab'
+    })
+    event.recipes.minecraft.crafting_shapeless('cyclic:wireless_energy', [
+        'cyclic:wireless_item',
+        'fluxnetworks:flux_dust'
+    ])
+    event.recipes.minecraft.crafting_shapeless('cyclic:wireless_fluid', [
+        'cyclic:wireless_item',
+        'bucket'
+    ])
 })
 
 onEvent('item.tags', event => {

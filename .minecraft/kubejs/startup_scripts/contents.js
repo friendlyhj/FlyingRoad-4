@@ -54,10 +54,19 @@ onEvent('block.registry', event => {
         .box(2, 0, 2, 14, 8, 14, true)
 
     event.create('mithril_block')
+        .material('metal')
         .tagBlock('minecraft:mineable/pickaxe')
         .requiresTool(true)
         .tag('forge:stoarge_blocks/mithril')
         .tag('forge:stoarge_blocks')
+
+    event.create('wrapped_obsidian')
+        .material('rock')
+        .hardness(50)
+        .tagBlock('minecraft:mineable/pickaxe')
+        .tagBlock('minecraft:needs_diamond_tool')
+        .requiresTool(true)
+        .type()
 })
 
 onEvent('item.registry', event => {
