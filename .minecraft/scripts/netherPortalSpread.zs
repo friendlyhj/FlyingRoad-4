@@ -307,7 +307,7 @@ public function tickPortal(level as ServerLevel, pos as BlockPos, time as int, m
 
     if (hasModifier(modifier, Modifiers.SPEED)) {
         interval = 40;
-        if (time % 8001 == 0) {
+        if (time % 8001 == 0 && time != 0) {
             newModifier = removeModifier(modifier, Modifiers.SPEED);
             notifyDetector(3, level, data);
         }
