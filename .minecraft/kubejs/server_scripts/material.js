@@ -564,7 +564,7 @@ onEvent('recipes', event => {
             },
             {
                 'fluid': 'thermal:ender',
-                'amount': 250
+                'amount': 125
             }
         ],
         'result': [
@@ -584,15 +584,7 @@ onEvent('recipes', event => {
         'O': 'obsidian'
     })
 
-    event.recipes.minecraft.crafting_shaped('end_portal_frame', [
-        'A A',
-        'CCC',
-        'EEE'
-    ], {
-        'A': 'amethyst_block',
-        'C': 'crying_obsidian',
-        'E': 'end_stone'
-    })
+
 
     event.recipes.minecraft.crafting_shapeless('8x mekanism:dust_fluorite', [
         '8x glowstone_dust', 'thermal_extra:amethyst_dust'
@@ -654,6 +646,34 @@ onEvent('recipes', event => {
     ])
 
     event.remove({ 'id': 'immersiveengineering:crafting/gunpowder_from_dusts' })
+
+    event.custom({
+        'type': 'pneumaticcraft:pressure_chamber',
+        'inputs': [
+            {
+                'item': 'crying_obsidian'
+            },
+            {
+                'item': 'thermal:enderium_dust'
+            },
+            {
+                'type': 'pneumaticcraft:stacked_item',
+                'item': 'thermal_extra:amethyst_dust',
+                'count': 2
+            },
+            {
+                'type': 'pneumaticcraft:stacked_item',
+                'item': 'thermal:silver_dust',
+                'count': 2
+            }
+        ],
+        'pressure': 4.0,
+        'results': [
+            {
+                'item': 'kubejs:warped_obsidian'
+            }
+        ]
+    })
 })
 
 onEvent('tags.fluids', event => {

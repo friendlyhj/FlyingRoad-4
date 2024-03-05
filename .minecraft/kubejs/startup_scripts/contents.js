@@ -60,7 +60,7 @@ onEvent('block.registry', event => {
         .tag('forge:stoarge_blocks/mithril')
         .tag('forge:stoarge_blocks')
 
-    event.create('wrapped_obsidian')
+    event.create('warped_obsidian')
         .material('rock')
         .hardness(50)
         .tagBlock('minecraft:mineable/pickaxe')

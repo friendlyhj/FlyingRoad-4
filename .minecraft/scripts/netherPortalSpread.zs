@@ -255,7 +255,7 @@ CTEventManager.register<PortalSpawnEvent>(event => {
 
 CTEventManager.register<WorldTickEvent>(event => {
     val level = event.world;
-    if (level.isClientSide) return;
+    if (level.isClientSide || event.phase == <constant:forge:event/tick/phase:end>) return;
     val serverLevel = level as ServerLevel;
     val customData = serverLevel.customData;
     val data = customData.getData();
