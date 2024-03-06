@@ -310,6 +310,24 @@ public function tickPortal(level as ServerLevel, pos as BlockPos, time as int, m
         if (time % 8001 == 0 && time != 0) {
             newModifier = removeModifier(modifier, Modifiers.SPEED);
             notifyDetector(3, level, data);
+        } else {
+            val random = level.random;
+            if (random.nextInt(8) == 0) {
+                val offsetX = random.nextDouble() * 5.0 - 2.5;
+                val offsetY = random.nextDouble() * 4.0;
+                val offsetZ = random.nextDouble() * 5.0 - 2.5;
+                level.server.executeCommand("particle minecraft:soul " + (pos.x + offsetX + 0.5) + " " + (pos.y + offsetY + 0.5) + " " + (pos.z + offsetZ + 0.5), true);
+            }
+        }
+    }
+
+    if (hasModifier(modifier, Modifiers.NETHERITE)) {
+        val random = level.random;
+        if (random.nextInt(12) == 0) {
+            val offsetX = random.nextDouble() * 5.0 - 2.5;
+            val offsetY = random.nextDouble() * 4.0;
+            val offsetZ = random.nextDouble() * 5.0 - 2.5;
+            level.server.executeCommand("particle minecraft:glow_squid_ink " + (pos.x + offsetX + 0.5) + " " + (pos.y + offsetY + 0.5) + " " + (pos.z + offsetZ + 0.5), true);
         }
     }
 
