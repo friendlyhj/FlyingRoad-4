@@ -545,6 +545,11 @@
             "fileID": 4016461,
             "projectID": 491794,
             "required": true
+        },
+        {
+            "fileID": 3878822,
+            "projectID": 280441,
+            "required": true
         }
     ],
     "manifestType": "minecraftModpack",
@@ -560,5 +565,5 @@
     },
     "name": "Flying Road 4",
     "overrides": "overrides",
-    "version": "4.2.0"
+    "version": "4.3.0"
 }

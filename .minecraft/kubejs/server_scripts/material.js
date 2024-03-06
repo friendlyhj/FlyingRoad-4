@@ -664,7 +664,7 @@ onEvent('recipes', event => {
             {
                 'type': 'pneumaticcraft:stacked_item',
                 'item': 'thermal:silver_dust',
-                'count': 2
+                'count': 3
             }
         ],
         'pressure': 4.0,
