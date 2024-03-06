@@ -565,17 +565,32 @@
 			}]
 		}
 		{
+			icon: "kubejs:warped_obsidian"
 			x: 3.0d
 			y: 7.5d
-			description: ["别摆错传送门框架的方向！不要忘记收集龙息！"]
+			description: [
+				"将上述材料和一个能量单元（任何模组的能存储电量的设备均可）摆成如下的结构。右键下方扭曲的黑曜石平台正中间的方块即可在黑曜石平台中间生成一个末地传送门。"
+				"{image:kubejs:textures/quest/end_portal.png width:100 height:100 align:1}"
+				"维持末地传送门需要消耗大量的能量，需要 10000FE/t。能量单元需要有足够的能量传输能力且底部可以输出才能正常消耗能量。"
+				"若你没有足够的发电量，请考虑只给能量单元一点电，保证传送门维持的时间足以你进去即可。"
+				"由于复活末影龙所需的材料很贵（反物质），打龙之前务必收集足够的龙息。"
+			]
 			dependencies: ["523D0D633964702B"]
 			id: "466AD95B3CEAE868"
-			tasks: [{
-				id: "4E9C99C007445A93"
-				type: "item"
-				item: "minecraft:end_portal_frame"
-				count: 12L
-			}]
+			tasks: [
+				{
+					id: "73356E9A45C5CD25"
+					type: "item"
+					item: "kubejs:warped_obsidian"
+					count: 18L
+				}
+				{
+					id: "39E78B164A4A8CB6"
+					type: "item"
+					item: "minecraft:end_stone"
+					count: 49L
+				}
+			]
 			rewards: [{
 				id: "44B5B5F22B6066F6"
 				type: "item"
