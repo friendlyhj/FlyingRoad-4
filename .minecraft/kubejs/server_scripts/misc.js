@@ -183,6 +183,14 @@ onEvent('recipes', event => {
         'cyclic:wireless_item',
         'bucket'
     ])
+    event.recipes.minecraft.crafting_shaped('shulker_shell', [
+        'EEE',
+        'E E',
+        'EEE'
+    ], {
+        'E': 'mysticalagriculture:shulker_essence'
+    })
+    event.recipes.mekanism.metallurgic_infusing('rotten_flesh', '#forge:foods/meat/raw', '5x mekanism:fungi')
 })
 
 onEvent('item.tags', event => {

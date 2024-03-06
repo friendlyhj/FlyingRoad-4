@@ -34,6 +34,8 @@ craftingTable.addShaped("inf_water", <item:ae2:creative_fluid_cell>.withTag({lis
     [<item:mekanism:alloy_atomic>, <item:mysticalagriculture:water_essence>, <item:mekanism:alloy_atomic>]
 ]);
 
+mods.mysticalagriculture.SoulExtractorCrafting.addRecipe("shulker_soul", <item:minecraft:shulker_shell>, "mysticalcustomization:shulker", 1.5);
+
 for recipe in craftingTable.getRecipesByOutput(IIngredientAny.getInstance().onlyIf("thermal extra augment", item => {
     val id = item.registryName;
     return id.namespace == "thermal_extra" && "augment" in id.path;

@@ -1,0 +1,18 @@
+{
+    "type": "mysticalagriculture:mob",
+    "tier": "mysticalagriculture:4",
+    "ingredient": {
+        "type": "forge:nbt",
+        "item": "mysticalagriculture:soul_jar",
+        "nbt": "{Souls:6.0d,Type:\"mysticalcustomization:shulker\"}"
+    },
+    "colors": {
+        "flower": "976997",
+        "essence": "ffffff",
+        "seeds": "976997"
+    },
+    "textures": {
+        "flower": "mysticalagriculture:block/flower_face",
+        "essence": "mysticalcustomization:item/shulker_essence"
+    }
+}
