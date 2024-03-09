@@ -61,11 +61,11 @@ onEvent('block.registry', event => {
         .tag('forge:stoarge_blocks')
 
     event.create('warped_obsidian')
-        .material('rock')
         .hardness(50)
         .tagBlock('minecraft:mineable/pickaxe')
         .tagBlock('minecraft:needs_diamond_tool')
         .requiresTool(true)
+        .material('rock')
 })
 
 onEvent('item.registry', event => {

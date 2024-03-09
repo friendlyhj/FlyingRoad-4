@@ -240,11 +240,19 @@
 					item: "pneumaticcraft:gps_tool"
 				}
 			]
-			rewards: [{
-				id: "4218B1FBEBC185E8"
-				type: "item"
-				item: "pneumaticcraft:dispenser_upgrade"
-			}]
+			rewards: [
+				{
+					id: "4218B1FBEBC185E8"
+					type: "item"
+					item: "pneumaticcraft:dispenser_upgrade"
+				}
+				{
+					id: "08C00B17C8D9A1F4"
+					type: "item"
+					item: "pneumaticcraft:programming_puzzle"
+					count: 24
+				}
+			]
 		}
 		{
 			x: 12.0d
@@ -403,6 +411,12 @@
 				id: "5F2D633373E9A849"
 				type: "item"
 				item: "pneumaticcraft:speed_upgrade"
+			}]
+			rewards: [{
+				id: "7D03B7414FED184E"
+				type: "item"
+				item: "minecraft:lapis_lazuli"
+				count: 16
 			}]
 		}
 		{

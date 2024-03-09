@@ -242,6 +242,11 @@
 				type: "item"
 				item: "pneumaticcraft:flux_compressor"
 			}]
+			rewards: [{
+				id: "203D4B3A412225A6"
+				type: "item"
+				item: "pneumaticcraft:regulator_tube_module"
+			}]
 		}
 		{
 			x: -3.0d

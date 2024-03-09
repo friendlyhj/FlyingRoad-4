@@ -21,7 +21,7 @@ CTEventManager.register<RightClickBlockEvent>(event => {
         val player = event.player;
         if (block == <blockstate:kubejs:warped_obsidian>) {
             val centralPos = pos.above();
-            if (level.getBlockState(centralPos) == <blockstate:minecraft:air> && checkStructure(level, centralPos)) {
+            if (!player.isVisuallyCrawling && level.getBlockState(centralPos) == <blockstate:minecraft:air> && checkStructure(level, centralPos)) {
                 player.playNotifySound(<soundevent:minecraft:block.end_portal.spawn>, <constant:minecraft:sound/source:blocks>, 1.0, 1.0);
                 level.setBlockAndUpdate(centralPos, <blockstate:minecraft:end_portal>);
                 val customData = level.customData;
