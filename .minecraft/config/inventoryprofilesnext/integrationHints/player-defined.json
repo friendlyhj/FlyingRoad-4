@@ -34,5 +34,11 @@
     },
     "me.desht.pneumaticcraft.common.inventory.FluidTankMenu": {
         "ignore": true
+    },
+    "de.mari_023.ae2wtlib.wct.WCTScreen": {
+        "ignore": true
+    },
+    "de.mari_023.ae2wtlib.wct.WCTMenu": {
+        "ignore": true
     }
 }

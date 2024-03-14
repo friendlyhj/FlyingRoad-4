@@ -138,6 +138,17 @@ onEvent('recipes', event => {
     })
 
     event.custom({
+        'type': 'lychee:block_interacting',
+        'item_in': { 'item': 'thermal:phytogro' },
+        'block_in': { 'blocks': ['kubejs:budding_andesite'] },
+        'post': {
+            'type': 'place',
+            'block': 'kubejs:andesite_bud',
+            'offsetY': 1
+        }
+    })
+
+    event.custom({
         'type': 'lychee:block_clicking',
         'item_in': { 'tag': 'kubejs:pickaxes' },
         'block_in': { 'blocks': ['kubejs:mine_bud'] },
