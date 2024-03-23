@@ -627,6 +627,25 @@
 					type: "item"
 					item: "mekanism:electric_bow"
 				}
+				{
+					id: "20BC3EFD75A62F08"
+					type: "item"
+					item: {
+						id: "minecraft:enchanted_book"
+						Count: 1b
+						tag: {
+							StoredEnchantments: [{
+								lvl: 1s
+								id: "minecraft:infinity"
+							}]
+						}
+					}
+				}
+				{
+					id: "37380BAFE74EE360"
+					type: "item"
+					item: "minecraft:arrow"
+				}
 			]
 		}
 		{

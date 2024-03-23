@@ -15,11 +15,13 @@ CTEventManager.register<BlockNeighborNotifyEvent>(event => {
         for side in Direction.values() {
             val level = event.world;
             val pos = event.pos;
-            if (level.getBlockState(event.pos.relative(side)).block.registryName == <resource:kubejs:primal_mana>) {
+            if (level.getBlockState(pos.relative(side)).block.registryName == <resource:kubejs:primal_mana>) {
                 level.sequence({"version": "1.0.0"})
                     .sleep(20)
                     .then(level => {
-                        level.setBlockAndUpdate(pos, <blockstate:kubejs:mithril_block>);
+                        if (level.getBlockState(pos).block.registryName in <tag:blocks:forge:storage_blocks/silver>) {
+                            level.setBlockAndUpdate(pos, <blockstate:kubejs:mithril_block>);
+                        }
                     })
                     .start();
             }
