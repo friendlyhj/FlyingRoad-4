@@ -56,11 +56,11 @@ onEvent('recipes', event => {
         'CFC',
         'GRG'
     ], {
-        'E': 'redstone',
-        'A': '#forge:alloys/advanced',
-        'C': 'mekanism:bio_fuel',
+        'E': 'redstone_block',
+        'A': 'mekanism:elite_control_circuit',
+        'C': 'blast_furnace',
         'F': 'mekanism:steel_casing',
-        'G': '#forge:gears/bronze',
+        'G': '#forge:gears/lumium',
         'R': 'ae2:energy_acceptor'
     })
 

@@ -191,6 +191,62 @@ onEvent('recipes', event => {
         'E': 'mysticalagriculture:shulker_essence'
     })
     event.recipes.mekanism.metallurgic_infusing('rotten_flesh', '#forge:foods/meat/raw', '5x mekanism:fungi')
+    event.remove({ 'id': 'cyclic:breaker' })
+    event.recipes.minecraft.crafting_shaped('cyclic:breaker', [
+        'AGA',
+        'SDP',
+        'BBB'
+    ], {
+        'A': 'andesite',
+        'G': '#forge:gears/copper',
+        'S': '#ae2:quartz_shovel',
+        'D': 'dispenser',
+        'P': '#ae2:quartz_pickaxe',
+        'B': 'stone_brick_slab'
+    })
+
+    event.remove({ 'id': 'cyclic:forester' })
+    event.recipes.minecraft.crafting_shaped('cyclic:forester', [
+        'CQC',
+        'AFA',
+        'GWG'
+    ], {
+        'C': 'mekanism:elite_control_circuit',
+        'Q': 'quartz_block',
+        'A': '#ae2:quartz_axe',
+        'F': 'thermal:machine_frame',
+        'G': '#forge:gears/compressed_iron',
+        'W': 'thermal:rf_coil'
+    })
+
+    event.remove({ 'id': 'cyclic:harvester' })
+    event.recipes.minecraft.crafting_shaped('cyclic:harvester', [
+        'CHC',
+        'SFS',
+        'GWG'
+    ], {
+        'C': 'mekanism:ultimate_control_circuit',
+        'H': 'mekanismtools:refined_obsidian_hoe',
+        'F': 'thermal:machine_frame',
+        'S': 'thermal:silver_ingot',
+        'G': '#forge:gears/emerald',
+        'W': 'thermal:rf_coil'
+    })
+
+    event.remove({ 'id': 'cyclic:collector' })
+    event.recipes.minecraft.crafting_shaped('cyclic:collector', [
+        'CLC',
+        'SFS',
+        'GWG'
+    ], {
+        'C': 'iron_ingot',
+        'L': 'lapis_lazuli',
+        'F': 'cyclic:compressed_cobblestone',
+        'S': 'thermal:silver_ingot',
+        'G': '#forge:gears/tin',
+        'W': 'thermal:redstone_servo'
+    })
+
 })
 
 onEvent('item.tags', event => {

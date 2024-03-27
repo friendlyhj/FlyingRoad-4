@@ -674,6 +674,8 @@ onEvent('recipes', event => {
             }
         ]
     })
+
+    event.recipes.mekanism.injecting('leather', 'thermal:rosin', '1x mekanism:hydrogen_chloride')
 })
 
 onEvent('tags.fluids', event => {
