@@ -1,4 +1,4 @@
-const version = '4.3.2'
+const version = '4.4.0'
 const titles = [
     'Made by youyihj',
     'Powered by Minecraft 1.18.2',
@@ -101,7 +101,7 @@ const titles = [
     '人被杀就会死',
     '检测到在途的聚变打击',
     '奇怪的知识增加了',
-    ',99% off',
+    '-99% off',
     '阿卡林',
     'ko~ ko~ da~ yo~',
     '接下来就交给你们了',
@@ -112,7 +112,7 @@ const titles = [
     'Never gonna give you up',
     '我试过了，是假的',
     'hypo meaning low',
-    'emia meaning presenting in blood',
+    '-emia meaning presenting in blood',
     'Don\'t ask to ask',
     '生物质燃料批发',
     '地铁 老人 手机',
@@ -131,7 +131,8 @@ const titles = [
     '为什么要演奏《春日影》',
     '你这个人满脑子想着都是自己呢',
     '八号打假赛的提前倒下',
-    '会赢的'
+    '会赢的',
+    '还是 PVP 大佬'
 ]
 
 let randomTitleIndex = -1

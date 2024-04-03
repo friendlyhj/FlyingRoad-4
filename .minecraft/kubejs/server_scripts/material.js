@@ -529,7 +529,7 @@ onEvent('recipes', event => {
 
     event.recipes.mekanism.enriching('kubejs:small_ender_dust', 'twisting_vines')
     event.recipes.minecraft.crafting_shapeless('thermal:ender_pearl_dust', ['4x kubejs:small_ender_dust'])
-    event.recipes.thermal.crucible(Fluid.of('thermal:ender', 250), '#forge:dusts/ender_pearl', 20000)
+    event.recipes.thermal.crucible(Fluid.of('thermal:ender', 250), '#forge:dusts/ender_pearl').energy(20000)
     event.custom({
         'type': 'thermal:crystallizer',
         'ingredients': [
