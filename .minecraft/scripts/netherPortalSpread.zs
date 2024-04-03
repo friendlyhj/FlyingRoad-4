@@ -112,53 +112,59 @@ public expand <T> List<T> {
     }
 }
 
+public expand <T> WeightedEntry<T>[] {
+    public implicit as WeightedList<T> {
+        return new WeightedList<T>(this);
+    }
+}
+
 public class SpreadRules {
     public static val groups as WeightedList<BlockState>[string] = {
-        "wastes": new WeightedList<BlockState>([
+        "wastes": [
             <blockstate:minecraft:netherrack> % 75,
             <blockstate:minecraft:nether_quartz_ore> % 15,
             <blockstate:minecraft:nether_gold_ore> % 15
-        ]),
-        "soul": new WeightedList<BlockState>([
+        ] as WeightedList<BlockState>,
+        "soul": [
             <blockstate:minecraft:soul_sand> % 60,
             <blockstate:minecraft:soul_soil> % 40
-        ]),
-        "crimson": new WeightedList<BlockState>([
+        ],
+        "crimson": [
             <blockstate:minecraft:crimson_nylium> % 1
-        ]),
-        "nylium": new WeightedList<BlockState>([
+        ],
+        "nylium": [
             <blockstate:minecraft:warped_nylium> % 1
-        ]),
-        "basalt": new WeightedList<BlockState>([
+        ],
+        "basalt": [
             <blockstate:minecraft:basalt:axis=y> % 40,
             <blockstate:minecraft:blackstone> % 40,
             <blockstate:minecraft:magma_block> % 20
-        ])
+        ]
     };
     public static val rules as WeightedList<string>[KnownTag<Block>] = {
-        <tag:blocks:forge:stone>: new WeightedList<string>([
+        <tag:blocks:forge:stone>: [
             "wastes" % 80,
             "crimson" % 20,
             "nylium" % 20,
             "basalt" % 20,
             "soul" % 20
-        ]),
-        <tag:blocks:forge:cobblestone>: new WeightedList<string>([
+        ] as WeightedList<string>,
+        <tag:blocks:forge:cobblestone>: [
             "wastes" % 80,
             "crimson" % 20,
             "nylium" % 20,
             "basalt" % 20,
             "soul" % 20
-        ]),
-        <tag:blocks:minecraft:dirt>: new WeightedList<string>([
+        ],
+        <tag:blocks:minecraft:dirt>: [
             "wastes" % 80,
             "crimson" % 20,
             "nylium" % 20,
             "soul" % 50
-        ]),
-        <tag:blocks:forge:sand>: new WeightedList<string>([
+        ],
+        <tag:blocks:forge:sand>: [
             "soul" % 1
-        ])
+        ]
     };
 }
 

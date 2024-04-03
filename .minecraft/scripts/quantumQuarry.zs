@@ -13,8 +13,8 @@ public expand Percentaged<IItemStack> {
 }
 
 public class Outputs {
-    public static val outputs as WeightedList<IItemStack> = new WeightedList<IItemStack>([
-        <item:minecraft:stone> % 200,
+    public static val outputs as WeightedList<IItemStack> = [
+        (<item:minecraft:stone> % 200) as WeightedEntry<IItemStack>,
         <item:minecraft:granite> % 100,
         <item:minecraft:diorite> % 100,
         <item:minecraft:andesite> % 100,
@@ -34,7 +34,7 @@ public class Outputs {
         <item:mekanism:uranium_ore> % 15,
         <item:draconicevolution:overworld_draconium_ore> % 1,
         <item:mysticalagriculture:prosperity_ore> % 12
-    ]);
+    ];
 }
 
 
