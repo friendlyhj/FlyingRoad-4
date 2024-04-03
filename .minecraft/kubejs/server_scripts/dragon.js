@@ -154,6 +154,44 @@ onEvent('recipes', event => {
     event.custom({
         'type': 'draconicevolution:fusion_crafting',
         'result': {
+            'item': `draconicevolution:wyvern_capacitor`
+        },
+        'catalyst': {
+            'item': `thermal:flux_capacitor`
+        },
+        'total_energy': 8000000,
+        'tier': 'WYVERN',
+        'ingredients': [
+            {
+                'item': 'draconicevolution:wyvern_core'
+            },
+            {
+                'tag': 'forge:ingots/draconium'
+            },
+            {
+                'tag': 'forge:ingots/draconium'
+            },
+            {
+                'tag': 'forge:ingots/draconium'
+            },
+            {
+                'tag': 'forge:ingots/draconium'
+            },
+            {
+                'item': 'draconicevolution:wyvern_energy_core'
+            },
+            {
+                'item': 'draconicevolution:wyvern_energy_core'
+            },
+            {
+                'item': 'draconicevolution:wyvern_energy_core'
+            }
+        ]
+    })
+
+    event.custom({
+        'type': 'draconicevolution:fusion_crafting',
+        'result': {
             'item': 'draconicevolution:wyvern_chestpiece'
         },
         'catalyst': {
