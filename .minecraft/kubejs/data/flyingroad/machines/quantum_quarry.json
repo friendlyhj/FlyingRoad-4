@@ -1,0 +1,171 @@
+{
+    "name": "flyingroad.quantum_quarry",
+    "appearance": {
+        "block": "kubejs:machine/quantum_quarry"
+    },
+    "tooltips": [],
+    "components": [
+        {
+            "type": "custommachinery:energy",
+            "capacity": 4000000,
+            "maxInput": 120000,
+            "maxOutput": 0
+        },
+        {
+            "type": "custommachinery:fluid",
+            "capacity": 2000,
+            "id": "tank",
+            "maxInput": 1000,
+            "maxOutput": 0,
+            "filter": [
+                "thermal:ender"
+            ],
+            "whitelist": true
+        },
+        {
+            "type": "custommachinery:item",
+            "id": "upgrade",
+            "mode": "input",
+            "variant": "custommachinery:upgrade"
+        },
+        {
+            "type": "custommachinery:item",
+            "id": "output_0",
+            "mode": "output"
+        },
+        {
+            "type": "custommachinery:item",
+            "id": "output_1",
+            "mode": "output"
+        },
+        {
+            "type": "custommachinery:item",
+            "id": "output_2",
+            "mode": "output"
+        },
+        {
+            "type": "custommachinery:item",
+            "id": "output_3",
+            "mode": "output"
+        },
+        {
+            "type": "custommachinery:item",
+            "id": "output_4",
+            "mode": "output"
+        },
+        {
+            "type": "custommachinery:item",
+            "id": "output_5",
+            "mode": "output"
+        },
+        {
+            "type": "custommachinery:item",
+            "id": "output_6",
+            "mode": "output"
+        },
+        {
+            "type": "custommachinery:item",
+            "id": "output_7",
+            "mode": "output"
+        },
+        {
+            "type": "custommachinery:item",
+            "id": "output_8",
+            "mode": "output"
+        }
+    ],
+    "gui": [
+        {
+            "type": "custommachinery:texture",
+            "x": 0,
+            "y": 0,
+            "texture": "custommachinery:textures/gui/base_background.png"
+        },
+        {
+            "type": "custommachinery:energy",
+            "x": 40,
+            "y": 20
+        },
+        {
+            "type": "custommachinery:fluid",
+            "x": 60,
+            "y": 20,
+            "id": "tank"
+        },
+        {
+            "type": "custommachinery:slot",
+            "x": 180,
+            "y": 15,
+            "id": "upgrade",
+            "ghost": {
+                "items": [
+                    "thermal:upgrade_augment_1",
+                    "thermal:upgrade_augment_2",
+                    "thermal:upgrade_augment_3",
+                    "thermal_extra:upgrade_augment"
+                ]
+            }
+        },
+        {
+            "type": "custommachinery:slot",
+            "x": 100,
+            "y": 15,
+            "id": "output_0"
+        },
+        {
+            "type": "custommachinery:slot",
+            "x": 118,
+            "y": 15,
+            "id": "output_1"
+        },
+        {
+            "type": "custommachinery:slot",
+            "x": 136,
+            "y": 15,
+            "id": "output_2"
+        },
+        {
+            "type": "custommachinery:slot",
+            "x": 100,
+            "y": 33,
+            "id": "output_3"
+        },
+        {
+            "type": "custommachinery:slot",
+            "x": 118,
+            "y": 33,
+            "id": "output_4"
+        },
+        {
+            "type": "custommachinery:slot",
+            "x": 136,
+            "y": 33,
+            "id": "output_5"
+        },
+        {
+            "type": "custommachinery:slot",
+            "x": 100,
+            "y": 51,
+            "id": "output_6"
+        },
+        {
+            "type": "custommachinery:slot",
+            "x": 118,
+            "y": 51,
+            "id": "output_7"
+        },
+        {
+            "type": "custommachinery:slot",
+            "x": 136,
+            "y": 51,
+            "id": "output_8"
+        },
+        {
+            "type": "custommachinery:player_inventory",
+            "x": 50,
+            "y": 80
+        }
+    ],
+    "jei": [],
+    "catalysts": []
+}

@@ -461,6 +461,17 @@
 				}
 			]
 		}
+		{
+			x: 9.0d
+			y: -1.5d
+			dependencies: ["345920F121F83770"]
+			id: "51F04A7985452B51"
+			tasks: [{
+				id: "3014C7C46E682EA5"
+				type: "item"
+				item: "thermal:flax_seeds"
+			}]
+		}
 	]
 	quest_links: [ ]
 }

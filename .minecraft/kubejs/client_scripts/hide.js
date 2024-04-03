@@ -9,4 +9,5 @@ onEvent('jei.hide.items', event => {
 onEvent('jei.remove.categories', event => {
 	event.removeIf(category => category.getUid().toString().search(/cyclic:generator_.*/) != -1)
 	event.removeIf(category => category.getUid().toString() == 'cyclic:crusher')
+	event.removeIf(category => category.getUid().namespace == 'flyingroad')
 })

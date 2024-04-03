@@ -40,5 +40,11 @@
     },
     "de.mari_023.ae2wtlib.wct.WCTMenu": {
         "ignore": true
+    },
+    "fr.frinn.custommachinery.client.screen.CustomMachineScreen": {
+        "ignore": true
+    },
+    "fr.frinn.custommachinery.common.init.CustomMachineContainer": {
+        "ignore": true
     }
 }

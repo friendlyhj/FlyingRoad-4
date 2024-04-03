@@ -21,7 +21,7 @@ CTEventManager.register<RightClickBlockEvent>(event => {
         val player = event.player;
         if (block == <blockstate:kubejs:warped_obsidian>) {
             val centralPos = pos.above();
-            if (!player.isVisuallyCrawling && level.getBlockState(centralPos) == <blockstate:minecraft:air> && checkStructure(level, centralPos)) {
+            if (!player.isVisuallyCrawling && level.getBlockState(centralPos) == <blockstate:minecraft:air> && checkStructure(level, centralPos) && consumeEnergy(level, centralPos, true)) {
                 player.playNotifySound(<soundevent:minecraft:block.end_portal.spawn>, <constant:minecraft:sound/source:blocks>, 1.0, 1.0);
                 level.setBlockAndUpdate(centralPos, <blockstate:minecraft:end_portal>);
                 val customData = level.customData;
@@ -49,22 +49,15 @@ CTEventManager.register<WorldTickEvent>(event => {
         for element in (data.getData<ListData>("EndPortals") as ListData as List<IData>) {
             val posData = element as IntArrayData;
             val pos = new BlockPos(posData.getAt(0).asInt(), posData.getAt(1).asInt(), posData.getAt(2).asInt());
-            if (checkStructure(level, pos)) {
-                val cell = level.getBlockEntity(pos.above(2));
-                if (cell != null) {
-                    val energyStorage = cell.getCapability<IEnergyStorage>(Capabilities.ENERGY, <constant:minecraft:direction:down>);
-                    if (energyStorage != null && energyStorage.extractEnergy(10000, true) == 10000) {
-                        energyStorage.extractEnergy(10000, false);
-                        newList.add(posData);
-                        val random = serverLevel.random;
-                        val offsetX = random.nextDouble() * 3.0 - 1.5;
-                        val offsetZ = random.nextDouble() * 3.0 - 1.5;
-                        serverLevel.server.executeCommand("particle minecraft:portal " + (pos.x + offsetX + 0.5) + " " + pos.y + " " + (pos.z + offsetZ + 0.5), true);
-                        continue;
-                    }
-                }
+            if (checkStructure(level, pos) && consumeEnergy(level, pos, false)) {
+                newList.add(posData);
+                val random = serverLevel.random;
+                val offsetX = random.nextDouble() * 3.0 - 1.5;
+                val offsetZ = random.nextDouble() * 3.0 - 1.5;
+                serverLevel.server.executeCommand("particle minecraft:portal " + (pos.x + offsetX + 0.5) + " " + pos.y + " " + (pos.z + offsetZ + 0.5), true);
+            } else {
+                level.setBlockAndUpdate(pos, <blockstate:minecraft:air>);
             }
-            level.setBlockAndUpdate(pos, <blockstate:minecraft:air>);
         }
         data.put("EndPortals", newList);
     }
@@ -95,4 +88,18 @@ public function checkStructure(level as ServerLevel, pos as BlockPos) as bool {
         }
     }
     return true;
+}
+
+public function consumeEnergy(level as ServerLevel, pos as BlockPos, simulate as bool) as bool {
+    val cell = level.getBlockEntity(pos.above(2));
+    if (cell != null) {
+        val energyStorage = cell.getCapability<IEnergyStorage>(Capabilities.ENERGY, <constant:minecraft:direction:down>);
+        if (energyStorage != null && energyStorage.extractEnergy(10000, true) == 10000) {
+            if (!simulate) {
+                energyStorage.extractEnergy(10000, false);
+            }
+            return true;
+        }
+    }
+    return false;
 }

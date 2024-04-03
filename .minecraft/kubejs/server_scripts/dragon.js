@@ -34,7 +34,7 @@ onEvent('recipes', event => {
         'CFC',
         'GWG'
     ], {
-        'S': 'miniutilities:diamond_spikes',
+        'S': 'cyclic:spikes_diamond',
         'C': 'draconicevolution:wyvern_core',
         'F': 'mekanism:steel_casing',
         'G': 'kubejs:mithril_gear',

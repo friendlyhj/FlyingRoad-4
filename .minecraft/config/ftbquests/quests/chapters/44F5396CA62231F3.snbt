@@ -554,19 +554,19 @@
 			x: 4.5d
 			y: 7.5d
 			shape: "hexagon"
-			description: ["虚空造矿，是获取活化水晶碎片的唯一方式。速度升级可以提高其的工作速度和耗电，右键放入，Shift + 右键取出。"]
+			description: ["消耗大量电能和少许谐振末影流体来链接另一个维度，并从此获取大量矿物，是获取活化水晶碎片的唯一方式。热力的升级组件可以加快其的工作速度。"]
 			dependencies: ["466AD95B3CEAE868"]
 			id: "2E3F66B101110489"
 			tasks: [{
-				id: "2BE7142E7E2D7F59"
+				id: "59D6819A5B22C51C"
 				type: "item"
-				item: "miniutilities:quantum_quarry"
-			}]
-			rewards: [{
-				id: "2311E5A71842E9F0"
-				type: "item"
-				item: "miniutilities:speed_upgrade"
-				count: 4
+				item: {
+					id: "custommachinery:custom_machine_item"
+					Count: 1b
+					tag: {
+						machine: "flyingroad:quantum_quarry"
+					}
+				}
 			}]
 		}
 		{

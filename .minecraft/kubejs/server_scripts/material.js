@@ -527,7 +527,47 @@ onEvent('recipes', event => {
         ]
     })
 
-    event.recipes.mekanism.enriching('miniutilities:ender_dust', 'twisting_vines')
+    event.recipes.mekanism.enriching('kubejs:small_ender_dust', 'twisting_vines')
+    event.recipes.minecraft.crafting_shapeless('thermal:ender_pearl_dust', ['4x kubejs:small_ender_dust'])
+    event.recipes.thermal.crucible(Fluid.of('thermal:ender', 250), '#forge:dusts/ender_pearl', 20000)
+    event.custom({
+        'type': 'thermal:crystallizer',
+        'ingredients': [
+            {
+                'fluid': 'water',
+                'amount': 2000
+            },
+            {
+                'item': 'thermal:ender_pearl_dust'
+            }
+        ],
+        'result': [
+            {
+                'item': 'ender_pearl'
+            }
+        ],
+        'energy': 4000
+    })
+    event.custom({
+        'type': 'thermal:crystallizer',
+        'ingredients': [
+            {
+                'fluid': 'water',
+                'amount': 2000
+            },
+            {
+                'type': 'pneumaticcraft:stacked_item',
+                'item': 'kubejs:small_ender_dust',
+                'count': 4
+            },
+        ],
+        'result': [
+            {
+                'item': 'ender_pearl'
+            }
+        ],
+        'energy': 4000
+    })
 
     event.recipes.mekanism.enriching('mysticalagriculture:inferium_essence', 'thermal:phytogro')
     event.remove({ 'id': 'thermal:phyto_tnt' })

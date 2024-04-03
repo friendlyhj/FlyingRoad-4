@@ -15,9 +15,11 @@
     "item.kubejs.mithril_gear": "秘银齿轮",
     "item.kubejs.primal_mana_bucket": "元始魔力桶",
     "item.kubejs.energy_duct_empty": "能量管道（空）",
+    "item.kubejs.small_ender_dust": "小堆末影珍珠粉",
 
     "fluid.kubejs.primal_mana": "元始魔力",
     "block.kubejs.primal_mana": "元始魔力",
 
-    "kubejs.modpack.name": "飞翔之路 4"
+    "kubejs.modpack.name": "飞翔之路 4",
+    "flyingroad.quantum_quarry": "量子采石场"
 }

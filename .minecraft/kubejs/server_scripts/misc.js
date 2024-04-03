@@ -27,7 +27,6 @@ onEvent('recipes', event => {
     event.replaceInput({ 'id': 'cyclic:lightning_scepter' }, '#forge:nuggets/netherite', 'minecraft:nether_star')
     event.replaceInput({ 'type': 'crafting_shaped' }, 'thermal:cinnabar_dust', 'redstone')
     event.replaceInput({ 'id': 'immersiveengineering:crafting/dynamo' }, 'immersiveengineering:component_iron', 'ae2:energy_acceptor')
-    event.replaceInput({ 'id': 'miniutilities:solar_panel_controller' }, 'redstone_block', 'ae2:energy_acceptor')
 
     event.remove({ 'id': 'cyclic:uncrafter' })
     event.remove({ 'id': 'minecraft:end_crystal' })
@@ -92,8 +91,6 @@ onEvent('recipes', event => {
         'E': 'ender_pearl',
         'O': 'obsidian'
     })
-
-    event.replaceInput({ 'id': 'miniutilities:quantum_quarry' }, 'redstone_block', 'thermal_extra:shellite_block')
 
     event.remove({ 'id': 'draconicevolution:potentiometer' })
     event.recipes.minecraft.crafting_shaped('draconicevolution:potentiometer', [
@@ -247,6 +244,7 @@ onEvent('recipes', event => {
         'W': 'thermal:redstone_servo'
     })
 
+    event.replaceInput({ 'id': 'angelring:itemdiamondring' }, 'ghast_tear', 'thermal_extra:shellite_dust')
 })
 
 onEvent('item.tags', event => {
