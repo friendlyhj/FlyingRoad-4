@@ -429,7 +429,7 @@
 			x: -6.0d
 			y: 7.5d
 			description: [
-				"用样板终端给样板指定输入和输出，放入样板供应器内。然后你可以在终端内「下单」自动合成，下单后配方输入会发配到样板供应器，当配方输出传输到&c同一个样板供应器&r，ME 网络才会认为合成完毕。"
+				"用样板终端给样板指定输入和输出，放入样板供应器内。然后你可以在终端内「下单」自动合成，下单后配方输入会发配到样板供应器。将合成结果返还至 ME 网络（通常是同一个样板供应器）以完成自动化。"
 				"合成所需要的所有物品都会暂存到合成存储器中，更大的合成存储器可以处理更复杂的配方。"
 				"分子装配室是标准化的 AE 自动工作台。合成样板专用于处理分子装配室的自动合成，对于其他模组的「合成」，请采用处理样板。"
 			]
@@ -944,6 +944,37 @@
 					id: "688584CD75B45855"
 					type: "item"
 					item: "entangled:item"
+				}
+			]
+		}
+		{
+			title: "电线上的频道"
+			icon: "more_immersive_wires:ae_coil"
+			x: -7.5d
+			y: 3.0d
+			description: ["利用沉浸工艺的线缆实现远程 ME 网络链接。"]
+			dependencies: ["0942ECF2CD794EA7"]
+			id: "15C1049FA30174D0"
+			tasks: [
+				{
+					id: "1BF06CED60B1D822"
+					type: "item"
+					item: "more_immersive_wires:ae_coil"
+				}
+				{
+					id: "628B780B0C8C650D"
+					type: "item"
+					item: "more_immersive_wires:ae_relay"
+				}
+				{
+					id: "7834AD68B321727D"
+					type: "item"
+					item: "more_immersive_wires:ae_connector"
+				}
+				{
+					id: "020EC32619DD2C09"
+					type: "item"
+					item: "immersiveengineering:treated_post"
 				}
 			]
 		}

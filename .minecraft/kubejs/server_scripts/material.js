@@ -643,6 +643,18 @@ onEvent('recipes', event => {
     })
 
     event.custom({
+        'type': 'lychee:item_inside',
+        'item_in': { 'item': 'quartz' },
+        'block_in': { 'blocks': ['kubejs:primal_mana'] },
+        'post': [
+            {
+                'type': 'drop_item',
+                'item': 'prismarine_shard'
+            }
+        ]
+    })
+
+    event.custom({
         'type': 'thermal:crystallizer',
         'ingredients': [
             {
@@ -716,6 +728,11 @@ onEvent('recipes', event => {
     })
 
     event.recipes.mekanism.injecting('leather', 'thermal:rosin', '1x mekanism:hydrogen_chloride')
+    event.recipes.minecraft.crafting_shapeless('4x projectred_core:electrotine_dust', [
+        '4x redstone',
+        'thermal:lapis_dust',
+        'thermal_extra:amethyst_dust'
+    ])
 })
 
 onEvent('tags.fluids', event => {

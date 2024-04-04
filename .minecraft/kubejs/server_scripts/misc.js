@@ -81,17 +81,6 @@ onEvent('recipes', event => {
         }
     })
 
-    event.remove({ 'id': 'cyclic:eye_teleport' })
-    event.remove({ 'id': 'cyclic:eye_teleport_rev' })
-    event.recipes.minecraft.crafting_shaped('cyclic:eye_teleport', [
-        'EEE',
-        'EOE',
-        'EEE'
-    ], {
-        'E': 'ender_pearl',
-        'O': 'obsidian'
-    })
-
     event.remove({ 'id': 'draconicevolution:potentiometer' })
     event.recipes.minecraft.crafting_shaped('draconicevolution:potentiometer', [
         'ACC',
@@ -248,8 +237,6 @@ onEvent('recipes', event => {
 })
 
 onEvent('item.tags', event => {
-    event.remove('forge:storage_blocks', 'cyclic:eye_teleport')
-    event.remove('forge:storage_blocks/ender_pearl', 'cyclic:eye_teleport')
     const pickaxe = java('net.minecraftforge.common.ToolAction').get('pickaxe_dig')
 
     Item.getList().forEach(item => {
