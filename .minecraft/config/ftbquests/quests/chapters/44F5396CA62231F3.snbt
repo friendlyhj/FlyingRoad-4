@@ -570,15 +570,16 @@
 			}]
 		}
 		{
+			title: "终末之地"
 			icon: "kubejs:warped_obsidian"
 			x: 3.0d
 			y: 7.5d
 			description: [
 				"将上述材料和一个能量单元（任何模组的能存储电量的设备均可）摆成如下的结构。右键下方扭曲的黑曜石平台正中间的方块即可在黑曜石平台中间生成一个末地传送门。"
 				"{image:kubejs:textures/quest/end_portal.png width:100 height:100 align:1}"
-				"维持末地传送门需要消耗大量的能量，需要 10000FE/t。能量单元需要有足够的能量传输能力且底部可以输出才能正常消耗能量。"
+				"维持末地传送门需要消耗大量的能量，需要 10000FE/t。&c&l能量单元需要有足够的能量传输能力且底部可以输出才能正常消耗能量。"
 				"若你没有足够的发电量，请考虑只给能量单元一点电，保证传送门维持的时间足以你进去即可。"
-				"由于复活末影龙所需的材料很贵（反物质），打龙之前务必收集足够的龙息。"
+				"&c&l由于复活末影龙需要反物质，且反物质的生产与处理也需要龙息，打龙之前务必收集足够的龙息。"
 			]
 			dependencies: ["523D0D633964702B"]
 			id: "466AD95B3CEAE868"
@@ -756,9 +757,9 @@
 			]
 		}
 		{
-			x: 3.0d
+			x: 4.5d
 			y: 9.0d
-			dependencies: ["14A00E0254B34E74"]
+			dependencies: ["73E17215A221EDFE"]
 			id: "09E5D384AC069FD4"
 			tasks: [{
 				id: "56C044D471B169BE"
@@ -975,6 +976,52 @@
 					id: "020EC32619DD2C09"
 					type: "item"
 					item: "immersiveengineering:treated_post"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "custommachinery:custom_machine_item"
+				Count: 1b
+				tag: {
+					machine: "flyingroad:antimatter_crystallizer"
+				}
+			}
+			x: 3.0d
+			y: 9.0d
+			description: [
+				"将上述材料摆成如下多方块结构，消耗能量于高磁场环境下结晶反物质。"
+				"{image:kubejs:textures/quest/antimatter_crystallizer.png width:100 height:100 align:1}"
+				"由于高磁场所需的高电流，每次工作完成后所有琥珀金线圈均会烧毁，需要进行替换。"
+			]
+			dependencies: [
+				"466AD95B3CEAE868"
+				"14A00E0254B34E74"
+			]
+			id: "73E17215A221EDFE"
+			tasks: [
+				{
+					id: "5E5C51D2BF0F8619"
+					type: "item"
+					item: {
+						id: "custommachinery:custom_machine_item"
+						Count: 1b
+						tag: {
+							machine: "flyingroad:antimatter_crystallizer"
+						}
+					}
+				}
+				{
+					id: "38BA170D136EC70E"
+					type: "item"
+					item: "immersiveengineering:coil_mv"
+					count: 16L
+				}
+				{
+					id: "499929B55D52E957"
+					type: "item"
+					item: "mekanismgenerators:electromagnetic_coil"
+					count: 2L
 				}
 			]
 		}

@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/cube_bottom_top",
+    "textures": {
+        "side": "kubejs:block/burnt_electrum_coil_side",
+        "bottom": "kubejs:block/burnt_electrum_coil_top",
+        "top": "kubejs:block/burnt_electrum_coil_top"
+    }
+}

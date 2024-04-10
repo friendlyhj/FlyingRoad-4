@@ -66,6 +66,12 @@ onEvent('block.registry', event => {
         .tagBlock('minecraft:needs_diamond_tool')
         .requiresTool(true)
         .material('rock')
+
+    event.create('burnt_electrum_coil_block')
+        .hardness(5)
+        .tagBlock('minecraft:mineable/pickaxe')
+        .requiresTool(true)
+        .material('metal')
 })
 
 onEvent('item.registry', event => {

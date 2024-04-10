@@ -1,0 +1,68 @@
+{
+    "name": "flyingroad.antimatter_crystallizer",
+    "appearance": {
+        "block": "kubejs:machine/antimatter_crystallizer"
+    },
+    "tooltips": [],
+    "components": [
+        {
+            "type": "custommachinery:energy",
+            "capacity": 400000000,
+            "maxInput": 2000000,
+            "maxOutput": 0
+        },
+        {
+            "type": "custommachinery:gas",
+            "capacity": 2000,
+            "id": "tank",
+            "maxInput": 1000,
+            "maxOutput": 0,
+            "filter": [
+                "mekanism:antimatter"
+            ],
+            "whitelist": true
+        },
+        {
+            "type": "custommachinery:item",
+            "id": "output",
+            "mode": "output"
+        }
+    ],
+    "gui": [
+        {
+            "type": "custommachinery:texture",
+            "x": 0,
+            "y": 0,
+            "texture": "custommachinery:textures/gui/base_background.png"
+        },
+        {
+            "type": "custommachinery:energy",
+            "x": 40,
+            "y": 20
+        },
+        {
+            "type": "custommachinery:gas",
+            "x": 60,
+            "y": 20,
+            "id": "tank"
+        },
+        {
+            "type": "custommachinery:progress",
+            "x": 96,
+            "y": 33
+        },
+        {
+            "type": "custommachinery:slot",
+            "x": 136,
+            "y": 33,
+            "id": "output"
+        },
+        {
+            "type": "custommachinery:player_inventory",
+            "x": 50,
+            "y": 80
+        }
+    ],
+    "jei": [],
+    "catalysts": []
+}

@@ -53,6 +53,7 @@ public class Outputs {
         }
         return Result.error("Output is full");
     })
+    .hide()
     .build();
 
 CMUpgradeBuilder.create(<item:thermal:upgrade_augment_1>)

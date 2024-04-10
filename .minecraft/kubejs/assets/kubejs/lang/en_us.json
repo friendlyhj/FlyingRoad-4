@@ -2,5 +2,6 @@
     "kubejs.modpack.name": "FlyingRoad 4",
     "item.kubejs.energy_duct_empty": "Energy Duct (Empty)",
     "item.kubejs.small_ender_dust": "Small Pile of Ender Pearl Dust",
-    "flyingroad.quantum_quarry": "Quantum Quarry"
+    "flyingroad.quantum_quarry": "Quantum Quarry",
+    "flyingroad.antimatter_crystallizer": "Antimatter Crystallizer"
 }

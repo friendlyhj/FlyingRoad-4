@@ -1,4 +1,4 @@
-const version = '4.4.1'
+const version = '4.4.2'
 const titles = [
     'Made by youyihj',
     'Powered by Minecraft 1.18.2',
@@ -132,7 +132,8 @@ const titles = [
     '你这个人满脑子想着都是自己呢',
     '八号打假赛的提前倒下',
     '会赢的',
-    '还是 PVP 大佬'
+    '还是 PVP 大佬',
+    '无法预测的命运之舞台'
 ]
 
 let randomTitleIndex = -1

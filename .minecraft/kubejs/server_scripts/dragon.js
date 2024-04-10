@@ -115,9 +115,9 @@ onEvent('recipes', event => {
         'bow'
     ]
 
-    event.remove({ 'id': '/draconicevolution:tools/wyvern_.*/' })
-
     tools.forEach(tool => {
+        event.remove({'id': `draconicevolution:tools/wyvern_${tool}` })
+        event.remove({'id': `draconicevolution:tools/draconic_${tool}` })
         event.custom({
             'type': 'draconicevolution:fusion_crafting',
             'result': {
@@ -146,6 +146,37 @@ onEvent('recipes', event => {
                 },
                 {
                     'item': 'draconicevolution:basic_relay_crystal'
+                }
+            ]
+        })
+        event.custom({
+            'type': 'draconicevolution:fusion_crafting',
+            'result': {
+                'item': `draconicevolution:draconic_${tool}`
+            },
+            'catalyst': {
+                'item': `draconicevolution:wyvern_${tool}`
+            },
+            'total_energy': 32000000,
+            'tier': 'DRACONIC',
+            'ingredients': [
+                {
+                    'item': 'draconicevolution:awakened_core'
+                },
+                {
+                    'tag': 'forge:ingots/draconium_awakened'
+                },
+                {
+                    'tag': 'forge:ingots/draconium_awakened'
+                },
+                {
+                    'item': 'thermal_extra:rf_coil_storage_augment_5'
+                },
+                {
+                    'item': 'draconicevolution:draconic_energy_core'
+                },
+                {
+                    'item': 'thermal_extra:rf_coil_storage_augment_5'
                 }
             ]
         })
@@ -189,6 +220,8 @@ onEvent('recipes', event => {
         ]
     })
 
+    event.remove({'id': `draconicevolution:tools/wyvern_chestpiece` })
+    event.remove({'id': `draconicevolution:tools/draconic_chestpiece` })
     event.custom({
         'type': 'draconicevolution:fusion_crafting',
         'result': {
@@ -217,6 +250,38 @@ onEvent('recipes', event => {
             },
             {
                 'item': 'draconicevolution:basic_relay_crystal'
+            }
+        ]
+    })
+
+    event.custom({
+        'type': 'draconicevolution:fusion_crafting',
+        'result': {
+            'item': `draconicevolution:draconic_chestpiece`
+        },
+        'catalyst': {
+            'item': `draconicevolution:wyvern_chestpiece`
+        },
+        'total_energy': 32000000,
+        'tier': 'DRACONIC',
+        'ingredients': [
+            {
+                'item': 'draconicevolution:awakened_core'
+            },
+            {
+                'tag': 'forge:ingots/draconium_awakened'
+            },
+            {
+                'tag': 'forge:ingots/draconium_awakened'
+            },
+            {
+                'item': 'thermal_extra:rf_coil_storage_augment_5'
+            },
+            {
+                'item': 'draconicevolution:draconic_energy_core'
+            },
+            {
+                'item': 'thermal_extra:rf_coil_storage_augment_5'
             }
         ]
     })
