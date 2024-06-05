@@ -733,6 +733,45 @@ onEvent('recipes', event => {
         'thermal:lapis_dust',
         'thermal_extra:amethyst_dust'
     ])
+
+    event.custom({
+        'type': 'draconicevolution:fusion_crafting',
+        'result': {
+            'item': 'totem_of_undying',
+            'count': 1
+        },
+        'catalyst': {
+            'item': 'draconicevolution:wyvern_core'
+        },
+        'total_energy': 6400000,
+        'tier': 'WYVERN',
+        'ingredients': [
+            {
+                'item': 'emerald_block'
+            },
+            {
+                'item': 'emerald_block'
+            },
+            {
+                'item': 'golden_apple'
+            },
+            {
+                'item': 'golden_apple'
+            },
+            {
+                'item': 'golden_apple'
+            },
+            {
+                'item': 'golden_apple'
+            },
+            {
+                'item': 'mekanism:pellet_plutonium'
+            },
+            {
+                'item': 'dragon_breath'
+            }
+        ]
+    })
 })
 
 onEvent('tags.fluids', event => {
