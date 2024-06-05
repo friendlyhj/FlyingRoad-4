@@ -1,4 +1,4 @@
-const version = '4.4.2'
+const version = '4.4.3'
 const titles = [
     'Made by youyihj',
     'Powered by Minecraft 1.18.2',
@@ -86,7 +86,7 @@ const titles = [
     'Also try Sky Factory 4!',
     'Also try All the Mods 3 Expert!',
     'Also try Enigmatica 2 Expert Extended!',
-    'On MCBBS',
+    'On MCMOD',
     '认真看书了吗',
     '鸡你太美',
     '我想起高兴的事情',

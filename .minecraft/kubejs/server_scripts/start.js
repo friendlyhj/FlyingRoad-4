@@ -118,7 +118,7 @@ onEvent('recipes', event => {
         'type': 'lychee:item_exploding',
         'item_in': [
             { 'item': 'stone' },
-            { 'item': 'andesite' },
+            { 'item': 'diorite' },
             { 'item': 'gold_ingot' }
         ],
         'post': [

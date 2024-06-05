@@ -386,7 +386,7 @@
 			y: 0.0d
 			shape: "hexagon"
 			description: [
-				"将金融入石头和安山岩之间，便能产出源源不断的矿物！然而这个母岩不能自我生长，需要给它一点肥料。"
+				"将金融入石头和闪长岩之间，便能产出源源不断的矿物！然而这个母岩不能自我生长，需要给它一点肥料。"
 				"此外植育一号可以替代骨粉的大部分功能，且有 75% 概率不消耗。同时植育一号也能通过合成转换为骨粉。"
 			]
 			dependencies: ["2573B3FC5A949830"]
@@ -661,6 +661,31 @@
 				id: "625DA71D3CC45F0F"
 				type: "checkmark"
 				title: "思索"
+			}]
+		}
+		{
+			title: "放置与破坏"
+			x: 18.0d
+			y: 0.0d
+			description: ["自动化下界门所必要的。"]
+			dependencies: ["3CD13653AE55E671"]
+			id: "5E1DB4A5EBDC7CA0"
+			tasks: [
+				{
+					id: "60A798066B89EF80"
+					type: "item"
+					item: "cyclic:placer"
+				}
+				{
+					id: "28D9434D6C9D4F39"
+					type: "item"
+					item: "cyclic:breaker"
+				}
+			]
+			rewards: [{
+				id: "5364A908BF6F40BC"
+				type: "item"
+				item: "minecraft:repeater"
 			}]
 		}
 	]

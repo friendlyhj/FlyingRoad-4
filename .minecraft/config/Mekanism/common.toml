@@ -6,5 +6,5 @@
 	energyType = "FORGE_ENERGY"
 	#Displayed temperature unit in Mekanism GUIs and network reader readings.
 	#Allowed Values: KELVIN, CELSIUS, RANKINE, FAHRENHEIT, AMBIENT
-	temperatureUnit = "KELVIN"
+	temperatureUnit = "CELSIUS"
 

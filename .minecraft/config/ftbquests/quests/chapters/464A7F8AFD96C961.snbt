@@ -92,17 +92,6 @@
 		}
 		{
 			x: -4.5d
-			y: -2.5d
-			dependencies: ["0221B011E44E8330"]
-			id: "1A9489C8681E01E0"
-			tasks: [{
-				id: "0DB72119E28493CD"
-				type: "item"
-				item: "draconicevolution:energy_transfuser"
-			}]
-		}
-		{
-			x: -4.5d
 			y: -7.0d
 			description: ["自动杀死凋灵。"]
 			dependencies: ["2EC397BF043326E4"]
@@ -142,17 +131,6 @@
 						}
 					}
 				}
-			}]
-		}
-		{
-			x: -4.5d
-			y: -4.0d
-			dependencies: ["2EC397BF043326E4"]
-			id: "0221B011E44E8330"
-			tasks: [{
-				id: "6BFA8B0ED9174BF6"
-				type: "item"
-				item: "draconicevolution:draconium_energy_module"
 			}]
 		}
 		{

@@ -651,13 +651,15 @@
 		}
 		{
 			title: "裂变反应堆"
-			x: -1.5d
+			x: 1.5d
 			y: 9.0d
 			description: [
 				"大型核裂变反应堆，消耗冷却剂和裂变燃料生产蒸汽和钋等材料，蒸汽可进入蒸汽涡轮发电。"
-				"冷却剂必须充足，不然反应堆会过热爆炸并导致辐射泄漏！"
+				"由于裂变堆对铀的需求极大，一个五倍矿产线是必要的。"
+				"反应堆的冷却液必须充足，否则会过热爆炸，导致辐射泄漏！"
+				"本包并没有水槽提供无限水，即使有 AE 的无限水元件，输出总线的传输效率也是有限的。你需要把涡轮冷凝蒸汽产生的水重新导入裂变堆里。"
 			]
-			dependencies: ["062CDEF8AAEAFBEB"]
+			dependencies: ["078A1A8DA473AA9B"]
 			id: "6B527D2992FDDE14"
 			tasks: [
 				{
@@ -723,8 +725,8 @@
 			]
 		}
 		{
-			x: 0.0d
-			y: 9.0d
+			x: 1.5d
+			y: 10.5d
 			dependencies: ["6B527D2992FDDE14"]
 			id: "2DA79CFFBBC3EF5D"
 			tasks: [{
@@ -734,8 +736,8 @@
 			}]
 		}
 		{
-			x: 1.5d
-			y: 9.0d
+			x: 3.0d
+			y: 10.5d
 			dependencies: ["2DA79CFFBBC3EF5D"]
 			id: "14A00E0254B34E74"
 			tasks: [
@@ -883,8 +885,8 @@
 			y: 9.0d
 			description: ["使 ME 网络拥有无限的水。该元件不可用元件工作台编辑。"]
 			dependencies: [
-				"6B527D2992FDDE14"
 				"2A6DCC6B2EDB38FA"
+				"03D3430ACEA56230"
 			]
 			id: "18BE6858EACA419D"
 			tasks: [{
@@ -1022,6 +1024,123 @@
 					type: "item"
 					item: "mekanismgenerators:electromagnetic_coil"
 					count: 2L
+				}
+			]
+		}
+		{
+			title: "三倍产矿"
+			x: -1.5d
+			y: 9.0d
+			description: ["使用氧气三倍产矿，提纯 -> 富集 -> 粉碎 ->  熔炼"]
+			dependencies: ["062CDEF8AAEAFBEB"]
+			id: "03D3430ACEA56230"
+			tasks: [{
+				id: "17999A7AD05C47E9"
+				type: "item"
+				item: "mekanism:purification_chamber"
+			}]
+			rewards: [{
+				id: "5E7364F0BF41E0DB"
+				type: "item"
+				item: "mekanism:upgrade_gas"
+				count: 4
+			}]
+		}
+		{
+			title: "盐水塔"
+			x: -1.5d
+			y: 10.5d
+			description: ["通过热量蒸出部分水分，将其中的盐分浓缩，形成盐水。"]
+			dependencies: ["03D3430ACEA56230"]
+			id: "57EE75E9BE3CB65F"
+			tasks: [
+				{
+					id: "39CF65F9814B6F65"
+					type: "item"
+					item: "mekanism:thermal_evaporation_controller"
+				}
+				{
+					id: "2947DED8433CAF2D"
+					type: "item"
+					item: "mekanism:thermal_evaporation_valve"
+					count: 3L
+				}
+				{
+					id: "143F4E92BD1D4003"
+					type: "item"
+					item: "mekanism:thermal_evaporation_block"
+				}
+				{
+					id: "31FAA0D36A9017C4"
+					type: "item"
+					item: "mekanism:resistive_heater"
+				}
+			]
+		}
+		{
+			title: "四倍产矿"
+			x: 0.0d
+			y: 10.5d
+			description: ["使用氯化氢四倍产矿，压射 -> 提纯 -> 粉碎 -> 富集 -> 熔炼"]
+			dependencies: ["57EE75E9BE3CB65F"]
+			id: "1AD7D76628B6FB62"
+			tasks: [{
+				id: "51E58D423C731ED9"
+				type: "item"
+				item: "mekanism:chemical_injection_chamber"
+			}]
+		}
+		{
+			title: "五倍产矿"
+			icon: "mekanism:chemical_dissolution_chamber"
+			x: 0.0d
+			y: 9.0d
+			description: [
+				"使用硫酸进行五倍产矿，溶解 -> 清洗 -> 结晶 -> 压射 -> 提纯 -> 粉碎 -> 富集 -> 熔炼"
+				"硫酸请用三氧化硫产线生产，直接用硫磺转换效率极低！"
+			]
+			dependencies: ["1AD7D76628B6FB62"]
+			id: "078A1A8DA473AA9B"
+			tasks: [
+				{
+					id: "7D27C1CA0819B604"
+					type: "item"
+					item: "mekanism:chemical_dissolution_chamber"
+				}
+				{
+					id: "4638BFC1362CF709"
+					type: "item"
+					item: "mekanism:chemical_washer"
+				}
+				{
+					id: "140DDE3CBECF2225"
+					type: "item"
+					item: "mekanism:chemical_crystallizer"
+				}
+			]
+		}
+		{
+			title: "通量网络"
+			x: 1.5d
+			y: 4.5d
+			description: ["无线收发能量，甚至可以给物品栏装备充能！"]
+			dependencies: ["095AAAA29FFA2493"]
+			id: "6ED43E7864B7BD49"
+			tasks: [
+				{
+					id: "50AF4F8BFF40C2D4"
+					type: "item"
+					item: "fluxnetworks:flux_plug"
+				}
+				{
+					id: "389C1169D3DF6AE5"
+					type: "item"
+					item: "fluxnetworks:flux_point"
+				}
+				{
+					id: "690DC5D648FF3381"
+					type: "item"
+					item: "fluxnetworks:flux_controller"
 				}
 			]
 		}

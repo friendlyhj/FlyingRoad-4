@@ -68,7 +68,7 @@ onEvent('recipes', event => {
         'temperature': {
             'min_temp': 423
         },
-        'speed': 0.25,
+        'speed': 1.0,
         'pressure': 2.0,
         'exothermic': false
     })

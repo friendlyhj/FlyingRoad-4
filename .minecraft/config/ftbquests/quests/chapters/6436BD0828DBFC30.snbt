@@ -23,7 +23,7 @@
 			x: 6.0d
 			y: 1.5d
 			description: ["放下斧头，收集树内的胶质。肥料可以加快胶质的生产速度。"]
-			dependencies: ["0E6C8BABC76D0F33"]
+			dependencies: ["548722F76BF84A57"]
 			id: "03B1B8079F77963B"
 			tasks: [{
 				id: "07B716D87578B640"
